@@ -25,15 +25,8 @@ jobs:
         os: [ubuntu-22.04]
 
     steps:
-      - name: Checkout Source code
-        if: github.event_name == 'push'
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Checkout Source code
-        if: github.event_name == 'pull_request'
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
@@ -46,6 +39,7 @@ jobs:
           cache: 'true'
           tools: 'tools_ifw'
           aqtversion: '==3.1.*'
+          py7zrversion: '==0.20.*'
 
       - name: Create Build Environment
         # Some projects don't allow in-source building, so create a separate build directory
