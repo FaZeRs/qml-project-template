@@ -1,4 +1,3 @@
-enable_testing()
 include(CTest)
 
 find_package(Catch2 REQUIRED)
