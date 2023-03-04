@@ -1,0 +1,15 @@
+[submodule "thirdparty/sentry-native"]
+	path = thirdparty/sentry-native
+	url = https://github.com/getsentry/sentry-native.git
+[submodule "thirdparty/spdlog"]
+	path = thirdparty/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "thirdparty/singleapplication"]
+	path = thirdparty/singleapplication
+	url = https://github.com/itay-grudev/SingleApplication.git
+[submodule "thirdparty/ads"]
+	path = thirdparty/ads
+	url = https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System.git
+[submodule "thirdparty/QSimpleUpdater"]
+	path = thirdparty/QSimpleUpdater
+	url = https://github.com/alex-spataru/QSimpleUpdater.git
