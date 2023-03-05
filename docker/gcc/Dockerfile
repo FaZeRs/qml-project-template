@@ -14,7 +14,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN apt-get -yqq update && apt-get -yqq --no-install-suggests --no-install-recommends install \
     git \
-    curl \
+    curl libcurl4-openssl-dev \
     cmake \
     python3 \
     python3-pip \
@@ -28,13 +28,13 @@ RUN apt-get -yqq update && apt-get -yqq --no-install-suggests --no-install-recom
     libfreetype6-dev libx11-dev libx11-xcb-dev libxext-dev libxfixes-dev libxi-dev libxrender-dev libxcb1-dev \
     libxcb-glx0-dev libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync-dev \
     libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libxcb-util-dev \
+    catch2 \
     locales
 
-RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
-# RUN locale-gen "en_US.UTF-8"
-# ENV LANG en_US.UTF-8
-# ENV LANGUAGE en_US:en
-# ENV LC_ALL en_US.UTF-8
+RUN locale-gen "en_US.UTF-8"
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 RUN pip3 install aqtinstall
 
