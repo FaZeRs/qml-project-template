@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        run: sudo apt-get install -y catch2 libcurl4-openssl-dev
+        run: sudo apt-get install -y catch2 libcurl4-openssl-dev libxcb-xinerama0
 
       - name: Checkout
         uses: actions/checkout@v3
