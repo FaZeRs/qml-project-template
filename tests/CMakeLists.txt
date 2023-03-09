@@ -1,8 +1,10 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(unit_tests LANGUAGES CXX)
+
+add_executable(unit_tests tst_mytest.cpp)
+target_link_libraries(unit_tests PRIVATE Catch2::Catch2WithMain)
+
 include(CTest)
-
-find_package(Catch2 REQUIRED)
-
-include_directories(${CMAKE_SOURCE_DIR}/src)
-
-# add_subdirectory(gui)
-add_subdirectory(unit)
+include(Catch)
+catch_discover_tests(unit_tests)

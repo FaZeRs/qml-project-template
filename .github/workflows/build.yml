@@ -25,7 +25,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Install dependencies
-        run: sudo apt-get install -y catch2 libcurl4-openssl-dev libxcb-xinerama0 ninja-build ccache
+        run: sudo apt-get install -y catch2 libcurl4-openssl-dev libxcb-xinerama0 ninja-build ccache libxkbcommon-dev libxkbcommon-x11-dev
 
       - name: Checkout
         uses: actions/checkout@v3
