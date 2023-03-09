@@ -71,10 +71,9 @@ jobs:
 
       - name: Upload Artifact to Github
         uses: actions/upload-artifact@v3
-        working-directory: ${{runner.workspace}}/build
         with:
           name: ${{ steps.package.outputs.artifact }}
-          path: RoomSketcher-*-linux.tar.gz
+          path: build/RoomSketcher-*-linux.tar.gz
           retention-days: 2
 
   windows-build:
