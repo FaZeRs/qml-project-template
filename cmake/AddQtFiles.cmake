@@ -1,1 +1,1 @@
-set(FORM_FILES src/mainwindow.ui)
+set(QML_FILES src/qml/main.qml)

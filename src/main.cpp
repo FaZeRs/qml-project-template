@@ -1,13 +1,13 @@
 #include <singleapplication.h>
 
-#include <QApplication>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
 
 #include "logger.h"
-#include "mainwindow.h"
 #include "qt_log.h"
 #include "sentry.h"
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   Logger::instance();
   SPDLOG_INFO("*** ************* ***");
   SPDLOG_INFO("*** Room Sketcher ***");
@@ -18,8 +18,14 @@ int main(int argc, char* argv[]) {
 
   initializeSentry();
 
+  QGuiApplication::setApplicationName("Room Sketcher");
+  QGuiApplication::setOrganizationName("Giraffe360");
+
   SingleApplication app(argc, argv);
-  MainWindow window;
-  window.show();
+
+  QQmlApplicationEngine engine;
+  engine.load(QUrl(QStringLiteral("qrc:/src/qml/main.qml")));
+  if (engine.rootObjects().isEmpty()) return -1;
+
   return app.exec();
 }
