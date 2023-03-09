@@ -7,9 +7,6 @@
 [submodule "thirdparty/singleapplication"]
 	path = thirdparty/singleapplication
 	url = https://github.com/itay-grudev/SingleApplication.git
-[submodule "thirdparty/ads"]
-	path = thirdparty/ads
-	url = https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System.git
 [submodule "thirdparty/QSimpleUpdater"]
 	path = thirdparty/QSimpleUpdater
 	url = https://github.com/alex-spataru/QSimpleUpdater.git
