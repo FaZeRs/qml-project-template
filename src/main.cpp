@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
   qInstallMessageHandler(qtLogMessageHandler);
 
   initializeSentry();
+  auto sentryClose = qScopeGuard([] { sentry_close(); });
 
   QGuiApplication::setApplicationName("Room Sketcher");
   QGuiApplication::setOrganizationName("Giraffe360");

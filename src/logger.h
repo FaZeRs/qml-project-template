@@ -57,7 +57,7 @@ class Logger final : public Singleton<Logger> {
   std::shared_ptr<spdlog::logger> logger_;
   std::shared_ptr<spdlog::sinks::stdout_color_sink_mt> console_sink_;
   std::shared_ptr<spdlog::sinks::basic_file_sink_mt> file_sink_;
-  std::vector<spdlog::sink_ptr> sinks_;
+  std::vector<spdlog::sink_ptr> sinks_{};
 };  // Logger
 
 #endif  // LOGGER_H

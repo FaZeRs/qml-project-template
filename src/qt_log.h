@@ -2,6 +2,7 @@
 #define QT_LOG_H
 
 #include "spdlog/spdlog.h"
+#include <sentry.h>
 
 // Qt Log Message handler
 static void qtLogMessageHandler(QtMsgType type,
@@ -23,16 +24,19 @@ static void qtLogMessageHandler(QtMsgType type,
       spdlog::log(
           spdlog::source_loc{context.file, context.line, context.function},
           spdlog::level::warn, loc.constData());
+      sentry_capture_event(sentry_value_new_message_event(SENTRY_LEVEL_WARNING, "default", loc.constData()));
       break;
     case QtCriticalMsg:
       spdlog::log(
           spdlog::source_loc{context.file, context.line, context.function},
           spdlog::level::err, loc.constData());
+      sentry_capture_event(sentry_value_new_message_event(SENTRY_LEVEL_ERROR, "default", loc.constData()));
       break;
     case QtFatalMsg:
       spdlog::log(
           spdlog::source_loc{context.file, context.line, context.function},
           spdlog::level::critical, loc.constData());
+      sentry_capture_event(sentry_value_new_message_event(SENTRY_LEVEL_FATAL, "default", loc.constData()));
       break;
   }
 }

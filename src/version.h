@@ -70,27 +70,27 @@ static constexpr const char* version_string{version_impl::makeVersionString()};
 
 /// @brief Get version string
 /// @returns Version string
-static constexpr inline auto getVersionString() { return version_string; }
+static constexpr auto getVersionString() { return version_string; }
 
 /// @brief Get major version
 /// @returns Major version
-static constexpr inline auto getMajor() { return major; }
+static constexpr auto getMajor() { return major; }
 
 /// @brief Get minor version
 /// @returns Minor version
-static constexpr inline auto getMinor() { return minor; }
+static constexpr auto getMinor() { return minor; }
 
 /// @brief Get patch version
 /// @returns Patch version
-static constexpr inline auto getPatch() { return patch; }
+static constexpr auto getPatch() { return patch; }
 
 /// @brief Get build number
 /// @returns Build number
-static constexpr inline auto getBuild() { return build; }
+static constexpr auto getBuild() { return build; }
 
 /// @brief Get pre-release string
 /// @returns Pre-release string
-static constexpr inline auto getPrerelease() { return prerelease; }
+static constexpr auto getPrerelease() { return prerelease; }
 
 }  // namespace version
 
