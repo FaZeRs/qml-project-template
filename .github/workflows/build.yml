@@ -52,7 +52,7 @@ jobs:
         shell: bash
         working-directory: ${{runner.workspace}}/build
         run: |
-          cmake -G Ninja $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+          cmake -G Ninja $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DSENTRY_BACKEND=breakpad -DSENTRY_INTEGRATION_QT=ON -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.5/bin
 
       - name: Build
         working-directory: ${{runner.workspace}}/build
@@ -62,12 +62,18 @@ jobs:
       - name: Test
         working-directory: ${{runner.workspace}}/build
         shell: bash
-        run: ctest -C $BUILD_TYPE --output-on-failure
+        run: ctest -C $BUILD_TYPE --output-on-failure --output-junit test-results.xml
+
+      - uses: actions/upload-artifact@v3
+        if: success() || failure()
+        with:
+          name: test-results
+          path: build/test-results.xml
 
       - name: Package
         working-directory: ${{runner.workspace}}/build
         shell: bash
-        run: cmake --build . --config $BUILD_TYPE --target package -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.5/bin
+        run: cmake --build . --config $BUILD_TYPE --target package
 
       - name: Upload Artifact to Github
         uses: actions/upload-artifact@v3
@@ -108,7 +114,7 @@ jobs:
         shell: bash
         working-directory: ${{runner.workspace}}/build
         run: |
-          cmake -G Ninja $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+          cmake -G Ninja $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DSENTRY_BACKEND=breakpad -DSENTRY_INTEGRATION_QT=ON -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.5/bin
 
       - name: Build
         working-directory: ${{runner.workspace}}/build
