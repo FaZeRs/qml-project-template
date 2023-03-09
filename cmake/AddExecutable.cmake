@@ -6,6 +6,7 @@ qt_add_qml_module(${CMAKE_PROJECT_NAME}
   URI roomsketcher
   VERSION 1.0
   QML_FILES ${QML_FILES}
+  RESOURCES qtquickcontrols2.conf
   NO_RESOURCE_TARGET_PATH
 )
 
