@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Dialogs
 
 MenuBar {
     spacing: 10
@@ -73,13 +72,6 @@ MenuBar {
         text: qsTr("Paste")
         shortcut: StandardKey.Paste
         onTriggered: console.log("Paste action triggered");
-    }
-
-    MessageDialog {
-        id: aboutDialog
-        title: qsTr("About")
-        buttons: MessageDialog.Ok
-        text: qsTr("Room Sketcher - Floor Plan Creator")
     }
 
     Action {

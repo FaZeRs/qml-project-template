@@ -12,6 +12,12 @@ ApplicationWindow {
     width: 640
     height: 480
 
+    App.AboutDialog {
+        id: aboutDialog
+        parent: Overlay.overlay
+        anchors.centerIn: parent
+    }
+
     menuBar: App.MenuBar {}
 
     Button {
