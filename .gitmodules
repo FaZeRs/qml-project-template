@@ -7,6 +7,3 @@
 [submodule "thirdparty/singleapplication"]
 	path = thirdparty/singleapplication
 	url = https://github.com/itay-grudev/SingleApplication.git
-[submodule "thirdparty/QSimpleUpdater"]
-	path = thirdparty/QSimpleUpdater
-	url = https://github.com/alex-spataru/QSimpleUpdater.git
