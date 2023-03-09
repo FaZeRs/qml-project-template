@@ -25,3 +25,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
   Qt::Qml
   SingleApplication::SingleApplication
 )
+
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE VERSION_MAJOR=${VERSION_MAJOR})
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE VERSION_MINOR=${VERSION_MINOR})
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE VERSION_PATCH=${VERSION_PATCH})

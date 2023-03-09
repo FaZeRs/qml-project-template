@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.16...3.22)
 
+include(cmake/AddVersion.cmake)
+
 project(RoomSketcher
-  VERSION 1.0.0
+  VERSION ${VERSION_SHORT}
   DESCRIPTION "Floor Plan Editor"
   HOMEPAGE_URL "https://giraffe360.com"
   LANGUAGES CXX)
@@ -18,6 +20,7 @@ include(cmake/AddInstallTargets.cmake)
 include(cmake/AddCPack.cmake)
 include(cmake/AddTests.cmake)
 
+message(STATUS "Version: ${PROJECT_VERSION}")
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "Release cxx: ${CMAKE_CXX_FLAGS_RELEASE}")
 message(STATUS "Debug cxx: ${CMAKE_CXX_FLAGS_DEBUG}")

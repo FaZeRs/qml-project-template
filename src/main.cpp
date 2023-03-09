@@ -2,15 +2,18 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 #include "logger.h"
 #include "qt_log.h"
 #include "sentry.h"
+#include "version.h"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   Logger::instance();
   SPDLOG_INFO("*** ************* ***");
   SPDLOG_INFO("*** Room Sketcher ***");
+  SPDLOG_INFO("*** v: {} ***", version::getVersionString());
   SPDLOG_INFO("*** ************* ***\n");
 
   // Install Qt Log Message Handler
@@ -20,6 +23,7 @@ int main(int argc, char *argv[]) {
 
   QGuiApplication::setApplicationName("Room Sketcher");
   QGuiApplication::setOrganizationName("Giraffe360");
+  QGuiApplication::setApplicationVersion(version::getVersionString());
 
   SingleApplication app(argc, argv);
 
