@@ -65,11 +65,10 @@ jobs:
         run: ctest -C $BUILD_TYPE --output-on-failure --output-junit test-results.xml
 
       - uses: actions/upload-artifact@v3
-        working-directory: ${{runner.workspace}}/build
         if: success() || failure()
         with:
           name: test-results
-          path: test-results.xml
+          path: ./build/test-results.xml
 
       - name: Package
         working-directory: ${{runner.workspace}}/build
@@ -77,11 +76,10 @@ jobs:
         run: cmake --build . --config $BUILD_TYPE --target package
 
       - name: Upload Artifact to Github
-        working-directory: ${{runner.workspace}}/build
         uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.package.outputs.artifact }}
-          path: RoomSketcher-*-linux.tar.gz
+          path: ./build/RoomSketcher-*-linux.tar.gz
           retention-days: 2
 
   windows-build:
@@ -129,11 +127,10 @@ jobs:
         run: ctest -C $BUILD_TYPE --output-on-failure --output-junit test-results.xml
 
       - uses: actions/upload-artifact@v3
-        working-directory: ${{runner.workspace}}/build
         if: success() || failure()
         with:
           name: test-results
-          path: test-results.xml
+          path: ./build/test-results.xml
 
       - name: Package
         working-directory: ${{runner.workspace}}/build
@@ -141,9 +138,8 @@ jobs:
         run: cmake --build . --config $BUILD_TYPE --target package
 
       - name: Upload Artifact to Github
-        working-directory: ${{runner.workspace}}/build
         uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.package.outputs.artifact }}
-          path: RoomSketcher-*-win64.tar.gz
+          path: ./build/RoomSketcher-*-win64.tar.gz
           retention-days: 2
