@@ -67,7 +67,7 @@ jobs:
       - name: Package
         working-directory: ${{runner.workspace}}/build
         shell: bash
-        run: cmake --build . --config $BUILD_TYPE --target package
+        run: cmake --build . --config $BUILD_TYPE --target package -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.5/bin
 
       - name: Upload Artifact to Github
         uses: actions/upload-artifact@v3
@@ -77,11 +77,11 @@ jobs:
           retention-days: 2
 
   windows-build:
-    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.os}}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [windows-latest]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
