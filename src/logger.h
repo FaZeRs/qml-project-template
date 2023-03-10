@@ -19,8 +19,6 @@ class Logger final : public Singleton<Logger> {
     spdlog::drop_all();  // Release all Loggers
   }
 
-  std::shared_ptr<spdlog::logger> getLogger() const { return logger_; }
-
   // Creates SPDLOG logger with multiple sinks (console + file)
   void initLogger() {
     console_sink_ = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
@@ -46,11 +44,6 @@ class Logger final : public Singleton<Logger> {
     spdlog::flush_every(std::chrono::seconds(1));  // Refresh every second
     spdlog::set_default_logger(logger_);
     spdlog::set_level(spdlog::level::trace);
-  }
-
-  void reinitLogger() {
-    spdlog::drop_all();
-    initLogger();
   }
 
  private:
