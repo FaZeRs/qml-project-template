@@ -8,11 +8,10 @@ services:
       args:
         QT_VERSION: 6.5.0
         QT_PATH: /opt/qt
-        QT_MODULES:
         QT_HOST: linux
         QT_TARGET: desktop
         QT_ARCH: gcc_64
-    image: roomsketcher/6.5-gcc:latest
+    image: sref/qt-docker:6.5-gcc
     tty: true
     volumes:
     - ./:/usr/src/app
@@ -24,11 +23,10 @@ services:
       args:
         QT_VERSION: 6.5.0
         QT_PATH: C:\\Qt
-        QT_MODULES:
         QT_HOST: windows
         QT_TARGET: desktop
         QT_ARCH: win64_mingw
-    image: roomsketcher/6.5-mingw:latest
+    image: sref/qt-docker:6.5-mingw
     tty: true
     volumes:
     - ./:/usr/src/app

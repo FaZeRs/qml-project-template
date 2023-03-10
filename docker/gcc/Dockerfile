@@ -40,7 +40,7 @@ RUN pip3 install aqtinstall
 
 ARG QT_VERSION=6.5.0
 ARG QT_PATH=/opt/qt
-ARG QT_MODULES=
+ARG QT_MODULES
 ARG QT_HOST=linux
 ARG QT_TARGET=desktop
 ARG QT_ARCH=gcc_64
