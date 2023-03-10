@@ -1,8 +1,5 @@
-Include(FetchContent)
 SET(COMPILE_TESTS TRUE CACHE BOOL "Compile tests")
 if(COMPILE_TESTS)
-    FetchContent_Declare(Catch2 URL https://github.com/catchorg/Catch2/archive/refs/tags/v3.3.2.tar.gz)
-    FetchContent_MakeAvailable(Catch2)
     enable_testing()
     add_subdirectory(tests)
 endif()

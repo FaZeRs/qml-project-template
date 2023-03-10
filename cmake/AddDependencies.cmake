@@ -7,14 +7,18 @@ find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui Qml Quick QuickControls2)
 qt_standard_project_setup()
 
-Include(FetchContent)
+include(cmake/modules/CPM.cmake)
 
-FetchContent_Declare(
-  sentry
-  GIT_REPOSITORY https://github.com/getsentry/sentry-native.git
-  GIT_TAG        0.6.0
-  GIT_SUBMODULES external/libunwindstack-ndk external/breakpad external/third_party/lss
+CPMAddPackage(
+  NAME sentry
+  VERSION 0.6.0
+  GITHUB_REPOSITORY getsentry/sentry-native
+  GIT_TAG "0.6.0"
+  OPTIONS "SENTRY_BACKEND breakpad" "SENTRY_INTEGRATION_QT ON" "SENTRY_BUILD_TESTS OFF" "SENTRY_BUILD_EXAMPLES OFF"
 )
-FetchContent_Declare(spdlog URL https://github.com/gabime/spdlog/archive/refs/tags/v1.11.0.tar.gz)
+CPMAddPackage("gh:gabime/spdlog@1.11.0")
 
-FetchContent_MakeAvailable(sentry spdlog)
+# enables CCACHE support through the USE_CCACHE flag possible values are: YES, NO or equivalent
+if(USE_CCACHE)
+    CPMAddPackage("gh:TheLartians/Ccache.cmake@1.2.4")
+endif()

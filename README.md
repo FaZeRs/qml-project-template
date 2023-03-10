@@ -2,16 +2,18 @@
 
 Project template for QT projects.
 
-## Linux Build
+## Co,
 
 ```bash
 docker build -t roomsketcher/6.5-gcc:latest ./docker/gcc
 docker compose run --rm gcc bash
-mkdir build
+cmake -E make_directory build
 cd build
-cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/room_sketcher ..
-cmake --build . --parallel
+cmake -G Ninja .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/room_sketcher -DUSE_CCACHE=ON -DCPM_SOURCE_CACHE=~/.cache/CPM
+cmake --build . --parallel --config Release
+ctest -C Release --output-on-failure --output-junit test-results.xml
 cmake --install .
+cmake --build . --config Release --target package
 ```
 
 ## Windows Build
