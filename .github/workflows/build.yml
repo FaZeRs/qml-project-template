@@ -87,8 +87,8 @@ jobs:
       - name: Upload Artifact to Github
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ steps.package.outputs.artifact }}
-          path: ${{ runner.workspace }}/build/*.tar.gz
+          name: linux-build
+          path: ${{ runner.workspace }}/build/RoomSketcher-*-linux.tar.gz
           retention-days: 2
 
   windows-build:
@@ -129,7 +129,7 @@ jobs:
         shell: bash
         working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -G Ninja $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCPM_USE_LOCAL_PACKAGES=ON -DUSE_CCACHE=ON -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.5/bin
+          cmake -G Ninja $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCPM_USE_LOCAL_PACKAGES=ON -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.5/bin
 
       - name: Build
         working-directory: ${{ runner.workspace }}/build
@@ -155,6 +155,6 @@ jobs:
       - name: Upload Artifact to Github
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ steps.package.outputs.artifact }}
-          path: ${{ runner.workspace }}/build/*.tar.gz
+          name: windows-build
+          path: ${{ runner.workspace }}/build/RoomSketcher-*-win64.tar.gz
           retention-days: 2
