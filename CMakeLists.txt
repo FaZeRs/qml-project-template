@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16...3.22)
 
+include(cmake/AddCcache.cmake)
 include(cmake/AddVersion.cmake)
 
 project(RoomSketcher
@@ -11,7 +12,6 @@ project(RoomSketcher
 include(cmake/AddCompilationFlags.cmake)
 include(cmake/AddSanitizers.cmake)
 include(cmake/AddCodeCoverage.cmake)
-include(cmake/AddCcache.cmake)
 include(cmake/AddDependencies.cmake)
 include(cmake/AddSourceFiles.cmake)
 include(cmake/AddQtFiles.cmake)
