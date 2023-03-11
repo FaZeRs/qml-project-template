@@ -1,8 +1,6 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 
-#include <filesystem>
-#include <iostream>
 #include <memory>
 
 #include "parameters.h"
@@ -31,19 +29,16 @@ class Logger final : public Singleton<Logger> {
     console_sink_->set_pattern("[%H:%M:%S.%e] [%^%l%$] [t:%t] [%s:%#] %v");
     file_sink_->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%^%l%$] [%s:%#] %v");
 
-    sinks_.push_back(console_sink_);
-    sinks_.push_back(file_sink_);
+    sinks_.emplace_back(console_sink_);
+    sinks_.emplace_back(file_sink_);
 
     logger_ =
         std::make_shared<spdlog::logger>("rs_log", begin(sinks_), end(sinks_));
     logger_->set_level(spdlog::level::trace);
-    logger_->flush_on(
-        spdlog::level::warn);  // Flush automatically when warning appears
+    logger_->flush_on(spdlog::level::warn); // Flush automatically when warning appears
 
-    spdlog::register_logger(logger_);              // Register Logger
-    spdlog::flush_every(std::chrono::seconds(1));  // Refresh every second
+    spdlog::register_logger(logger_); // Register Logger
     spdlog::set_default_logger(logger_);
-    spdlog::set_level(spdlog::level::trace);
   }
 
  private:
