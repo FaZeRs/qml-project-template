@@ -29,3 +29,7 @@ endif()
 
 # Enable all warnings - we try to minimize these
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wextra-semi -Wconversion")
+
+if(MSVC)
+  add_definitions(/MP)
+endif()

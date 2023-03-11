@@ -76,7 +76,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: success() || failure()
         with:
-          name: test-results
+          name: test-results-linux
           path: ${{ runner.workspace }}/build/test-results.xml
 
       - name: Package
@@ -88,7 +88,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: linux-build
-          path: ${{ runner.workspace }}/build/RoomSketcher-*-linux.tar.gz
+          path: |
+            ${{ runner.workspace }}/build/RoomSketcher-*-linux.tar.gz
+            ${{ runner.workspace }}/build/RoomSketcher-*-linux.run
           retention-days: 2
 
   windows-build:
@@ -144,7 +146,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: success() || failure()
         with:
-          name: test-results
+          name: test-results-win
           path: ${{ runner.workspace }}/build/test-results.xml
 
       - name: Package
@@ -156,5 +158,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: windows-build
-          path: ${{ runner.workspace }}/build/RoomSketcher-*-win64.tar.gz
+          path: |
+            ${{ runner.workspace }}/build/RoomSketcher-*-win64.tar.gz
+            ${{ runner.workspace }}/build/RoomSketcher-*-win64.exe
           retention-days: 2
