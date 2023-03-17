@@ -1,4 +1,4 @@
-set(CODE_COVERAGE "OFF" CACHE BOOL "Enable compilation of binaries with code coverage instrumentation.")
+set(CODE_COVERAGE TRUE CACHE BOOL "Enable compilation of binaries with code coverage instrumentation.")
 
 if(CODE_COVERAGE)
     if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_C_COMPILER_ID MATCHES "GNU")

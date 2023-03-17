@@ -12,6 +12,7 @@ project(RoomSketcher
 include(cmake/AddCompilationFlags.cmake)
 include(cmake/AddSanitizers.cmake)
 include(cmake/AddCodeCoverage.cmake)
+include(cmake/AddClangTidy.cmake)
 include(cmake/AddDependencies.cmake)
 include(cmake/AddSourceFiles.cmake)
 include(cmake/AddQtFiles.cmake)

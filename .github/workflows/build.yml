@@ -61,7 +61,7 @@ jobs:
         shell: bash
         working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -G Ninja $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCPM_USE_LOCAL_PACKAGES=ON -DUSE_CCACHE=ON -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.5/bin
+          cmake -G Ninja $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCPM_USE_LOCAL_PACKAGES=ON -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.5/bin
 
       - name: Build
         working-directory: ${{ runner.workspace }}/build

@@ -1,4 +1,4 @@
-SET(QT_DEFAULT_MAJOR_VERSION 6)
+set(QT_DEFAULT_MAJOR_VERSION 6)
 set(QAPPLICATION_CLASS QGuiApplication CACHE STRING "Inheritance class for SingleApplication")
 add_subdirectory(thirdparty/singleapplication)
 
@@ -17,8 +17,3 @@ CPMAddPackage(
   OPTIONS "SENTRY_BACKEND breakpad" "SENTRY_INTEGRATION_QT ON" "SENTRY_BUILD_TESTS OFF" "SENTRY_BUILD_EXAMPLES OFF"
 )
 CPMAddPackage("gh:gabime/spdlog@1.11.0")
-
-# enables CCACHE support through the USE_CCACHE flag possible values are: YES, NO or equivalent
-if(USE_CCACHE)
-    CPMAddPackage("gh:TheLartians/Ccache.cmake@1.2.4")
-endif()
