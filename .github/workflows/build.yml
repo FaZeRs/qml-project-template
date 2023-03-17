@@ -93,6 +93,16 @@ jobs:
             ${{ runner.workspace }}/build/RoomSketcher-*-linux.run
           retention-days: 2
 
+      - name: Build docs
+        working-directory: ${{ runner.workspace }}/build
+        run: cmake --build . --target docs --parallel $(nproc) --config $BUILD_TYPE
+
+      - name: Upload Docs to Github
+        uses: actions/upload-artifact@v3
+        with:
+          name: github-pages
+          path: ${{ runner.workspace }}/build/html
+
   windows-build:
     name: ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
@@ -162,3 +172,24 @@ jobs:
             ${{ runner.workspace }}/build/RoomSketcher-*-win64.tar.gz
             ${{ runner.workspace }}/build/RoomSketcher-*-win64.exe
           retention-days: 2
+
+  deploy:
+    # Add a dependency to the build job
+    needs: linux-build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

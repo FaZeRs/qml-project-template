@@ -20,6 +20,7 @@ include(cmake/AddExecutable.cmake)
 include(cmake/AddInstallTargets.cmake)
 include(cmake/AddCPack.cmake)
 include(cmake/AddTests.cmake)
+include(cmake/AddDocs.cmake)
 
 message(STATUS "Version: ${PROJECT_VERSION}")
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
