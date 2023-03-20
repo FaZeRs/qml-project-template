@@ -192,6 +192,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Create Draft Release
         run: |
           gh release create ${{ github.ref_name }} --title ${{ github.ref_name }} --generate-notes --draft
