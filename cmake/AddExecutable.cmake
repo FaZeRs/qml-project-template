@@ -23,7 +23,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
   Qt::Quick
   Qt::QuickControls2
   Qt::Qml
-  SingleApplication::SingleApplication
+  Qt::Widgets
 )
 
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE VERSION_MAJOR=${VERSION_MAJOR})

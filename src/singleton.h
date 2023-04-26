@@ -1,7 +1,9 @@
-#ifndef SINGLETON_H
-#define SINGLETON_H
+#ifndef ROOM_SKETCHER_SINGLETON_H
+#define ROOM_SKETCHER_SINGLETON_H
 
 #include <type_traits>
+
+namespace room_sketcher {
 
 template <typename T, typename D = T>
 class Singleton {
@@ -26,4 +28,6 @@ T& Singleton<T, D>::instance() {
   return inst;
 }
 
-#endif  // SINGLETON_H
+} // namespace room_sketcher
+
+#endif  // ROOM_SKETCHER_SINGLETON_H
