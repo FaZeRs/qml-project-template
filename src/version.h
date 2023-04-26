@@ -19,7 +19,7 @@
 #define STRINGIFY(X) #X
 #define TO_STRING(X) STRINGIFY(X)
 
-namespace version {
+namespace room_sketcher::version {
 namespace version_impl {
 constexpr const char* makeVersionString() {
   return TO_STRING(VERSION_MAJOR) "." TO_STRING(
@@ -43,6 +43,6 @@ static constexpr const char* version_string{version_impl::makeVersionString()};
 /// @returns Version string
 static constexpr auto getVersionString() { return version_string; }
 
-}  // namespace version
+}  // namespace room_sketcher::version
 
 #endif  // VERSION_H
