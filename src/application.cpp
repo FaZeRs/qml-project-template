@@ -46,7 +46,7 @@ static void qtLogMessageHandler(QtMsgType type,
 
 namespace room_sketcher {
 
-static Scope<QCoreApplication> createApplication(int& argc, char* argv[])
+static Scope<QCoreApplication> createApplication(int& argc, char** argv)
 {
   QCoreApplication::setApplicationName("Room Sketcher");
   QCoreApplication::setOrganizationName("Giraffe360");
@@ -60,8 +60,7 @@ static Scope<QCoreApplication> createApplication(int& argc, char* argv[])
 }
 
 Application::Application(int& argc, char** argv)
-    : m_Application(createApplication(argc, argv)),
-      m_Engine(CreateScope<QQmlApplicationEngine>()) {
+    : m_Application(createApplication(argc, argv)) {
   Logger::instance();
 
   SPDLOG_INFO("*** ************* ***");
@@ -74,13 +73,32 @@ Application::Application(int& argc, char** argv)
   initializeSentry();
   auto sentryClose = qScopeGuard([] { sentry_close(); });
 
+  registerQmlTypes();
+
+  m_Engine->rootContext()->setContextProperty("settings", m_Settings.get());
+
   m_Engine->load(QUrl(QStringLiteral("qrc:/src/qml/main.qml")));
   if (m_Engine->rootObjects().isEmpty()) SPDLOG_WARN("Failed to load main.qml");
 }
 
-int Application::run() { return m_Application->exec(); }
+Application::~Application()
+{
+  m_Engine.reset();
+  m_Settings.reset();
+}
 
-QQmlApplicationEngine* Application::qmlEngine() const { return m_Engine.get(); }
+int Application::run() const {
+  return m_Application->exec();
+}
+
+QQmlApplicationEngine* Application::qmlEngine() const {
+  return m_Engine.get();
+}
+
+Settings* Application::settings() const
+{
+  return m_Settings.get();
+}
 
 void Application::initializeSentry() {
   sentry_options_t* options = sentry_options_new();
@@ -90,6 +108,11 @@ void Application::initializeSentry() {
   sentry_options_set_release(options, version::getVersionString());
   sentry_options_set_traces_sample_rate(options, 0.2);
   sentry_init(options);
+}
+
+void Application::registerQmlTypes() const
+{
+  qRegisterMetaType<Settings*>();
 }
 
 } // namespace room_sketcher
