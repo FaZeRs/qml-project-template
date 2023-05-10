@@ -1,28 +1,25 @@
 import QtQuick
 import QtQuick.Controls
-
 import "." as App
 
 ApplicationWindow {
-
-    visible: true
-
-    //title of the application
     title: qsTr("Room Sketcher")
+    visible: true
     width: 640
     height: 480
 
-    App.AboutDialog {
-        id: aboutDialog
-        parent: Overlay.overlay
-        anchors.centerIn: parent
+    menuBar: App.MenuBar {
     }
 
-    menuBar: App.MenuBar {}
-
+    App.AboutDialog {
+        id: aboutDialog
+        anchors.centerIn: parent
+        parent: Overlay.overlay
+    }
     Button {
-        text: qsTr("Hello World")
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
+        text: qsTr("Hello World")
+        onClicked: console.log("Hello World button triggered")
     }
 }

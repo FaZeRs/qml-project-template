@@ -28,13 +28,13 @@ constexpr const char* makeVersionString() {
 }  // namespace version_impl
 
 static_assert(VERSION_MAJOR >= 0 &&
-                  std::is_integral<decltype(VERSION_MAJOR)>::value,
+                  std::is_integral_v<decltype(VERSION_MAJOR)>,
               "VERSION_MAJOR is not positive integer!");
 static_assert(VERSION_MINOR >= 0 &&
-                  std::is_integral<decltype(VERSION_MINOR)>::value,
+                  std::is_integral_v<decltype(VERSION_MINOR)>,
               "VERSION_MINOR is not positive integer!");
 static_assert(VERSION_PATCH >= 0 &&
-                  std::is_integral<decltype(VERSION_PATCH)>::value,
+                  std::is_integral_v<decltype(VERSION_PATCH)>,
               "VERSION_PATCH is not positive integer!");
 
 static constexpr const char* version_string{version_impl::makeVersionString()};
