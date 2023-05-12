@@ -4,9 +4,9 @@
 #include "spdlog/spdlog.h"
 
 #include "application.h"
-#include "version.h"
 #include "logger.h"
 #include "parameters.h"
+#include "version.h"
 
 static void qtLogMessageHandler(QtMsgType type,
                                 const QMessageLogContext& context,

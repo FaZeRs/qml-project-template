@@ -1,4 +1,4 @@
-#include "application.h"
+#include "core/application.h"
 
 int main(int argc, char* argv[]) {
   using namespace room_sketcher;

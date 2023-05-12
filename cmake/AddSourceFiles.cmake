@@ -1,5 +1,5 @@
 set(SOURCE_FILES
     src/main.cpp
-    src/application.cpp
-    src/settings.cpp
+    src/core/application.cpp
+    src/core/settings.cpp
 )
