@@ -53,7 +53,7 @@ jobs:
 
           - os: macos-12
             qt_host: mac
-            qt_arch: gcc_64
+            qt_arch: clang_64
 
           - compiler: gcc
             gcov_executable: gcov
@@ -78,6 +78,10 @@ jobs:
             build_type: Release
 
     steps:
+      - name: Install dependencies
+        if: "${{ contains(matrix.os, 'ubuntu') }}"
+        run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev doxygen graphviz
+
       - uses: actions/checkout@v3
 
       - name: Setup Cache
