@@ -1,7 +1,7 @@
 ---
-Checks: 'clang-analyzer-*,cppcoreguidelines-*,modernize-*,-cppcoreguidelines-avoid-magic-numbers,-cppcoreguidelines-macro-usage,-cppcoreguidelines-owning-memory,-modernize-use-nodiscard,-modernize-use-trailing-return-type'
+Checks: 'clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,modernize-*,-modernize-use-trailing-return-type'
 WarningsAsErrors: ''
 HeaderFilterRegex: 'src\/.*.h'
 AnalyzeTemporaryDtors: false
-FormatStyle:     none
+FormatStyle:     google
 ...

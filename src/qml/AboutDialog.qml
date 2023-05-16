@@ -23,7 +23,7 @@ Dialog {
         }
 
         Label {
-            text: qsTr("Copyright 2023, Nauris Linde")
+            text: qsTr("Copyright 2023, Giraffe360")
         }
     }
 }

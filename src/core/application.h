@@ -12,12 +12,16 @@ namespace room_sketcher {
 class Application {
  public:
   Application(int& argc, char** argv);
+  Application(const Application&) = delete;
+  Application& operator=(const Application&) = delete;
+  Application(Application&&) = delete;
+  Application& operator=(Application&&) = delete;
   ~Application();
 
-  int run() const;
+  [[nodiscard]] int run() const;
 
-  QQmlApplicationEngine* qmlEngine() const;
-  Settings* settings() const;
+  [[nodiscard]] QQmlApplicationEngine* qmlEngine() const;
+  [[nodiscard]] Settings* settings() const;
 
  private:
   static void initializeSentry();

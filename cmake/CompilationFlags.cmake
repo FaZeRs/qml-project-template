@@ -1,7 +1,9 @@
 # Default compilation flags.
 
 # Compile as C++20.
-set(CMAKE_CXX_STANDARD 20)
+if (NOT DEFINED CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 20)
+endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -17,9 +19,9 @@ endif()
 string(TOLOWER ${CMAKE_BUILD_TYPE} BUILD_TYPE)
 
 if(BUILD_TYPE STREQUAL "release")
-  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native -fopenmp -Wall") # -march=native used for GCC
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native -fopenmp") # -march=native used for GCC
 else()
-  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Og -ggdb -Wall")
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Og -ggdb")
 endif()
 
 if(ENABLE_PROFILE)

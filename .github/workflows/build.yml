@@ -103,7 +103,7 @@ jobs:
       - name: Build docs
         if: github.ref == 'refs/heads/main'
         working-directory: ${{ runner.workspace }}/build
-        run: cmake --build . --target docs --parallel $(nproc) --config $BUILD_TYPE
+        run: cmake --build . --target doxygen-docs --parallel $(nproc) --config $BUILD_TYPE
 
       - name: Upload docs
         if: github.ref == 'refs/heads/main'
