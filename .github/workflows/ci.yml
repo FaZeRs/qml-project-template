@@ -111,9 +111,9 @@ jobs:
         uses: jurplel/install-qt-action@v3
         with:
           version: '6.5.0'
-          host: 'linux'
+          host: ${{ matrix.qt_host }}
           target: 'desktop'
-          arch: 'gcc_64'
+          arch: ${{ matrix.qt_arch }}
           install-deps: 'true'
           cache: 'true'
           tools: 'tools_ifw'
