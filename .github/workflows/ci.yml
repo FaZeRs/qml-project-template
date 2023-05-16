@@ -25,8 +25,8 @@ jobs:
           - ubuntu-22.04
           - macos-12
         compiler:
-          - llvm
-          - gcc
+          - llvm-14
+          - gcc-10
         generator:
           - "Ninja Multi-Config"
         build_type:
