@@ -30,7 +30,8 @@
                 "ms-python.vscode-pylance",
                 "mutantdino.resourcemonitor",
                 "github.copilot",
-                "github.copilot-labs"
+                "github.copilot-labs",
+                "github.vscode-github-actions"
             ]
         }
     },
