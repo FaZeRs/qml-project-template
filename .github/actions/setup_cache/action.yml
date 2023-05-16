@@ -10,9 +10,6 @@ inputs:
   generator:
     required: true
     type: string
-  packaging_maintainer_mode:
-    required: true
-    type: string
 
 
 runs:

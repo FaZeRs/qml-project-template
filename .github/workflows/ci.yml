@@ -15,7 +15,6 @@ on:
       - develop
 
 env:
-  CLANG_TIDY_VERSION: "14.0.0"
   VERBOSE: 1
 
 
@@ -30,14 +29,15 @@ jobs:
           - ubuntu-22.04
           - macos-12
         compiler:
-          - llvm-14
-          - gcc-10
+          - llvm
+          - gcc
         generator:
           - "Ninja Multi-Config"
         build_type:
           - Release
           - Debug
-
+        package_generator:
+            - ZIP
         exclude:
           - os: windows-2022
             compiler: gcc
@@ -61,9 +61,6 @@ jobs:
           - compiler: llvm
             gcov_executable: "llvm-cov gcov"
 
-          - build_type: Release
-            package_generator: TBZ2
-
           - os: ubuntu-22.04
             compiler: gcc
             generator: "Unix Makefiles"
@@ -79,16 +76,8 @@ jobs:
             compiler: msvc
             generator: "Visual Studio 17 2022"
             build_type: Release
-            package_generator: ZIP
 
     steps:
-      - name: Check for llvm version mismatches
-        if: ${{ contains(matrix.compiler, 'llvm') && !contains(matrix.compiler, env.CLANG_TIDY_VERSION) }}
-        uses: actions/github-script@v3
-        with:
-          script: |
-            core.setFailed('There is a mismatch between configured llvm compiler and clang-tidy version chosen')
-
       - uses: actions/checkout@v3
 
       - name: Setup Cache
@@ -107,7 +96,7 @@ jobs:
           ninja: true
           vcpkg: false
           ccache: true
-          clangtidy: ${{ env.CLANG_TIDY_VERSION }}
+          clangtidy: true
           cppcheck: true
           gcovr: true
           opencppcoverage: true
