@@ -24,40 +24,41 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        os:
+          - windows-latest
+          - ubuntu-latest
+          - macos-latest
+        compiler:
+          - llvm
+          - gcc
+        generator:
+          - "Ninja Multi-Config"
         build_type:
           - Release
           - Debug
-        include:
-          - name: Linux GCC
-            os: ubuntu-latest
+        exclude:
+          - os: windows-latest
             compiler: gcc
-            generator: "Ninja Multi-Config"
-            gcov_executable: gcov
+        include:
+          - os: ubuntu-latest
             qt_host: linux
-            qt_arch: gcc_64
+            
+          - os: macos-latest
+            qt_host: mac
 
-          - name: Linux Clang
-            os: ubuntu-latest
-            compiler: llvm
-            generator: "Ninja Multi-Config"
-            gcov_executable: "llvm-cov gcov"
-            qt_host: linux
-            qt_arch: clang_64
-
-          - name: MacOS Clang
-            os: macos-latest
-            compiler: llvm
-            generator: "Ninja Multi-Config"
-            gcov_executable: "llvm-cov gcov"
-            qt_host: ma
-            qt_arch: clang_64
-
-          - name: Windows MSVC
-            os: windows-latest
+          - os: windows-latest
             compiler: msvc
             generator: "Visual Studio 17 2022"
             qt_host: windows
             qt_arch: win64_msvc2019_64
+
+          - compiler: gcc
+            gcov_executable: gcov
+            qt_arch: gcc_64
+
+          - compiler: llvm
+            gcov_executable: "llvm-cov gcov"
+            qt_arch: clang_64
 
     steps:
       - name: Install dependencies
