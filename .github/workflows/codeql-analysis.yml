@@ -43,6 +43,10 @@ jobs:
           - "Ninja Multi-Config"
         build_type:
           - Debug
+        qt_host:
+          - linux
+        qt_arch:
+          - gcc_64
 
     steps:
     - uses: actions/checkout@v3
@@ -70,6 +74,19 @@ jobs:
 
         gcovr: false
         opencppcoverage: false
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0'
+        host: ${{ matrix.qt_host }}
+        target: 'desktop'
+        arch: ${{ matrix.qt_arch }}
+        install-deps: 'true'
+        cache: 'true'
+        tools: 'tools_ifw'
+        aqtversion: '==3.1.*'
+        py7zrversion: '==0.20.*'
 
       # make sure coverage is only enabled for Debug builds, since it sets -O0 to make sure coverage
       # has meaningful results
