@@ -50,7 +50,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        run: sudo apt-get install -y libcurl4-openssl-dev
+        run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev doxygen graphviz
 
       - uses: actions/checkout@v3
 
@@ -111,7 +111,7 @@ jobs:
       - name: Build
         # Execute the build.  You can specify a specific target with "--target <NAME>"
         run: |
-          cmake --build ./build --config ${{matrix.build_type}} --target room-sketcher
+          cmake --build ./build --config ${{matrix.build_type}}
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
