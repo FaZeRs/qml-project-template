@@ -8,7 +8,7 @@ function(setup_dependencies)
           VERSION 0.6.2
           GITHUB_REPOSITORY getsentry/sentry-native
           GIT_TAG "0.6.2"
-          OPTIONS "SENTRY_BACKEND breakpad" "SENTRY_INTEGRATION_QT ON" "SENTRY_BUILD_TESTS OFF" "SENTRY_BUILD_EXAMPLES OFF"
+          OPTIONS "SENTRY_INTEGRATION_QT ON" "SENTRY_BUILD_TESTS OFF" "SENTRY_BUILD_EXAMPLES OFF"
           SYSTEM YES
         )
     endif()
