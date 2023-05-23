@@ -41,6 +41,8 @@ jobs:
             compiler: gcc
           - os: windows-latest
             compiler: llvm
+          - os: macos-latest
+            compiler: gcc
         include:
           - os: ubuntu-latest
             qt_host: linux
