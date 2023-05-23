@@ -19,7 +19,7 @@ endif()
 string(TOLOWER ${CMAKE_BUILD_TYPE} BUILD_TYPE)
 
 if(BUILD_TYPE STREQUAL "release")
-  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native -fopenmp") # -march=native used for GCC
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native") # -march=native used for GCC
 else()
   if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Og -ggdb")

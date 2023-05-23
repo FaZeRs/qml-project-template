@@ -28,6 +28,15 @@ enable_sanitizers(project_options
         ${ENABLE_SANITIZER_THREAD}
         ${ENABLE_SANITIZER_MEMORY})
 
+if(ENABLE_PCH)
+  target_precompile_headers(
+    project_options
+    INTERFACE
+    <vector>
+    <string>
+    <utility>)
+endif()
+
 if(ENABLE_CACHE)
   include(cmake/Cache.cmake)
   enable_cache()
