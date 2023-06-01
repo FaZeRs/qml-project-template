@@ -80,6 +80,12 @@ MenuBar {
         onTriggered: aboutDialog.open()
     }
 
+    Action {
+        id: optionsAction
+        text: qsTr("Options")
+        onTriggered: optionsDialog.open()
+    }
+
     Menu {
         title: qsTr("File")
         MenuItem {
@@ -116,6 +122,12 @@ MenuBar {
         }
         MenuItem {
             action: cutAction
+        }
+    }
+    Menu {
+        title: qsTr("Tools")
+        MenuItem {
+            action: optionsAction
         }
     }
     Menu {

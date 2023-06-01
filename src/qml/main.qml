@@ -16,6 +16,13 @@ ApplicationWindow {
         anchors.centerIn: parent
         parent: Overlay.overlay
     }
+
+    App.OptionsDialog {
+        id: optionsDialog
+        anchors.centerIn: parent
+        parent: Overlay.overlay
+    }
+
     Button {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter

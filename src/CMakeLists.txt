@@ -8,7 +8,14 @@ set(SOURCE_FILES
     main.cpp
     core/application.cpp
     core/settings.cpp)
-set(QML_FILES qml/main.qml qml/MenuBar.qml qml/AboutDialog.qml)
+set(QML_FILES
+    qml/main.qml
+    qml/MenuBar.qml
+    qml/AboutDialog.qml
+    qml/OptionsDialog.qml
+    qml/SettingsTab.qml
+    qml/ShortcutsTab.qml
+    qml/ShortcutRow.qml)
 
 qt_add_executable(${CMAKE_PROJECT_NAME}
         ${SOURCE_FILES})

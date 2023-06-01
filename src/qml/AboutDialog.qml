@@ -5,6 +5,7 @@ import QtQuick.Layouts
 
 Dialog {
     id: root
+    objectName: "aboutDialog"
     title: qsTr("About")
     modal: true
     dim: false
