@@ -7,6 +7,7 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
+    opacity: settings.windowOpacity
 
     menuBar: App.MenuBar {
     }
@@ -28,5 +29,12 @@ ApplicationWindow {
         anchors.verticalCenter: parent.verticalCenter
         text: qsTr("Hello World")
         onClicked: console.log("Hello World button triggered")
+    }
+
+    App.StatusBar {
+        id: statusBar
+        parent: ApplicationWindow.window.contentItem
+        width: parent.width
+        anchors.bottom: parent.bottom
     }
 }

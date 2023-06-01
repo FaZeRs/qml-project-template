@@ -10,21 +10,13 @@ ColumnLayout {
 
     function applyChangesToSettings() {
         settings.language = languageComboBox.currentValue
-        settings.checkerColour1 = checkerColour1TextField.colour
-        settings.checkerColour2 = checkerColour2TextField.colour
-        settings.alwaysShowCrosshair = alwaysShowCrosshairCheckBox.checked
         settings.fpsVisible = showFpsCheckBox.checked
-        settings.showCurrentLayerInStatusBar = showCurrentLayerInStatusBarCheckBox.checked
         settings.windowOpacity = windowOpacitySlider.value
     }
 
     function revertToOldSettings() {
         languageComboBox.currentIndex = languageComboBox.indexOfValue(settings.language)
-        checkerColour1TextField.text = settings.checkerColour1
-        checkerColour2TextField.text = settings.checkerColour2
         showFpsCheckBox.checked = settings.fpsVisible
-        showCurrentLayerInStatusBarCheckBox.checked = settings.showCurrentLayerInStatusBar
-        alwaysShowCrosshairCheckBox.checked = settings.alwaysShowCrosshair
         windowOpacitySlider.value = settings.windowOpacity
     }
 
@@ -79,8 +71,8 @@ ColumnLayout {
 
                 ToolTip.text: qsTr("Changes the opacity of the window. Useful for tracing over an image in another window.")
                 ToolTip.visible: hovered
-                ToolTip.delay: UiConstants.toolTipDelay
-                ToolTip.timeout: UiConstants.toolTipTimeout
+                ToolTip.delay: 800
+                ToolTip.timeout: 5000
 
                 Binding {
                     target: dialog.ApplicationWindow.window
@@ -98,95 +90,12 @@ ColumnLayout {
             }
 
             Label {
-                text: qsTr("Transparency grid colours")
-            }
-            RowLayout {
-                spacing: 8
-
-                TextMetrics {
-                    id: colourInputFontMetrics
-                    // '.' is never part of the text, but it gives us some wiggle room.
-                    text: "444444."
-                    font: checkerColour1TextField.font
-                }
-
-                Item {
-                    implicitWidth: 32
-                    implicitHeight: 32
-
-                    Flow {
-                        anchors.fill: parent
-
-                        Repeater {
-                            model: 16
-                            delegate: Rectangle {
-                                width: 8
-                                height: 8
-                                color: index % 2 == 0
-                                       ? (evenRow ? checkerColour2TextField.colour : checkerColour1TextField.colour)
-                                       : (evenRow ? checkerColour1TextField.colour : checkerColour2TextField.colour)
-
-                                readonly property int evenRow: Math.floor(index / 4) % 2 == 0
-                            }
-                        }
-                    }
-                }
-                TextField {
-                    id: checkerColour1TextField
-                    objectName: "checkerColour1TextField"
-                    text: settings.checkerColour1
-                    inputMask: "hhhhhh"
-                    selectByMouse: true
-
-                    readonly property color colour: "#" + text
-
-                    Layout.fillWidth: true
-                    Layout.preferredWidth: colourInputFontMetrics.width + 16
-                }
-                TextField {
-                    id: checkerColour2TextField
-                    objectName: "checkerColour2TextField"
-                    text: settings.checkerColour2
-                    inputMask: "hhhhhh"
-                    selectByMouse: true
-
-                    readonly property color colour: "#" + text
-
-                    Layout.fillWidth: true
-                    Layout.preferredWidth: colourInputFontMetrics.width + 16
-                }
-            }
-
-            Label {
                 text: qsTr("Show FPS")
             }
             CheckBox {
                 id: showFpsCheckBox
                 checked: settings.fpsVisible
                 leftPadding: 0
-            }
-
-            Label {
-                text: qsTr("Show current layer in status bar")
-            }
-            CheckBox {
-                id: showCurrentLayerInStatusBarCheckBox
-                leftPadding: 0
-                checked: settings.showCurrentLayerInStatusBar
-            }
-
-            Label {
-                text: qsTr("Always show crosshair cursor")
-            }
-            CheckBox {
-                id: alwaysShowCrosshairCheckBox
-                leftPadding: 0
-                checked: settings.alwaysShowCrosshair
-
-                ToolTip.text: qsTr("Don't hide crosshair cursor when rectangle cursor is visible")
-                ToolTip.visible: hovered
-                ToolTip.delay: UiConstants.toolTipDelay
-                ToolTip.timeout: UiConstants.toolTipTimeout
             }
         }
     }

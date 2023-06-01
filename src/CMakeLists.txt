@@ -15,7 +15,9 @@ set(QML_FILES
     qml/OptionsDialog.qml
     qml/SettingsTab.qml
     qml/ShortcutsTab.qml
-    qml/ShortcutRow.qml)
+    qml/ShortcutRow.qml
+    qml/StatusBar.qml
+    qml/FpsCounter.qml)
 
 qt_add_executable(${CMAKE_PROJECT_NAME}
         ${SOURCE_FILES})

@@ -32,7 +32,8 @@
                 "github.copilot",
                 "github.copilot-labs",
                 "github.vscode-github-actions",
-                "llvm-vs-code-extensions.vscode-clangd"
+                "xaver.clang-format",
+                "sonarsource.sonarlint-vscode"
             ]
         }
     },
