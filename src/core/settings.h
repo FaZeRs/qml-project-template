@@ -2,6 +2,7 @@
 #define ROOM_SKETCHER_SETTINGS_H
 
 #include <QSettings>
+#include <QObject>
 
 namespace room_sketcher {
 

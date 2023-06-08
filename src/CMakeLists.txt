@@ -4,10 +4,13 @@ find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui Qml Quick QuickControls2 Widgets)
 qt_standard_project_setup()
 
+add_subdirectory(quick)
+
 set(SOURCE_FILES
     main.cpp
     core/application.cpp
     core/settings.cpp)
+
 set(QML_FILES
     qml/main.qml
     qml/MenuBar.qml
@@ -18,6 +21,10 @@ set(QML_FILES
     qml/ShortcutRow.qml
     qml/StatusBar.qml
     qml/FpsCounter.qml)
+
+set(QUICK_FILES
+    quick/keysequenceeditor.h
+    quick/keysequenceeditor.cpp)
 
 qt_add_executable(${CMAKE_PROJECT_NAME}
         ${SOURCE_FILES})
@@ -47,7 +54,6 @@ if (USE_OPENMP)
     endif()
 endif()
 
-include(${CMAKE_SOURCE_DIR}/cmake/SystemLink.cmake)
 target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     spdlog::spdlog
     sentry::sentry
@@ -56,7 +62,8 @@ target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     Qt::Quick
     Qt::QuickControls2
     Qt::Qml
-    Qt::Widgets)
+    Qt::Widgets
+    quick_widgetsplugin)
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE "${CMAKE_BINARY_DIR}/configured_files/include")
 

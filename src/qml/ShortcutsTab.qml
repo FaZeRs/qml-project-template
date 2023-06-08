@@ -63,8 +63,8 @@ ColumnLayout {
                         shortcutDisplayName: qsTr("Save Project As")
                     }
                     ShortcutRow {
-                        shortcutName: "closeShortcut"
-                        shortcutDisplayName: qsTr("Close Project")
+                        shortcutName: "quitShortcut"
+                        shortcutDisplayName: qsTr("Quit")
                     }
                     ShortcutRow {
                         shortcutName: "undoShortcut"
@@ -79,7 +79,7 @@ ColumnLayout {
                         shortcutDisplayName: qsTr("Options")
                     }
                     ShortcutRow {
-                        shortcutName: "fullScreenToggleShortcut"
+                        shortcutName: "fullScreenShortcut"
                         shortcutDisplayName: qsTr("Toggle fullscreen")
                     }
                 }

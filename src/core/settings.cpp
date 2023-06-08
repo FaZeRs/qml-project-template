@@ -1,6 +1,6 @@
-#include <QKeySequence>
-
 #include "settings.h"
+
+#include <QKeySequence>
 
 namespace room_sketcher {
 
