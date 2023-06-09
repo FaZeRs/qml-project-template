@@ -61,7 +61,7 @@ RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - 2>/dev/
     apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y --no-install-recommends \
     clang-${LLVM_VER} lldb-${LLVM_VER} lld-${LLVM_VER} clangd-${LLVM_VER} \
-    llvm-${LLVM_VER}-dev libclang-${LLVM_VER}-dev clang-tidy-${LLVM_VER}
+    llvm-${LLVM_VER}-dev libclang-${LLVM_VER}-dev clang-tidy-${LLVM_VER} clang-format-${LLVM_VER}
 
 # Set the default clang-tidy, so CMake can find it
 RUN update-alternatives --install /usr/bin/clang-tidy clang-tidy $(which clang-tidy-${LLVM_VER}) 1
@@ -88,6 +88,10 @@ RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
 RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y --no-install-recommends \
     doxygen graphviz ccache cppcheck libomp-dev
+
+# Install NodeJS
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
+    apt-get install -y nodejs
 
 # Install include-what-you-use
 ENV IWYU /home/iwyu
@@ -119,7 +123,7 @@ ENV LC_ALL en_US.UTF-8
 # Install QT
 RUN pip3 install aqtinstall
 
-ARG QT_VERSION=6.5.0
+ARG QT_VERSION=6.5.1
 ARG QT_PATH=/opt/qt
 ARG QT_MODULES
 ARG QT_HOST=linux
@@ -129,7 +133,7 @@ RUN aqt install --outputdir ${QT_PATH} ${QT_VERSION} ${QT_HOST} ${QT_TARGET} ${Q
 RUN aqt install-tool --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} tools_ifw
 
 ENV PATH /opt/qt/${QT_VERSION}/gcc_64/bin:$PATH
-ENV PATH /opt/qt/Tools/QtInstallerFramework/4.5/bin:$PATH
+ENV PATH /opt/qt/Tools/QtInstallerFramework/4.6/bin:$PATH
 
 ## Cleanup cached apt data we don't need anymore
 RUN apt-get autoremove -y && apt-get clean && \

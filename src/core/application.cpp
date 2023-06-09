@@ -2,12 +2,12 @@
 
 #include <config.h>
 #include <sentry.h>
+#include <spdlog/spdlog.h>
 
 #include <QApplication>
 
 #include "logger.h"
 #include "parameters.h"
-#include "spdlog/spdlog.h"
 
 static void qtLogMessageHandler(QtMsgType type,
                                 const QMessageLogContext& context,

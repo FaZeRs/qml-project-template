@@ -10,6 +10,7 @@ project(room-sketcher
 
 include(cmake/Options.cmake)
 include(cmake/CompilationFlags.cmake)
+include(cmake/SystemLink.cmake)
 
 include(cmake/Dependencies.cmake)
 setup_dependencies()
