@@ -92,6 +92,7 @@ jobs:
           build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build . --parallel ${{ env.nproc }} --config ${{matrix.build_type}}
 
       - name: Run sonar-scanner
+        working-directory: ${{ runner.workspace }}/build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
