@@ -79,20 +79,17 @@ jobs:
         uses: SonarSource/sonarcloud-github-c-cpp@v1
 
       - name: Create Build Environment
-        run: cmake -E make_directory ${{ runner.workspace }}/build
+        run: cmake -E make_directory ./build
 
       - name: Configure CMake
-        working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DENABLE_DOCS:BOOL=FALSE -DCOMPILE_TESTS:BOOL=FALSE -DENABLE_CLANG_TIDY:BOOL=FALSE -DENABLE_CPPCHECK:BOOL=FALSE -DENABLE_INCLUDE_WHAT_YOU_USE:BOOL=FALSE
+          cmake -S . -B build -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DENABLE_DOCS:BOOL=FALSE -DCOMPILE_TESTS:BOOL=FALSE -DENABLE_CLANG_TIDY:BOOL=FALSE -DENABLE_CPPCHECK:BOOL=FALSE -DENABLE_INCLUDE_WHAT_YOU_USE:BOOL=FALSE
     
       - name: Run build-wrapper
-        working-directory: ${{ runner.workspace }}/build
         run: |
-          build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build . --parallel ${{ env.nproc }} --config ${{matrix.build_type}}
+          build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build ./build --parallel ${{ env.nproc }} --config ${{matrix.build_type}}
 
       - name: Run sonar-scanner
-        working-directory: ${{ runner.workspace }}/build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
