@@ -63,6 +63,18 @@ jobs:
           gcovr: false
           opencppcoverage: false
 
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.5.1'
+          host: ${{ matrix.qt_host }}
+          target: 'desktop'
+          arch: ${{ matrix.qt_arch }}
+          install-deps: 'true'
+          cache: 'true'
+          aqtversion: '==3.1.*'
+          py7zrversion: '==0.20.*'
+
       - name: Install sonar-scanner and build-wrapper
         uses: SonarSource/sonarcloud-github-c-cpp@v1
 
