@@ -181,11 +181,11 @@ void KeySequenceEditor::cancel()
     }
 }
 
-bool KeySequenceEditor::validate(const QKeySequence &sequence) const
+bool KeySequenceEditor::validate(const QKeySequence& sequence) const
 {
     SPDLOG_DEBUG("Validating key sequence {} ...", sequence);
 
-    bool valid = true;//false;
+    bool valid = true;
 
     // do some checks
 

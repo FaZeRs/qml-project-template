@@ -79,7 +79,6 @@ Application::Application(int& argc, char** argv)
   registerQmlTypes();
 
   m_Engine->rootContext()->setContextProperty("settings", m_Settings.get());
-
   m_Engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
   if (m_Engine->rootObjects().isEmpty()) SPDLOG_WARN("Failed to load main.qml");
 }
