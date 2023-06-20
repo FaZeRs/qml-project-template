@@ -3,13 +3,30 @@ import QtQuick.Controls
 import "." as App
 
 ApplicationWindow {
+    id: window
+    objectName: "window"
     title: qsTr("Room Sketcher")
     visible: true
     width: 640
     height: 480
     opacity: settings.windowOpacity
 
+    property int oldWindowVisibility: Window.Windowed
+
+    function toggleFullScreen() {
+        if (window.visibility === Window.FullScreen) {
+            window.visibility = oldWindowVisibility
+        }
+        else {
+            oldWindowVisibility = window.visibility
+            window.visibility = Window.FullScreen
+        }
+    }
+
     menuBar: App.MenuBar {
+    }
+
+    header: App.ToolBar {
     }
 
     App.AboutDialog {
@@ -22,13 +39,6 @@ ApplicationWindow {
         id: optionsDialog
         anchors.centerIn: parent
         parent: Overlay.overlay
-    }
-
-    Button {
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-        text: qsTr("Hello World")
-        onClicked: console.log("Hello World button triggered")
     }
 
     App.StatusBar {

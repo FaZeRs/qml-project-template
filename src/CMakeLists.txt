@@ -20,7 +20,12 @@ set(QML_FILES
     qml/ShortcutsTab.qml
     qml/ShortcutRow.qml
     qml/StatusBar.qml
-    qml/FpsCounter.qml)
+    qml/FpsCounter.qml
+    qml/ToolBar.qml
+    qml/ToolButton.qml)
+
+set(RESOURCE_FILES
+    assets/icons/expand.svg)
 
 set(QUICK_FILES
     quick/keysequenceeditor.h
@@ -35,6 +40,11 @@ qt_add_qml_module(${CMAKE_PROJECT_NAME}
     QML_FILES ${QML_FILES}
     RESOURCES qtquickcontrols2.conf
     NO_RESOURCE_TARGET_PATH)
+
+qt_add_resources(${CMAKE_PROJECT_NAME} "assets"
+    PREFIX "/"
+    FILES ${RESOURCE_FILES}
+)
 
 set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES
     MACOSX_BUNDLE TRUE
