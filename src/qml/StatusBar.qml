@@ -4,20 +4,20 @@ import QtQuick.Layouts
 import QtQuick.Window
 
 Pane {
-    id: statusBarPane
-    objectName: "statusBarPane"
+    id: statusBar
+    objectName: "statusBar"
     contentHeight: statusBarLayout.implicitHeight
     padding: 6
 
     Rectangle {
-        parent: statusBarPane.background
+        parent: statusBar.background
         width: parent.width
         height: 1
         color: "#444"
     }
 
     Rectangle {
-        parent: statusBarPane.background
+        parent: statusBar.background
         x: parent.width - 1
         width: 1
         height: parent.height

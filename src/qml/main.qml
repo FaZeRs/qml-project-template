@@ -7,8 +7,8 @@ ApplicationWindow {
     objectName: "window"
     title: qsTr("Room Sketcher")
     visible: true
-    width: 640
-    height: 480
+    width: 1000
+    height: 800
     opacity: settings.windowOpacity
 
     property int oldWindowVisibility: Window.Windowed
@@ -27,6 +27,7 @@ ApplicationWindow {
     }
 
     header: App.ToolBar {
+        id: toolBar
     }
 
     App.AboutDialog {
