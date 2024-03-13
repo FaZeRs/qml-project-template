@@ -1,5 +1,4 @@
-#ifndef ROOM_SKETCHER_APPLICATION_H
-#define ROOM_SKETCHER_APPLICATION_H
+#pragma once
 
 #include <QCoreApplication>
 #include <QtQml>
@@ -32,6 +31,4 @@ class Application {
   Scope<Settings> m_Settings = CreateScope<Settings>();
 };
 
-} // namespace room_sketcher
-
-#endif  // ROOM_SKETCHER_APPLICATION_H
+}  // namespace room_sketcher

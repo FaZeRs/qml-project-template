@@ -1,5 +1,4 @@
-#ifndef ROOM_SKETCHER_SINGLETON_H
-#define ROOM_SKETCHER_SINGLETON_H
+#pragma once
 
 #include <type_traits>
 
@@ -26,6 +25,4 @@ T& Singleton<T, D>::instance() {
   return inst;
 }
 
-} // namespace room_sketcher
-
-#endif  // ROOM_SKETCHER_SINGLETON_H
+}  // namespace room_sketcher

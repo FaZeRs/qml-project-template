@@ -24,7 +24,7 @@ Dialog {
         }
 
         Label {
-            text: qsTr("Copyright 2023, Giraffe360")
+            text: qsTr("Copyright 2024, Giraffe360")
         }
     }
 }

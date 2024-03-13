@@ -62,11 +62,12 @@ static void spdlogMessageHandler(QtMsgType type,
 namespace room_sketcher {
 
 static Scope<QCoreApplication> createApplication(int& argc, char** argv) {
-  QCoreApplication::setApplicationName("Room Sketcher");
-  QCoreApplication::setOrganizationName("Giraffe360");
+  QCoreApplication::setApplicationName(config::project_name);
+  QCoreApplication::setOrganizationName(config::organization_name);
   QCoreApplication::setApplicationVersion(config::project_version);
 
   for (int i = 1; i < argc; ++i) {
+    // NOLINTNEXTLINE
     if (strcmp(argv[i], "-no-gui") == 0)
       return CreateScope<QCoreApplication>(argc, argv);
   }

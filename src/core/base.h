@@ -1,7 +1,7 @@
-#ifndef ROOM_SKETCHER_BASE_H
-#define ROOM_SKETCHER_BASE_H
+#pragma once
 
 #include <memory>
+#include <utility>
 
 namespace room_sketcher {
 
@@ -19,6 +19,4 @@ constexpr Ref<T> CreateRef(Args&&... args) {
   return std::make_shared<T>(std::forward<Args>(args)...);
 }
 
-} // namespace room_sketcher
-
-#endif  // ROOM_SKETCHER_BASE_H
+}  // namespace room_sketcher
