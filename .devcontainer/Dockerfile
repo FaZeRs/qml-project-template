@@ -30,13 +30,13 @@ RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
     openssh-client gpg-agent socat rsync \
     make ninja-build git \
     python3 python3-pip \
-    locales \
+    locales zsh fonts-firacode \
     curl libcurl4-openssl-dev \
     libgl1-mesa-dev \
     libdbus-1-dev libfontconfig1-dev libxkbcommon-dev libxkbcommon-x11-dev libxcb-xinerama0-dev libxcb-xkb-dev \
     libfreetype6-dev libx11-dev libx11-xcb-dev libxext-dev libxfixes-dev libxi-dev libxrender-dev libxcb1-dev \
     libxcb-glx0-dev libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync-dev \
-    libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libxcb-util-dev
+    libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libxcb-util-dev libxcb-cursor0
 
 # User-settable versions:
 # This Dockerfile should support gcc-[7, 8, 9, 10, 11, 12, 13] and clang-[10, 11, 12, 13, 14, 15, 16]
@@ -65,19 +65,19 @@ RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - 2>/dev/
 
 # Set the default clang-tidy, so CMake can find it
 RUN update-alternatives --install /usr/bin/clang-tidy clang-tidy $(which clang-tidy-${LLVM_VER}) 1
-
+RUN update-alternatives --install /usr/bin/clang-format clang-format $(which clang-format-${LLVM_VER}) 1
 # Set clang-${LLVM_VER} as default clang
 RUN update-alternatives --install /usr/bin/clang clang $(which clang-${LLVM_VER}) 100
 RUN update-alternatives --install /usr/bin/clang++ clang++ $(which clang++-${LLVM_VER}) 100
 
 # Add current cmake/ccmake, from Kitware
-ARG CMAKE_URL="https://apt.kitware.com/ubuntu/"
 ARG CMAKE_PKG=${VARIANT}
 RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null \
-    | gpg --dearmor - | tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null && \
-    apt-add-repository -y "deb ${CMAKE_URL} ${CMAKE_PKG} main" && \
+    | gpg --dearmor - | tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null && \
+    echo "deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ ${CMAKE_PKG} main" | tee /etc/apt/sources.list.d/kitware.list >/dev/null && \
     apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
-    apt-get install -y --no-install-recommends cmake cmake-curses-gui
+    rm /usr/share/keyrings/kitware-archive-keyring.gpg && \
+    apt-get install -y --no-install-recommends kitware-archive-keyring cmake cmake-curses-gui
 
 # Install editors
 RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
@@ -123,7 +123,7 @@ ENV LC_ALL en_US.UTF-8
 # Install QT
 RUN pip3 install aqtinstall
 
-ARG QT_VERSION=6.5.1
+ARG QT_VERSION=6.6.2
 ARG QT_PATH=/opt/qt
 ARG QT_MODULES
 ARG QT_HOST=linux
@@ -133,7 +133,7 @@ RUN aqt install --outputdir ${QT_PATH} ${QT_VERSION} ${QT_HOST} ${QT_TARGET} ${Q
 RUN aqt install-tool --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} tools_ifw
 
 ENV PATH /opt/qt/${QT_VERSION}/gcc_64/bin:$PATH
-ENV PATH /opt/qt/Tools/QtInstallerFramework/4.6/bin:$PATH
+ENV PATH /opt/qt/Tools/QtInstallerFramework/4.7/bin:$PATH
 
 ## Cleanup cached apt data we don't need anymore
 RUN apt-get autoremove -y && apt-get clean && \
@@ -150,9 +150,18 @@ ENV CXX=${CXX:-"g++"}
 
 USER $USERNAME
 
-ENV CPM_SOURCE_CACHE=/home/$USERNAME/.cache/CPM
-# Include project
-#ADD . /workspaces/cpp_starter_project
-#WORKDIR /workspaces/cpp_starter_project
+# Install Oh My ZSH!
+ENV TERM xterm
+ENV SHELL /bin/zsh
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-CMD ["/bin/bash"]
+RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+RUN git clone https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
+RUN sed -i '/^plugins/c\plugins=(git zsh-autosuggestions sudo web-search copypath copyfile history zsh-syntax-highlighting zsh-completions)' ~/.zshrc
+RUN sed -i '/^ZSH_THEME/c\ZSH_THEME=""' ~/.zshrc
+
+ENV CPM_SOURCE_CACHE=/home/$USERNAME/.cache/CPM
