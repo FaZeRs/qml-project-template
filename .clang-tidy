@@ -2,6 +2,5 @@
 Checks: 'clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,modernize-*,-modernize-use-trailing-return-type'
 WarningsAsErrors: ''
 HeaderFilterRegex: 'src\/.*.h'
-AnalyzeTemporaryDtors: false
 FormatStyle:     google
 ...
