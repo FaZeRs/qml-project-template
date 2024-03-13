@@ -65,8 +65,6 @@ if (USE_OPENMP)
 endif()
 
 target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE
-    spdlog::spdlog
-    sentry::sentry
     Qt::Core
     Qt::Gui
     Qt::Quick
@@ -76,6 +74,16 @@ target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     quick_widgetsplugin)
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE "${CMAKE_BINARY_DIR}/configured_files/include")
+
+if (USE_SPDLOG)
+  target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE USE_SPDLOG)
+  target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE spdlog::spdlog)
+endif()
+
+if (USE_SENTRY)
+  target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE USE_SENTRY)
+  target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE sentry::sentry)
+endif()
 
 include(${CMAKE_SOURCE_DIR}/cmake/StaticAnalyzers.cmake)
 if (ENABLE_CPPCHECK)
