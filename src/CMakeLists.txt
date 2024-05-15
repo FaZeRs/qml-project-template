@@ -34,7 +34,7 @@ set(QUICK_FILES
     quick/keysequenceeditor.cpp)
 
 qt_add_executable(${CMAKE_PROJECT_NAME}
-        ${SOURCE_FILES})
+    ${SOURCE_FILES})
 
 qt_add_qml_module(${CMAKE_PROJECT_NAME}
     URI roomsketcher
@@ -57,11 +57,12 @@ target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     rs::project_warnings
 )
 
-if (USE_OPENMP)
-	find_package(OpenMP)
+if(USE_OPENMP)
+    find_package(OpenMP)
+
     if(OpenMP_CXX_FOUND)
-        target_link_libraries(openmp_para_test PUBLIC OpenMP::OpenMP_CXX)
-	else()
+        target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC OpenMP::OpenMP_CXX)
+    else()
         message(${WARNING_MESSAGE} "OpenMP requested but library not found")
     endif()
 endif()
@@ -77,25 +78,28 @@ target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE "${CMAKE_BINARY_DIR}/configured_files/include")
 
-if (USE_SPDLOG)
-  target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE USE_SPDLOG)
-  target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE spdlog::spdlog)
+if(USE_SPDLOG)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE USE_SPDLOG)
+    target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE spdlog::spdlog)
 endif()
 
-if (USE_SENTRY)
-  target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE USE_SENTRY)
-  target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE sentry::sentry)
+if(USE_SENTRY)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE USE_SENTRY)
+    target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE sentry::sentry)
 endif()
 
 include(${CMAKE_SOURCE_DIR}/cmake/StaticAnalyzers.cmake)
-if (ENABLE_CPPCHECK)
-  enable_cppcheck(${CMAKE_PROJECT_NAME} ${WARNINGS_AS_ERRORS} "")
+
+if(ENABLE_CPPCHECK)
+    enable_cppcheck(${CMAKE_PROJECT_NAME} ${WARNINGS_AS_ERRORS} "")
 endif()
-if (ENABLE_CLANG_TIDY)
-  enable_clang_tidy(${CMAKE_PROJECT_NAME} ${WARNINGS_AS_ERRORS} "")
+
+if(ENABLE_CLANG_TIDY)
+    enable_clang_tidy(${CMAKE_PROJECT_NAME} ${WARNINGS_AS_ERRORS} "")
 endif()
-if (ENABLE_INCLUDE_WHAT_YOU_USE)
-  enable_include_what_you_use(${CMAKE_PROJECT_NAME})
+
+if(ENABLE_INCLUDE_WHAT_YOU_USE)
+    enable_include_what_you_use(${CMAKE_PROJECT_NAME})
 endif()
 
 # Install the executable into "${CMAKE_INSTALL_PREFIX}/bin".

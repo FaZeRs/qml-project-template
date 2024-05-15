@@ -23,11 +23,11 @@ set_project_warnings(project_warnings ${WARNINGS_AS_ERRORS} "" "" "")
 
 include(cmake/Sanitizers.cmake)
 enable_sanitizers(project_options
-        ${ENABLE_SANITIZER_ADDRESS}
-        ${ENABLE_SANITIZER_LEAK}
-        ${ENABLE_SANITIZER_UNDEFINED}
-        ${ENABLE_SANITIZER_THREAD}
-        ${ENABLE_SANITIZER_MEMORY})
+  ${ENABLE_SANITIZER_ADDRESS}
+  ${ENABLE_SANITIZER_LEAK}
+  ${ENABLE_SANITIZER_UNDEFINED}
+  ${ENABLE_SANITIZER_THREAD}
+  ${ENABLE_SANITIZER_MEMORY})
 
 if(ENABLE_PCH)
   target_precompile_headers(
@@ -62,7 +62,7 @@ if(COMPILE_TESTS)
   add_subdirectory(tests)
 endif()
 
-if (ENABLE_DOCS)
+if(ENABLE_DOCS)
   include(cmake/Doxygen.cmake)
   enable_doxygen("")
 endif()
