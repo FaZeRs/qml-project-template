@@ -16,6 +16,7 @@ function(target_include_system_directories target)
         # awaiting https://gitlab.kitware.com/cmake/cmake/-/issues/17904
         set(_SYSTEM SYSTEM)
       endif()
+
       if(${scope} STREQUAL "INTERFACE" OR ${scope} STREQUAL "PUBLIC")
         target_include_directories(
           ${target}
@@ -32,7 +33,6 @@ function(target_include_system_directories target)
       endif()
     endforeach()
   endforeach()
-
 endfunction()
 
 # Include the directories of a library target as system directories (which suppresses their warnings).
@@ -44,6 +44,7 @@ function(
   # check if this is a target
   if(TARGET ${lib})
     get_target_property(lib_include_dirs ${lib} INTERFACE_INCLUDE_DIRECTORIES)
+
     if(lib_include_dirs)
       target_include_system_directories(${target} ${scope} ${lib_include_dirs})
     else()
