@@ -12,6 +12,11 @@ include(cmake/Options.cmake)
 include(cmake/CompilationFlags.cmake)
 include(cmake/SystemLink.cmake)
 
+if(ENABLE_IPO)
+  include(cmake/InterproceduralOptimization.cmake)
+  enable_ipo()
+endif()
+
 include(cmake/Dependencies.cmake)
 setup_dependencies()
 
