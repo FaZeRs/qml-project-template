@@ -8,7 +8,7 @@ add_executable(unit-tests tst_mytest.cpp)
 
 CPMAddPackage(
         NAME Catch2
-        VERSION 3.5.3
+        VERSION 3.6.0
         GITHUB_REPOSITORY catchorg/Catch2
         SYSTEM YES
 )
