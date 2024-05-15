@@ -39,6 +39,23 @@ enable_sanitizers(project_options
   ${ENABLE_SANITIZER_THREAD}
   ${ENABLE_SANITIZER_MEMORY})
 
+if(ENABLE_HARDENING)
+  include(cmake/Hardening.cmake)
+
+  if(NOT SUPPORTS_UBSAN
+    OR ENABLE_SANITIZER_UNDEFINED
+    OR ENABLE_SANITIZER_ADDRESS
+    OR ENABLE_SANITIZER_THREAD
+    OR ENABLE_SANITIZER_LEAK)
+    set(ENABLE_UBSAN_MINIMAL_RUNTIME FALSE)
+  else()
+    set(ENABLE_UBSAN_MINIMAL_RUNTIME TRUE)
+  endif()
+
+  message("${ENABLE_HARDENING} ${ENABLE_UBSAN_MINIMAL_RUNTIME} ${ENABLE_SANITIZER_UNDEFINED}")
+  enable_hardening(project_options ON ${ENABLE_UBSAN_MINIMAL_RUNTIME})
+endif()
+
 if(ENABLE_PCH)
   target_precompile_headers(
     project_options

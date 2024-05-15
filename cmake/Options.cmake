@@ -1,3 +1,4 @@
+option(ENABLE_HARDENING "Enable hardening" ON)
 option(ENABLE_IPO "Enable IPO/LTO" OFF)
 option(ENABLE_COVERAGE "Enable coverage reporting" OFF)
 option(WARNINGS_AS_ERRORS "Treat Warnings As Errors" OFF)
