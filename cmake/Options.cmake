@@ -1,6 +1,7 @@
 option(ENABLE_IPO "Enable IPO/LTO" OFF)
 option(ENABLE_COVERAGE "Enable coverage reporting" OFF)
 option(WARNINGS_AS_ERRORS "Treat Warnings As Errors" OFF)
+option(ENABLE_USER_LINKER "Enable user-selected linker" OFF)
 option(ENABLE_SANITIZER_ADDRESS "Enable address sanitizer" OFF)
 option(ENABLE_SANITIZER_LEAK "Enable leak sanitizer" OFF)
 option(ENABLE_SANITIZER_UNDEFINED "Enable undefined sanitizer" OFF)

@@ -26,6 +26,11 @@ add_library(project_options INTERFACE)
 include(cmake/CompilerWarnings.cmake)
 set_project_warnings(project_warnings ${WARNINGS_AS_ERRORS} "" "" "")
 
+if(ENABLE_USER_LINKER)
+  include(cmake/Linker.cmake)
+  configure_linker(project_options)
+endif()
+
 include(cmake/Sanitizers.cmake)
 enable_sanitizers(project_options
   ${ENABLE_SANITIZER_ADDRESS}
