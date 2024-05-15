@@ -25,6 +25,7 @@ class Application {
  private:
   static void initializeSentry();
   void registerQmlTypes() const;
+  void addFonts();
 
   Scope<QCoreApplication> m_Application;
   Scope<QQmlApplicationEngine> m_Engine = CreateScope<QQmlApplicationEngine>();

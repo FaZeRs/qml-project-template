@@ -11,6 +11,7 @@
 #endif
 
 #include <QApplication>
+#include <QFontDatabase>
 
 #if USE_SPDLOG
 static void spdlogMessageHandler(QtMsgType type,
@@ -96,6 +97,7 @@ Application::Application(int& argc, char** argv)
 #endif
 
   registerQmlTypes();
+  addFonts();
 
   m_Engine->rootContext()->setContextProperty("settings", m_Settings.get());
   m_Engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
@@ -127,5 +129,11 @@ void Application::initializeSentry() {
 }
 
 void Application::registerQmlTypes() const { qRegisterMetaType<Settings*>(); }
+
+void Application::addFonts() {
+  QFontDatabase::addApplicationFont(":/assets/fonts/font-awesome-regular.otf");
+  QFontDatabase::addApplicationFont(":/assets/fonts/font-awesome-solid.otf");
+  QFontDatabase::addApplicationFont(":/assets/fonts/font-awesome-brands.otf");
+}
 
 }  // namespace room_sketcher

@@ -17,7 +17,10 @@ ToolBar {
         App.ToolButton {
             id: fullScreenToolButton
             objectName: "fullScreenToolButton"
-            icon.source: "qrc:/assets/icons/expand.svg"
+            text: "\uf065"
+            font.family: "Font Awesome 6 Free Solid"
+            font.weight: 900
+            font.pixelSize: 18
             checkable: true
             checked: window.visibility === Window.FullScreen
 

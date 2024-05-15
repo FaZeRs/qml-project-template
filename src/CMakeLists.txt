@@ -25,7 +25,9 @@ set(QML_FILES
     qml/ToolButton.qml)
 
 set(RESOURCE_FILES
-    assets/icons/expand.svg)
+    assets/fonts/font-awesome-regular.otf
+    assets/fonts/font-awesome-solid.otf
+    assets/fonts/font-awesome-brands.otf)
 
 set(QUICK_FILES
     quick/keysequenceeditor.h
