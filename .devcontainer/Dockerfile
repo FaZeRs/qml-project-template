@@ -123,17 +123,17 @@ ENV LC_ALL en_US.UTF-8
 # Install QT
 RUN pip3 install aqtinstall
 
-ARG QT_VERSION=6.6.2
+ARG QT_VERSION=6.7.0
 ARG QT_PATH=/opt/qt
-ARG QT_MODULES
+ARG QT_MODULES=all
 ARG QT_HOST=linux
 ARG QT_TARGET=desktop
 ARG QT_ARCH=gcc_64
-RUN aqt install --outputdir ${QT_PATH} ${QT_VERSION} ${QT_HOST} ${QT_TARGET} ${QT_ARCH} -m ${QT_MODULES}
+RUN aqt install-qt --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} ${QT_VERSION} ${QT_ARCH} -m ${QT_MODULES}
 RUN aqt install-tool --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} tools_ifw
 
 ENV PATH /opt/qt/${QT_VERSION}/gcc_64/bin:$PATH
-ENV PATH /opt/qt/Tools/QtInstallerFramework/4.7/bin:$PATH
+ENV PATH /opt/qt/Tools/QtInstallerFramework/4.8/bin:$PATH
 
 ## Cleanup cached apt data we don't need anymore
 RUN apt-get autoremove -y && apt-get clean && \

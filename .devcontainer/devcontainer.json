@@ -6,7 +6,7 @@
             "VARIANT": "jammy",
             "GCC_VER": "13",
             "LLVM_VER": "18",
-            "QT_VERSION": "6.6.2"
+            "QT_VERSION": "6.7.0"
         }
     },
     "runArgs": [
@@ -44,7 +44,8 @@
                 "github.vscode-github-actions",
                 "xaver.clang-format",
                 "sonarsource.sonarlint-vscode",
-                "felgo.felgo"
+                "felgo.felgo",
+                "josetr.cmake-language-support-vscode"
             ]
         }
     },
