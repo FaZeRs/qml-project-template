@@ -102,7 +102,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: "6.7.0"
+          version: "6.7.1"
           host: ${{ matrix.qt_host }}
           target: "desktop"
           arch: ${{ matrix.qt_arch }}
@@ -120,7 +120,7 @@ jobs:
         shell: bash
         working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }} -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DENABLE_DOCS:BOOL=${{ contains(matrix.os, 'ubuntu') }} -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.6/bin
+          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }} -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DENABLE_DOCS:BOOL=${{ contains(matrix.os, 'ubuntu') }} -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.8/bin
 
       - name: Build
         working-directory: ${{ runner.workspace }}/build

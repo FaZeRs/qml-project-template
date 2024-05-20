@@ -6,7 +6,7 @@
             "VARIANT": "jammy",
             "GCC_VER": "13",
             "LLVM_VER": "18",
-            "QT_VERSION": "6.7.0"
+            "QT_VERSION": "6.7.1"
         }
     },
     "runArgs": [
