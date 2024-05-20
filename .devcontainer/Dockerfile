@@ -128,7 +128,7 @@ ARG QT_PATH=/opt/qt
 ARG QT_MODULES=all
 ARG QT_HOST=linux
 ARG QT_TARGET=desktop
-ARG QT_ARCH=gcc_64
+ARG QT_ARCH=linux_gcc_64
 RUN aqt install-qt --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} ${QT_VERSION} ${QT_ARCH} -m ${QT_MODULES}
 RUN aqt install-tool --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} tools_ifw
 

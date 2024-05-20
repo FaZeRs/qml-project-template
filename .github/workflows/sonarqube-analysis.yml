@@ -27,7 +27,7 @@ jobs:
         qt_host:
           - linux
         qt_arch:
-          - gcc_64
+          - linux_gcc_64
 
     env:
       BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed

@@ -45,7 +45,7 @@ jobs:
         qt_host:
           - linux
         qt_arch:
-          - gcc_64
+          - linux_gcc_64
 
     steps:
       - name: Install dependencies

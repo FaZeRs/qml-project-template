@@ -45,7 +45,7 @@ jobs:
         include:
           - os: ubuntu-latest
             qt_host: linux
-            qt_arch: gcc_64
+            qt_arch: linux_gcc_64
 
           - os: macos-latest
             qt_host: mac
