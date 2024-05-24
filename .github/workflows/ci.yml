@@ -37,11 +37,11 @@ jobs:
           - Debug
         exclude:
           - os: windows-latest
-            compiler: gcc
+            compiler: gcc-13
           - os: windows-latest
-            compiler: llvm
+            compiler: llvm-18
           - os: macos-latest
-            compiler: gcc
+            compiler: gcc-13
         include:
           - os: ubuntu-latest
             qt_host: linux
@@ -65,10 +65,10 @@ jobs:
             qt_arch: win64_msvc2019_64
             build_type: Debug
 
-          - compiler: gcc
+          - compiler: gcc-13
             gcov_executable: gcov
 
-          - compiler: llvm
+          - compiler: llvm-18
             gcov_executable: "llvm-cov gcov"
 
     steps:
