@@ -93,6 +93,10 @@ RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
     apt-get install -y nodejs
 
+# Install .NET SDK
+RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
+    apt-get install -y --no-install-recommends dotnet-sdk-8.0
+
 # Install include-what-you-use
 ENV IWYU /home/iwyu
 ENV IWYU_BUILD ${IWYU}/build

@@ -27,7 +27,8 @@
                 "cmake.configureOnOpen": true,
                 "editor.formatOnSave": true,
                 "terminal.integrated.shell.linux": "/bin/zsh",
-                "terminal.integrated.fontFamily": "'Fira Code', monospace"
+                "terminal.integrated.fontFamily": "'Fira Code', monospace",
+                "sonarlint.pathToNodeExecutable": "/usr/bin/node"
             },
             "extensions": [
                 "ms-vscode.cpptools",
@@ -36,8 +37,6 @@
                 "ms-vscode.cpptools-themes",
                 "cschlosser.doxdocgen",
                 "eamodio.gitlens",
-                "ms-python.python",
-                "ms-python.vscode-pylance",
                 "mutantdino.resourcemonitor",
                 "github.copilot",
                 "github.copilot-labs",
