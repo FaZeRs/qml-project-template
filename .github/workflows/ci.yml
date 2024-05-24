@@ -74,7 +74,7 @@ jobs:
     steps:
       - name: Install dependencies
         if: ${{ contains(matrix.os, 'ubuntu') }}
-        run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev doxygen graphviz
+        run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev
 
       - uses: actions/checkout@v4
 
@@ -92,12 +92,13 @@ jobs:
           vcvarsall: ${{ contains(matrix.os, 'windows' )}}
           cmake: true
           ninja: true
-          vcpkg: false
           ccache: true
           clangtidy: true
           cppcheck: true
-          gcovr: true
-          opencppcoverage: true
+          gcovr: ${{ contains(matrix.os, 'ubuntu') }}
+          opencppcoverage: ${{ contains(matrix.os, 'windows') }}
+          doxygen: ${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') }}
+          graphviz: ${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') }}
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
@@ -120,15 +121,15 @@ jobs:
         shell: bash
         working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }} -DENABLE_DOCS:BOOL=${{ contains(matrix.os, 'ubuntu') }} -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.7/bin
+          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }} -DENABLE_DOCS:BOOL=${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') }} -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.7/bin
 
       - name: Build
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: cmake --build . --parallel ${{ env.nproc }} --config ${{ matrix.build_type }}
 
-      - name: Unix - Test and coverage
-        if: runner.os != 'Windows'
+      - name: Ubuntu - Test and coverage
+        if: ${{ runner.os == 'Ubuntu' && matrix.build_type == 'Debug' }}
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
@@ -136,7 +137,7 @@ jobs:
           gcovr -j ${{ env.nproc }} --delete --root ../ --print-summary --xml-pretty --xml coverage.xml . --gcov-executable '${{ matrix.gcov_executable }}'
 
       - name: Windows - Test and coverage
-        if: runner.os == 'Windows'
+        if: ${{ runner.os == 'Windows' && matrix.build_type == 'Debug' }}
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
@@ -164,6 +165,7 @@ jobs:
           publish_dir: ./build/html
 
       - name: Publish to codecov
+        if: ${{ (runner.os == 'Ubuntu' || runner.os == 'Windows') && matrix.build_type == 'Debug' }}
         uses: codecov/codecov-action@v4
         with:
           flags: ${{ runner.os }}
