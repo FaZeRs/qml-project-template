@@ -28,8 +28,8 @@ jobs:
           - ubuntu-latest
           - macos-latest
         compiler:
-          - llvm
-          - gcc
+          - llvm-18
+          - gcc-13
         generator:
           - "Ninja Multi-Config"
         build_type:
@@ -93,8 +93,8 @@ jobs:
           cmake: true
           ninja: true
           ccache: ${{ contains(matrix.os, 'ubuntu') || contains(matrix.os, 'windows') }}
-          clangtidy: true
-          cppcheck: true
+          clangtidy: ${{ contains(matrix.os, 'ubuntu') || contains(matrix.os, 'windows') }}
+          cppcheck: ${{ contains(matrix.os, 'ubuntu') || contains(matrix.os, 'windows') }}
           gcovr: ${{ contains(matrix.os, 'ubuntu') }}
           opencppcoverage: ${{ contains(matrix.os, 'windows') }}
           doxygen: ${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') }}
