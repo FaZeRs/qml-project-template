@@ -12,6 +12,7 @@
 
 #include <QApplication>
 #include <QFontDatabase>
+#include <QQmlContext>
 
 #if USE_SPDLOG
 static void spdlogMessageHandler(QtMsgType type,
@@ -104,11 +105,6 @@ Application::Application(int& argc, char** argv)
   if (m_Engine->rootObjects().isEmpty()) qWarning("Failed to load main.qml");
 }
 
-Application::~Application() {
-  m_Engine.reset();
-  m_Settings.reset();
-}
-
 int Application::run() const { return m_Application->exec(); }
 
 QQmlApplicationEngine* Application::qmlEngine() const { return m_Engine.get(); }
@@ -130,7 +126,7 @@ void Application::initializeSentry() {
 
 void Application::registerQmlTypes() const { qRegisterMetaType<Settings*>(); }
 
-void Application::addFonts() {
+void Application::addFonts() const {
   QFontDatabase::addApplicationFont(":/assets/fonts/font-awesome-regular.otf");
   QFontDatabase::addApplicationFont(":/assets/fonts/font-awesome-solid.otf");
   QFontDatabase::addApplicationFont(":/assets/fonts/font-awesome-brands.otf");

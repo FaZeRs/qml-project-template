@@ -1,8 +1,10 @@
 #include "keysequenceeditor.h"
 
+#include <qnamespace.h>
+
+#include <QDebug>
+#include <QFocusEvent>
 #include <QKeyEvent>
-#include <QLoggingCategory>
-#include <QMetaEnum>
 
 KeySequenceEditor::KeySequenceEditor() { m_KeysPressed.fill(0, 4); }
 

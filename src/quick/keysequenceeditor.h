@@ -1,9 +1,15 @@
 #pragma once
 
+#include <QtQmlIntegration/qqmlintegration.h>
+#include <qtmetamacros.h>
+
 #include <QKeySequence>
 #include <QQuickItem>
+#include <QString>
+#include <QVector>
 
 class QKeyEvent;
+class QFocusEvent;
 
 class KeySequenceEditor : public QQuickItem {
   Q_OBJECT

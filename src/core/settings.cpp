@@ -1,6 +1,10 @@
 #include "settings.h"
 
 #include <QKeySequence>
+#include <QLatin1String>
+#include <QObject>
+#include <QVariant>
+#include <QVector>
 
 namespace room_sketcher {
 
@@ -14,8 +18,7 @@ QString Settings::language() const {
 }
 
 void Settings::setLanguage(const QString &language) {
-  const QString existingValue = value("language", defaultLanguage()).toString();
-  if (language == existingValue) return;
+  if (language == value("language", defaultLanguage()).toString()) return;
 
   setValue("language", language);
   emit languageChanged();
@@ -43,8 +46,7 @@ bool Settings::isFpsVisible() const {
 }
 
 void Settings::setFpsVisible(bool fpsVisible) {
-  const bool existingValue = value("fpsVisible", defaultFpsVisible()).toBool();
-  if (fpsVisible == existingValue) return;
+  if (fpsVisible == value("fpsVisible", defaultFpsVisible()).toBool()) return;
 
   setValue("fpsVisible", fpsVisible);
   emit fpsVisibleChanged();

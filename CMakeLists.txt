@@ -70,6 +70,19 @@ if(ENABLE_CACHE)
   enable_cache()
 endif()
 
+include(cmake/StaticAnalyzers.cmake)
+if(ENABLE_CPPCHECK)
+    enable_cppcheck(${WARNINGS_AS_ERRORS} "")
+endif()
+
+if(ENABLE_CLANG_TIDY)
+    enable_clang_tidy(project_options ${WARNINGS_AS_ERRORS} "")
+endif()
+
+if(ENABLE_INCLUDE_WHAT_YOU_USE)
+    enable_include_what_you_use()
+endif()
+
 if(ENABLE_COVERAGE)
   include(cmake/CodeCoverage.cmake)
   enable_coverage(project_options)

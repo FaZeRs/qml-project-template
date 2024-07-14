@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QCoreApplication>
-#include <QtQml>
+#include <QQmlApplicationEngine>
 
 #include "base.h"
 #include "settings.h"
@@ -15,7 +15,7 @@ class Application {
   Application& operator=(const Application&) = delete;
   Application(Application&&) = delete;
   Application& operator=(Application&&) = delete;
-  ~Application();
+  ~Application() = default;
 
   [[nodiscard]] int run() const;
 
@@ -25,7 +25,7 @@ class Application {
  private:
   static void initializeSentry();
   void registerQmlTypes() const;
-  void addFonts();
+  void addFonts() const;
 
   Scope<QCoreApplication> m_Application;
   Scope<QQmlApplicationEngine> m_Engine = CreateScope<QQmlApplicationEngine>();

@@ -88,20 +88,6 @@ if(USE_SENTRY)
     target_link_system_libraries(${CMAKE_PROJECT_NAME} PRIVATE sentry::sentry)
 endif()
 
-include(${CMAKE_SOURCE_DIR}/cmake/StaticAnalyzers.cmake)
-
-if(ENABLE_CPPCHECK)
-    enable_cppcheck(${CMAKE_PROJECT_NAME} ${WARNINGS_AS_ERRORS} "")
-endif()
-
-if(ENABLE_CLANG_TIDY)
-    enable_clang_tidy(${CMAKE_PROJECT_NAME} ${WARNINGS_AS_ERRORS} "")
-endif()
-
-if(ENABLE_INCLUDE_WHAT_YOU_USE)
-    enable_include_what_you_use(${CMAKE_PROJECT_NAME})
-endif()
-
 # Install the executable into "${CMAKE_INSTALL_PREFIX}/bin".
 install(TARGETS ${CMAKE_PROJECT_NAME}
     BUNDLE DESTINATION .
