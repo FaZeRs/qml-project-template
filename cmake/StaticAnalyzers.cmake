@@ -1,4 +1,4 @@
-macro(enable_cppcheck WARNINGS_AS_ERRORS CPPCHECK_OPTIONS)
+macro(enable_cppcheck target WARNINGS_AS_ERRORS CPPCHECK_OPTIONS)
   find_program(CPPCHECK cppcheck)
 
   if(CPPCHECK)
@@ -13,7 +13,7 @@ macro(enable_cppcheck WARNINGS_AS_ERRORS CPPCHECK_OPTIONS)
       # style should enable the other 3, but we'll be explicit just in case
       set(SUPPRESS_DIR "*:${CMAKE_CURRENT_BINARY_DIR}/_deps/*.h")
       message(STATUS "CPPCHECK_OPTIONS suppress: ${SUPPRESS_DIR}")
-      set(CMAKE_CXX_CPPCHECK
+      set(CPPCHECK_OPTIONS
         ${CPPCHECK}
         --template=${CPPCHECK_TEMPLATE}
         --enable=style,performance,warning,portability
@@ -37,19 +37,21 @@ macro(enable_cppcheck WARNINGS_AS_ERRORS CPPCHECK_OPTIONS)
         --suppress=${SUPPRESS_DIR})
     else()
       # if the user provides a CPPCHECK_OPTIONS with a template specified, it will override this template
-      set(CMAKE_CXX_CPPCHECK ${CPPCHECK} --template=${CPPCHECK_TEMPLATE} ${CPPCHECK_OPTIONS})
+      set(CPPCHECK_OPTIONS ${CPPCHECK} --template=${CPPCHECK_TEMPLATE} ${CPPCHECK_OPTIONS})
     endif()
 
     if(NOT
       "${CMAKE_CXX_STANDARD}"
       STREQUAL
       "")
-      set(CMAKE_CXX_CPPCHECK ${CMAKE_CXX_CPPCHECK} --std=c++${CMAKE_CXX_STANDARD})
+      set(CPPCHECK_OPTIONS ${CPPCHECK_OPTIONS} --std=c++${CMAKE_CXX_STANDARD})
     endif()
 
     if(${WARNINGS_AS_ERRORS})
-      list(APPEND CMAKE_CXX_CPPCHECK --error-exitcode=2)
+      list(APPEND CPPCHECK_OPTIONS --error-exitcode=2)
     endif()
+
+    set_target_properties(${target} PROPERTIES CXX_CPPCHECK "${CPPCHECK_OPTIONS}")
   else()
     message(${WARNING_MESSAGE} "cppcheck requested but executable not found")
   endif()
@@ -101,18 +103,21 @@ macro(enable_clang_tidy target WARNINGS_AS_ERRORS)
       list(APPEND CLANG_TIDY_OPTIONS -warnings-as-errors=*)
     endif()
 
-    message("Also setting clang-tidy globally")
-    set(CMAKE_CXX_CLANG_TIDY ${CLANG_TIDY_OPTIONS})
+    set_target_properties(${target} PROPERTIES CXX_CLANG_TIDY "${CLANG_TIDY_OPTIONS}")
   else()
     message(${WARNING_MESSAGE} "clang-tidy requested but executable not found")
   endif()
 endmacro()
 
-macro(enable_include_what_you_use)
+macro(enable_include_what_you_use target)
   find_program(INCLUDE_WHAT_YOU_USE include-what-you-use)
 
   if(INCLUDE_WHAT_YOU_USE)
-    set(CMAKE_CXX_INCLUDE_WHAT_YOU_USE ${INCLUDE_WHAT_YOU_USE} -Xiwyu)
+    set(IWYU_OPTIONS
+      ${INCLUDE_WHAT_YOU_USE}
+      -Xiwyu
+    )
+    set_target_properties(${target} PROPERTIES CXX_INCLUDE_WHAT_YOU_USE "${IWYU_OPTIONS}")
   else()
     message(${WARNING_MESSAGE} "include-what-you-use requested but executable not found")
   endif()

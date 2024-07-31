@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.27)
 
 include(cmake/Version.cmake)
 
@@ -68,19 +68,6 @@ endif()
 if(ENABLE_CACHE)
   include(cmake/Cache.cmake)
   enable_cache()
-endif()
-
-include(cmake/StaticAnalyzers.cmake)
-if(ENABLE_CPPCHECK)
-    enable_cppcheck(${WARNINGS_AS_ERRORS} "")
-endif()
-
-if(ENABLE_CLANG_TIDY)
-    enable_clang_tidy(project_options ${WARNINGS_AS_ERRORS} "")
-endif()
-
-if(ENABLE_INCLUDE_WHAT_YOU_USE)
-    enable_include_what_you_use()
 endif()
 
 if(ENABLE_COVERAGE)
