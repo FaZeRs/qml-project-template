@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QCoreApplication>
+#include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
 #include "base.h"
@@ -27,9 +27,9 @@ class Application {
   void registerQmlTypes() const;
   void addFonts() const;
 
-  Scope<QCoreApplication> m_Application;
-  Scope<QQmlApplicationEngine> m_Engine = CreateScope<QQmlApplicationEngine>();
-  Scope<Settings> m_Settings = CreateScope<Settings>();
+  QScopedPointer<QGuiApplication> m_Application;
+  QScopedPointer<QQmlApplicationEngine> m_Engine{new QQmlApplicationEngine};
+  QScopedPointer<Settings> m_Settings{new Settings};
 };
 
 }  // namespace room_sketcher
