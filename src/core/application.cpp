@@ -101,7 +101,7 @@ Application::Application(int& argc, char** argv)
   addFonts();
 
   m_Engine->rootContext()->setContextProperty("settings", m_Settings.get());
-  m_Engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+  m_Engine->load(QUrl(QStringLiteral("qrc:/RoomSketcherUi/main.qml")));
   if (m_Engine->rootObjects().isEmpty()) qWarning("Failed to load main.qml");
 }
 

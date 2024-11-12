@@ -82,8 +82,8 @@ endif()
 
 target_compile_features(project_options INTERFACE cxx_std_${CMAKE_CXX_STANDARD})
 
-add_library(rs::project_options ALIAS project_options)
-add_library(rs::project_warnings ALIAS project_warnings)
+add_library(libs::project_options ALIAS project_options)
+add_library(libs::project_warnings ALIAS project_warnings)
 
 add_subdirectory(src)
 

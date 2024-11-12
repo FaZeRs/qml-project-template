@@ -1,17 +1,23 @@
-set(QUICK_FILES
-    keysequenceeditor.h
-    keysequenceeditor.cpp)
+set(QUICK_FILES keysequenceeditor.h keysequenceeditor.cpp)
 
 qt_add_library(quick_widgets STATIC)
-qt_add_qml_module(quick_widgets
-    URI QuickWidgets
-    VERSION 1.0
-    SOURCES ${QUICK_FILES}
-    OUTPUT_DIRECTORY QuickWidgets
-    RESOURCE_PREFIX /
-)
+qt_add_qml_module(
+  quick_widgets
+  URI
+  QuickWidgets
+  VERSION
+  1.0
+  SOURCES
+  ${QUICK_FILES}
+  OUTPUT_DIRECTORY
+  QuickWidgets
+  RESOURCE_PREFIX
+  /)
 
-target_link_system_libraries(quick_widgets PRIVATE
-    Qt::Core
-    Qt::Quick)
-
+target_link_system_libraries(
+  quick_widgets
+  PRIVATE
+  Qt::Core
+  Qt::Gui
+  Qt::Qml
+  Qt::Quick)
