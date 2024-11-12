@@ -13,8 +13,7 @@ Settings::Settings(QObject *parent) : QSettings(parent) {}
 QString Settings::defaultLanguage() const { return "en_GB"; }
 
 QString Settings::language() const {
-  return contains("language") ? value("language").toString()
-                              : defaultLanguage();
+  return value("language", defaultLanguage()).toString();
 }
 
 void Settings::setLanguage(const QString &language) {
@@ -27,11 +26,10 @@ void Settings::setLanguage(const QString &language) {
 qreal Settings::defaultWindowOpacity() const { return 1.0; }
 
 qreal Settings::windowOpacity() const {
-  return contains("windowOpacity") ? value("windowOpacity").toReal()
-                                   : defaultWindowOpacity();
+  return value("windowOpacity", defaultWindowOpacity()).toReal();
 }
 
-void Settings::setWindowOpacity(qreal opacity) {
+void Settings::setWindowOpacity(const qreal opacity) {
   if (windowOpacity() == opacity) return;
 
   setValue("windowOpacity", opacity);
@@ -41,188 +39,220 @@ void Settings::setWindowOpacity(qreal opacity) {
 bool Settings::defaultFpsVisible() const { return false; }
 
 bool Settings::isFpsVisible() const {
-  return contains("fpsVisible") ? value("fpsVisible").toBool()
-                                : defaultFpsVisible();
+  return value("fpsVisible", defaultFpsVisible()).toReal();
 }
 
-void Settings::setFpsVisible(bool fpsVisible) {
-  if (fpsVisible == value("fpsVisible", defaultFpsVisible()).toBool()) return;
+void Settings::setFpsVisible(const bool fps_visible) {
+  if (fps_visible == value("fpsVisible", defaultFpsVisible()).toBool()) return;
 
-  setValue("fpsVisible", fpsVisible);
+  setValue("fpsVisible", fps_visible);
   emit fpsVisibleChanged();
 }
 
 void Settings::resetShortcutsToDefaults() {
-  static QVector<QString> allShortcuts;
-  if (allShortcuts.isEmpty()) {
-    allShortcuts.append(QLatin1String("newShortcut"));
-    allShortcuts.append(QLatin1String("openShortcut"));
-    allShortcuts.append(QLatin1String("saveShortcut"));
-    allShortcuts.append(QLatin1String("saveAsShortcut"));
-    allShortcuts.append(QLatin1String("quitShortcut"));
-    allShortcuts.append(QLatin1String("undoShortcut"));
-    allShortcuts.append(QLatin1String("redoShortcut"));
-    allShortcuts.append(QLatin1String("copyShortcut"));
-    allShortcuts.append(QLatin1String("cutShortcut"));
-    allShortcuts.append(QLatin1String("pasteShortcut"));
-    allShortcuts.append(QLatin1String("optionsShortcut"));
-    allShortcuts.append(QLatin1String("fullScreenToggleShortcut"));
-  }
-
-  foreach (const QString &shortcut, allShortcuts) {
+  static const QVector<QString> all_shortcuts = {
+      QLatin1String("newShortcut"),     QLatin1String("openShortcut"),
+      QLatin1String("saveShortcut"),    QLatin1String("saveAsShortcut"),
+      QLatin1String("quitShortcut"),    QLatin1String("undoShortcut"),
+      QLatin1String("redoShortcut"),    QLatin1String("copyShortcut"),
+      QLatin1String("cutShortcut"),     QLatin1String("pasteShortcut"),
+      QLatin1String("optionsShortcut"), QLatin1String("fullScreenShortcut")};
+  for (const auto &shortcut : all_shortcuts) {
     remove(shortcut);
   }
 }
-
-#define GET_SHORTCUT(shortcutName, defaultValueFunction)         \
-  return contains(shortcutName) ? value(shortcutName).toString() \
-                                : defaultValueFunction();
-
-#define SET_SHORTCUT(shortcutName, defaultValueFunction, notifySignal) \
-  QVariant existingValue = value(shortcutName);                        \
-  QString existingStringValue = defaultValueFunction();                \
-  if (contains(shortcutName)) {                                        \
-    existingStringValue = existingValue.toString();                    \
-  }                                                                    \
-                                                                       \
-  if (shortcut == existingStringValue) return;                         \
-                                                                       \
-  setValue(shortcutName, shortcut);                                    \
-  emit notifySignal();
-
 QString Settings::defaultNewShortcut() const {
-  return QKeySequence(QKeySequence::New).toString();
+  return QKeySequence("Ctrl+N").toString();
 }
 
 QString Settings::newShortcut() const {
-  GET_SHORTCUT("newShortcut", defaultNewShortcut)
+  return value("newShortcut", defaultNewShortcut()).toString();
 }
 
-void Settings::setNewShortcut(const QString &shortcut){
-    SET_SHORTCUT("newShortcut", defaultNewShortcut, newShortcutChanged)}
+void Settings::setNewShortcut(const QString &shortcut) {
+  if (shortcut == value("newShortcut", defaultNewShortcut()).toString()) {
+    return;
+  }
+  setValue("newShortcut", shortcut);
+  emit newShortcutChanged();
+}
 
 QString Settings::defaultOpenShortcut() const {
-  return QKeySequence(QKeySequence::Open).toString();
+  return QKeySequence("Ctrl+O").toString();
 }
 
 QString Settings::openShortcut() const {
-  GET_SHORTCUT("openShortcut", defaultOpenShortcut)
+  return value("openShortcut", defaultOpenShortcut()).toString();
 }
 
-void Settings::setOpenShortcut(const QString &shortcut){
-    SET_SHORTCUT("openShortcut", defaultOpenShortcut, openShortcutChanged)}
+void Settings::setOpenShortcut(const QString &shortcut) {
+  if (shortcut == value("openShortcut", defaultOpenShortcut()).toString()) {
+    return;
+  }
+  setValue("openShortcut", shortcut);
+  emit openShortcutChanged();
+}
 
 QString Settings::defaultSaveShortcut() const {
-  return QKeySequence(QKeySequence::Save).toString();
+  return QKeySequence("Ctrl+S").toString();
 }
 
 QString Settings::saveShortcut() const {
-  GET_SHORTCUT("saveShortcut", defaultSaveShortcut)
+  return value("saveShortcut", defaultSaveShortcut()).toString();
 }
 
-void Settings::setSaveShortcut(const QString &shortcut){
-    SET_SHORTCUT("saveShortcut", defaultSaveShortcut, saveShortcutChanged)}
+void Settings::setSaveShortcut(const QString &shortcut) {
+  if (shortcut == value("saveShortcut", defaultSaveShortcut()).toString()) {
+    return;
+  }
+  setValue("saveShortcut", shortcut);
+  emit saveShortcutChanged();
+}
 
 QString Settings::defaultSaveAsShortcut() const {
-  return QKeySequence(QKeySequence::SaveAs).toString();
+  return QKeySequence("Ctrl+Shift+S").toString();
 }
 
 QString Settings::saveAsShortcut() const {
-  GET_SHORTCUT("saveAsShortcut", defaultSaveAsShortcut)
+  return value("saveAsShortcut", defaultSaveAsShortcut()).toString();
 }
 
-void Settings::setSaveAsShortcut(const QString &shortcut){
-    SET_SHORTCUT("saveAsShortcut", defaultSaveAsShortcut,
-                 saveAsShortcutChanged)}
+void Settings::setSaveAsShortcut(const QString &shortcut) {
+  if (shortcut == value("saveAsShortcut", defaultSaveAsShortcut()).toString()) {
+    return;
+  }
+  setValue("saveAsShortcut", shortcut);
+  emit saveAsShortcutChanged();
+}
 
 QString Settings::defaultQuitShortcut() const {
-  return QKeySequence(QKeySequence::Quit).toString();
+  return QKeySequence("Ctrl+Q").toString();
 }
 
 QString Settings::quitShortcut() const {
-  GET_SHORTCUT("quitShortcut", defaultQuitShortcut)
+  return value("quitShortcut", defaultQuitShortcut()).toString();
 }
-void Settings::setQuitShortcut(const QString &shortcut){
-    SET_SHORTCUT("quitShortcut", defaultQuitShortcut, quitShortcutChanged)}
+
+void Settings::setQuitShortcut(const QString &shortcut) {
+  if (shortcut == value("quitShortcut", defaultQuitShortcut()).toString()) {
+    return;
+  }
+  setValue("quitShortcut", shortcut);
+  emit quitShortcutChanged();
+}
 
 QString Settings::defaultUndoShortcut() const {
-  return QKeySequence(QKeySequence::Undo).toString();
+  return QKeySequence("Ctrl+Z").toString();
 }
 
 QString Settings::undoShortcut() const {
-  GET_SHORTCUT("undoShortcut", defaultUndoShortcut)
+  return value("undoShortcut", defaultUndoShortcut()).toString();
 }
 
-void Settings::setUndoShortcut(const QString &shortcut){
-    SET_SHORTCUT("undoShortcut", defaultUndoShortcut, undoShortcutChanged)}
+void Settings::setUndoShortcut(const QString &shortcut) {
+  if (shortcut == value("undoShortcut", defaultUndoShortcut()).toString()) {
+    return;
+  }
+  setValue("undoShortcut", shortcut);
+  emit undoShortcutChanged();
+}
 
 QString Settings::defaultRedoShortcut() const {
-  return QKeySequence(QKeySequence::Redo).toString();
+  return QKeySequence("Ctrl+Y").toString();
 }
 
 QString Settings::redoShortcut() const {
-  GET_SHORTCUT("redoShortcut", defaultRedoShortcut)
+  return value("redoShortcut", defaultRedoShortcut()).toString();
 }
 
-void Settings::setRedoShortcut(const QString &shortcut){
-    SET_SHORTCUT("redoShortcut", defaultRedoShortcut, redoShortcutChanged)}
+void Settings::setRedoShortcut(const QString &shortcut) {
+  if (shortcut == value("redoShortcut", defaultRedoShortcut()).toString()) {
+    return;
+  }
+  setValue("redoShortcut", shortcut);
+  emit redoShortcutChanged();
+}
 
 QString Settings::defaultCopyShortcut() const {
-  return QKeySequence(QKeySequence::Copy).toString();
+  return QKeySequence("Ctrl+C").toString();
 }
 
 QString Settings::copyShortcut() const {
-  GET_SHORTCUT("copyShortcut", defaultCopyShortcut)
+  return value("copyShortcut", defaultCopyShortcut()).toString();
 }
 
-void Settings::setCopyShortcut(const QString &shortcut){
-    SET_SHORTCUT("copyShortcut", defaultCopyShortcut, copyShortcutChanged)}
+void Settings::setCopyShortcut(const QString &shortcut) {
+  if (shortcut == value("copyShortcut", defaultCopyShortcut()).toString()) {
+    return;
+  }
+  setValue("copyShortcut", shortcut);
+  emit copyShortcutChanged();
+}
 
 QString Settings::defaultCutShortcut() const {
-  return QKeySequence(QKeySequence::Cut).toString();
+  return QKeySequence("Ctrl+X").toString();
 }
 
 QString Settings::cutShortcut() const {
-  GET_SHORTCUT("cutShortcut", defaultCutShortcut)
+  return value("cutShortcut", defaultCutShortcut()).toString();
 }
 
-void Settings::setCutShortcut(const QString &shortcut){
-    SET_SHORTCUT("cutShortcut", defaultCutShortcut, cutShortcutChanged)}
+void Settings::setCutShortcut(const QString &shortcut) {
+  if (shortcut == value("cutShortcut", defaultCutShortcut()).toString()) {
+    return;
+  }
+  setValue("cutShortcut", shortcut);
+  emit cutShortcutChanged();
+}
 
 QString Settings::defaultPasteShortcut() const {
-  return QKeySequence(QKeySequence::Paste).toString();
+  return QKeySequence("Ctrl+V").toString();
 }
 
 QString Settings::pasteShortcut() const {
-  GET_SHORTCUT("pasteShortcut", defaultPasteShortcut)
+  return value("pasteShortcut", defaultPasteShortcut()).toString();
 }
 
-void Settings::setPasteShortcut(const QString &shortcut){
-    SET_SHORTCUT("pasteShortcut", defaultPasteShortcut, pasteShortcutChanged)}
+void Settings::setPasteShortcut(const QString &shortcut) {
+  if (shortcut == value("pasteShortcut", defaultPasteShortcut()).toString()) {
+    return;
+  }
+  setValue("pasteShortcut", shortcut);
+  emit pasteShortcutChanged();
+}
 
 QString Settings::defaultOptionsShortcut() const {
-  return QKeySequence(QKeySequence::Preferences).toString();
+  return QKeySequence("Ctrl+,").toString();
 }
 
 QString Settings::optionsShortcut() const {
-  GET_SHORTCUT("optionsShortcut", defaultOptionsShortcut)
+  return value("optionsShortcut", defaultOptionsShortcut()).toString();
 }
 
-void Settings::setOptionsShortcut(const QString &shortcut){
-    SET_SHORTCUT("optionsShortcut", defaultOptionsShortcut,
-                 optionsShortcutChanged)}
+void Settings::setOptionsShortcut(const QString &shortcut) {
+  if (shortcut ==
+      value("optionsShortcut", defaultOptionsShortcut()).toString()) {
+    return;
+  }
+  setValue("optionsShortcut", shortcut);
+  emit optionsShortcutChanged();
+}
 
 QString Settings::defaultFullScreenShortcut() const {
-  return QKeySequence(QKeySequence::FullScreen).toString();
+  return QKeySequence("Ctrl+F").toString();
 }
 
 QString Settings::fullScreenShortcut() const {
-  GET_SHORTCUT("fullScreenShortcut", defaultFullScreenShortcut)
+  return value("fullScreenShortcut", defaultFullScreenShortcut()).toString();
 }
 
 void Settings::setFullScreenShortcut(const QString &shortcut) {
-  SET_SHORTCUT("fullScreenShortcut", defaultFullScreenShortcut,
-               fullScreenShortcutChanged)
+  if (shortcut ==
+      value("fullScreenShortcut", defaultFullScreenShortcut()).toString()) {
+    return;
+  }
+  setValue("fullScreenShortcut", shortcut);
+  emit fullScreenShortcutChanged();
 }
 
 }  // namespace room_sketcher

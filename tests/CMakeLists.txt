@@ -2,21 +2,28 @@ cmake_minimum_required(VERSION 3.27)
 
 project(unit-tests LANGUAGES CXX)
 
-find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core Test)
 
-add_executable(unit-tests tst_mytest.cpp)
+add_executable(unit-tests tst_settings.cpp)
 
-CPMAddPackage(
-        NAME Catch2
-        VERSION 3.6.0
-        GITHUB_REPOSITORY catchorg/Catch2
-        SYSTEM YES
-)
+cpmaddpackage(
+  NAME
+  Catch2
+  VERSION
+  3.6.0
+  GITHUB_REPOSITORY
+  catchorg/Catch2
+  SYSTEM
+  YES)
 
-target_link_libraries(unit-tests PRIVATE
-        rs::project_warnings
-        rs::project_options
-        Catch2::Catch2WithMain)
+target_link_libraries(unit-tests PRIVATE libs::project_warnings libs::project_options libs::core)
+
+target_link_system_libraries(
+  unit-tests
+  PRIVATE
+  Qt::Core
+  Qt::Test
+  Catch2::Catch2WithMain)
 
 list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
 include(CTest)
