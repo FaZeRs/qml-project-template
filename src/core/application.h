@@ -29,7 +29,7 @@ class Application {
 
   QScopedPointer<QGuiApplication> m_Application;
   QScopedPointer<QQmlApplicationEngine> m_Engine{new QQmlApplicationEngine};
-  QScopedPointer<Settings> m_Settings{new Settings};
+  QScopedPointer<Settings, QScopedPointerDeleteLater> m_Settings{new Settings};
 };
 
 }  // namespace room_sketcher
