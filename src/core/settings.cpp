@@ -39,7 +39,7 @@ void Settings::setWindowOpacity(const qreal opacity) {
 bool Settings::defaultFpsVisible() const { return false; }
 
 bool Settings::isFpsVisible() const {
-  return value("fpsVisible", defaultFpsVisible()).toReal();
+  return value("fpsVisible", defaultFpsVisible()).toBool();
 }
 
 void Settings::setFpsVisible(const bool fps_visible) {
