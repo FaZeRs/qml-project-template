@@ -38,8 +38,7 @@ RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
     make ninja-build git \
     python3 python3-pip \
     locales zsh fonts-firacode \
-    curl libcurl4-openssl-dev \
-    libgl1-mesa-dev \
+    curl libgl1-mesa-dev \
     libdbus-1-dev libfontconfig1-dev libxkbcommon-dev libxkbcommon-x11-dev libxcb-xinerama0-dev libxcb-xkb-dev \
     libfreetype6-dev libx11-dev libx11-xcb-dev libxext-dev libxfixes-dev libxi-dev libxrender-dev libxcb1-dev \
     libxcb-glx0-dev libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync-dev \

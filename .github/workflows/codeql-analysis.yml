@@ -49,7 +49,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev
+        run: sudo apt-get install -y libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev
 
       - uses: actions/checkout@v4
 
