@@ -62,6 +62,10 @@ static void spdlogMessageHandler(QtMsgType type,
 
 namespace myproject {
 
+/// @brief Creates the application.
+/// @param argc The application argument count.
+/// @param argv The application arguments.
+/// @return The application.
 static QScopedPointer<QGuiApplication> createApplication(int& argc,
                                                          char** argv) {
   qDebug() << "config::organization_name" << config::organization_name;

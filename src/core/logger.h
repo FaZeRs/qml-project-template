@@ -12,6 +12,7 @@
 
 namespace myproject {
 
+/// @brief The Logger class is a singleton that manages the application logging.
 class Logger final : public Singleton<Logger> {
  public:
   Logger() { initLogger(); }
@@ -23,7 +24,7 @@ class Logger final : public Singleton<Logger> {
     spdlog::drop_all();  // Release all Loggers
   }
 
-  // Creates SPDLOG logger with multiple sinks (console + file)
+  /// @brief Creates SPDLOG logger with multiple sinks (console + file).
   void initLogger() {
     m_ConsoleSink = CreateRef<spdlog::sinks::stdout_color_sink_mt>();
     m_FileSink = CreateRef<spdlog::sinks::basic_file_sink_mt>(

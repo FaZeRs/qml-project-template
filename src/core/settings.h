@@ -7,6 +7,8 @@ class QObject;
 
 namespace myproject {
 
+/// @brief The Settings class is a singleton that manages the application
+/// settings.
 class Settings : public QSettings {
   Q_OBJECT
 
@@ -78,20 +80,44 @@ class Settings : public QSettings {
   /// @brief Resets all shortcuts to their default values.
   Q_INVOKABLE void resetShortcutsToDefaults();
 
+  /// @brief Returns the default new shortcut for the application.
+  /// @return The default new shortcut.
   [[nodiscard]] QString defaultNewShortcut() const;
+  /// @brief Returns the current new shortcut for the application.
+  /// @return The current new shortcut.
   [[nodiscard]] QString newShortcut() const;
+  /// @brief Sets the current new shortcut for the application.
+  /// @param shortcut The new new shortcut.
   void setNewShortcut(const QString &shortcut);
 
+  /// @brief Returns the default open shortcut for the application.
+  /// @return The default open shortcut.
   [[nodiscard]] QString defaultOpenShortcut() const;
+  /// @brief Returns the current open shortcut for the application.
+  /// @return The current open shortcut.
   [[nodiscard]] QString openShortcut() const;
+  /// @brief Sets the current open shortcut for the application.
+  /// @param shortcut The new open shortcut.
   void setOpenShortcut(const QString &shortcut);
 
+  /// @brief Returns the default save shortcut for the application.
+  /// @return The default save shortcut.
   [[nodiscard]] QString defaultSaveShortcut() const;
+  /// @brief Returns the current save shortcut for the application.
+  /// @return The current save shortcut.
   [[nodiscard]] QString saveShortcut() const;
+  /// @brief Sets the current save shortcut for the application.
+  /// @param shortcut The new save shortcut.
   void setSaveShortcut(const QString &shortcut);
 
+  /// @brief Returns the default save as shortcut for the application.
+  /// @return The default save as shortcut.
   [[nodiscard]] QString defaultSaveAsShortcut() const;
+  /// @brief Returns the current save as shortcut for the application.
+  /// @return The current save as shortcut.
   [[nodiscard]] QString saveAsShortcut() const;
+  /// @brief Sets the current save as shortcut for the application.
+  /// @param shortcut The new save as shortcut.
   void setSaveAsShortcut(const QString &shortcut);
 
   /// @brief Returns the default quit shortcut for the application.
@@ -104,24 +130,54 @@ class Settings : public QSettings {
   /// @param shortcut The new quit shortcut.
   void setQuitShortcut(const QString &shortcut);
 
+  /// @brief Returns the default undo shortcut for the application.
+  /// @return The default undo shortcut.
   [[nodiscard]] QString defaultUndoShortcut() const;
+  /// @brief Returns the current undo shortcut for the application.
+  /// @return The current undo shortcut.
   [[nodiscard]] QString undoShortcut() const;
+  /// @brief Sets the current undo shortcut for the application.
+  /// @param shortcut The new undo shortcut.
   void setUndoShortcut(const QString &shortcut);
 
+  /// @brief Returns the default redo shortcut for the application.
+  /// @return The default redo shortcut.
   [[nodiscard]] QString defaultRedoShortcut() const;
+  /// @brief Returns the current redo shortcut for the application.
+  /// @return The current redo shortcut.
   [[nodiscard]] QString redoShortcut() const;
+  /// @brief Sets the current redo shortcut for the application.
+  /// @param shortcut The new redo shortcut.
   void setRedoShortcut(const QString &shortcut);
 
+  /// @brief Returns the default copy shortcut for the application.
+  /// @return The default copy shortcut.
   [[nodiscard]] QString defaultCopyShortcut() const;
+  /// @brief Returns the current copy shortcut for the application.
+  /// @return The current copy shortcut.
   [[nodiscard]] QString copyShortcut() const;
+  /// @brief Sets the current copy shortcut for the application.
+  /// @param shortcut The new copy shortcut.
   void setCopyShortcut(const QString &shortcut);
 
+  /// @brief Returns the default cut shortcut for the application.
+  /// @return The default cut shortcut.
   [[nodiscard]] QString defaultCutShortcut() const;
+  /// @brief Returns the current cut shortcut for the application.
+  /// @return The current cut shortcut.
   [[nodiscard]] QString cutShortcut() const;
+  /// @brief Sets the current cut shortcut for the application.
+  /// @param shortcut The new cut shortcut.
   void setCutShortcut(const QString &shortcut);
 
+  /// @brief Returns the default paste shortcut for the application.
+  /// @return The default paste shortcut.
   [[nodiscard]] QString defaultPasteShortcut() const;
+  /// @brief Returns the current paste shortcut for the application.
+  /// @return The current paste shortcut.
   [[nodiscard]] QString pasteShortcut() const;
+  /// @brief Sets the current paste shortcut for the application.
+  /// @param shortcut The new paste shortcut.
   void setPasteShortcut(const QString &shortcut);
 
   /// @brief Returns the default options shortcut for the application.
@@ -152,17 +208,26 @@ class Settings : public QSettings {
   /// @brief Emitted when the FPS visibility is changed.
   void fpsVisibleChanged();
 
+  /// @brief Emitted when the new shortcut is changed.
   void newShortcutChanged();
+  /// @brief Emitted when the open shortcut is changed.
   void openShortcutChanged();
+  /// @brief Emitted when the save shortcut is changed.
   void saveShortcutChanged();
+  /// @brief Emitted when the save as shortcut is changed.
   void saveAsShortcutChanged();
   /// @brief Emitted when the quit shortcut is changed.
   void quitShortcutChanged();
 
+  /// @brief Emitted when the undo shortcut is changed.
   void undoShortcutChanged();
+  /// @brief Emitted when the redo shortcut is changed.
   void redoShortcutChanged();
+  /// @brief Emitted when the copy shortcut is changed.
   void copyShortcutChanged();
+  /// @brief Emitted when the cut shortcut is changed.
   void cutShortcutChanged();
+  /// @brief Emitted when the paste shortcut is changed.
   void pasteShortcutChanged();
 
   /// @brief Emitted when the options shortcut is changed.
