@@ -162,13 +162,11 @@ jobs:
     strategy:
       matrix:
         compiler:
-          - gcc-11
+          - gcc-14
         generator:
           - "Unix Makefiles"
         build_type:
           - Debug
-        developer_mode:
-          - OFF
 
     steps:
       - uses: actions/checkout@v3
@@ -222,18 +220,27 @@ jobs:
         uses: aminya/setup-cpp@v1
         with:
           compiler: gcc
-
           cmake: true
           ninja: false
           vcpkg: false
           ccache: false
           clangtidy: false
-
           cppcheck: false
-
           gcovr: false
           opencppcoverage: false
 
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: "6.8.0"
+          host: "linux"
+          target: "desktop"
+          arch: "linux_gcc_64"
+          install-deps: "true"
+          cache: "true"
+          tools: ""
+          aqtversion: "==3.1.*"
+          py7zrversion: "==0.20.*"
 
       - name: Test simple configuration to make sure nothing broke (default compiler,cmake,developer_mode OFF)
         run: |
