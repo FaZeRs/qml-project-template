@@ -10,12 +10,12 @@ include(version)
 project(
   myproject
   VERSION ${VERSION_SHORT}
-  DESCRIPTION ""
+  DESCRIPTION "%%description%%"
   HOMEPAGE_URL "%%myurl%%"
   LANGUAGES CXX C)
 
 set(PROJECT_VENDOR
-    "MyOrganization"
+    "%%myorg%%"
     CACHE STRING "Project vendor")
 set(AUTHOR_NAME
     "MyName"
