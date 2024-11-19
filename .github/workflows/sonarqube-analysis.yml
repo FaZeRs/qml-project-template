@@ -71,7 +71,7 @@ jobs:
           py7zrversion: "==0.20.*"
 
       - name: Install sonar-scanner and build-wrapper
-        uses: SonarSource/sonarcloud-github-c-cpp@v2
+        uses: SonarSource/sonarcloud-github-c-cpp@v3
 
       - name: Create Build Environment
         run: cmake -E make_directory ${{ runner.workspace }}/build

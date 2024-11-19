@@ -32,6 +32,7 @@ runs:
           ${{ github.workspace }}/build/_deps/*-src
           ${{ github.workspace }}/build/_deps/*-build
           ${{ github.workspace }}/build/_deps/*-subbuild
+          ~/.sonar/cache
         key: ${{ runner.os }}-${{ inputs.compiler }}-${{ inputs.build_type }}-${{ inputs.generator }}-${{ hashFiles('**/CMakeLists.txt') }}
         restore-keys: |
           ${{ runner.os }}-${{ inputs.compiler }}-${{ inputs.build_type }}
