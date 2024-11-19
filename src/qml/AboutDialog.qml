@@ -16,7 +16,7 @@ Dialog {
         spacing: 12
 
         Label {
-            text: qsTr("Room Sketcher - Floor Plan Creator")
+            text: qsTr("%1").arg(Qt.application.name)
         }
 
         Label {
@@ -24,7 +24,7 @@ Dialog {
         }
 
         Label {
-            text: qsTr("Copyright 2024, Giraffe360")
+            text: qsTr("Copyright %1, %2").arg(new Date().getFullYear()).arg(Qt.application.organization)
         }
     }
 }

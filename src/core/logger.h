@@ -10,7 +10,7 @@
 #include "parameters.h"
 #include "singleton.h"
 
-namespace room_sketcher {
+namespace myproject {
 
 class Logger final : public Singleton<Logger> {
  public:
@@ -55,4 +55,4 @@ class Logger final : public Singleton<Logger> {
   std::vector<spdlog::sink_ptr> m_Sinks{};
 };  // Logger
 
-}  // namespace room_sketcher
+}  // namespace myproject

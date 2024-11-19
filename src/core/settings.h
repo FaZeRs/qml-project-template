@@ -5,7 +5,7 @@
 
 class QObject;
 
-namespace room_sketcher {
+namespace myproject {
 
 class Settings : public QSettings {
   Q_OBJECT
@@ -171,4 +171,4 @@ class Settings : public QSettings {
   void fullScreenShortcutChanged();
 };
 
-}  // namespace room_sketcher
+}  // namespace myproject

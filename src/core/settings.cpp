@@ -6,7 +6,7 @@
 #include <QVariant>
 #include <QVector>
 
-namespace room_sketcher {
+namespace myproject {
 
 Settings::Settings(QObject *parent) : QSettings(parent) {}
 
@@ -255,4 +255,4 @@ void Settings::setFullScreenShortcut(const QString &shortcut) {
   emit fullScreenShortcutChanged();
 }
 
-}  // namespace room_sketcher
+}  // namespace myproject

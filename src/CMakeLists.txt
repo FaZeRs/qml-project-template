@@ -40,7 +40,7 @@ target_link_libraries(
           libs::project_warnings
           libs::core
           quick_widgetsplugin
-          roomsketcher_uiplugin)
+          myproject_uiplugin)
 
 target_link_system_libraries(
   ${CMAKE_PROJECT_NAME}
@@ -81,7 +81,7 @@ install(
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
-# Generate the deployment script for the target RoomSketcher.
+# Generate the deployment script for the target MyProject.
 qt_generate_deploy_qml_app_script(
   TARGET
   ${CMAKE_PROJECT_NAME}

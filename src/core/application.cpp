@@ -60,10 +60,11 @@ static void spdlogMessageHandler(QtMsgType type,
 }
 #endif
 
-namespace room_sketcher {
+namespace myproject {
 
 static QScopedPointer<QGuiApplication> createApplication(int& argc,
                                                          char** argv) {
+  qDebug() << "config::organization_name" << config::organization_name;
   QCoreApplication::setApplicationName(config::project_name);
   QCoreApplication::setOrganizationName(config::organization_name);
   QCoreApplication::setApplicationVersion(config::project_version);
@@ -95,7 +96,7 @@ Application::Application(int& argc, char** argv)
   addFonts();
 
   m_Engine->rootContext()->setContextProperty("settings", m_Settings.get());
-  m_Engine->load(QUrl(QStringLiteral("qrc:/RoomSketcherUi/main.qml")));
+  m_Engine->load(QUrl(QStringLiteral("qrc:/MyProjectUi/main.qml")));
   if (m_Engine->rootObjects().isEmpty()) qWarning("Failed to load main.qml");
 }
 
@@ -126,4 +127,4 @@ void Application::addFonts() const {
   QFontDatabase::addApplicationFont(":/assets/fonts/font-awesome-brands.otf");
 }
 
-}  // namespace room_sketcher
+}  // namespace myproject

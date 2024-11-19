@@ -6,7 +6,7 @@
 #include "base.h"
 #include "settings.h"
 
-namespace room_sketcher {
+namespace myproject {
 
 class Application {
  public:
@@ -32,4 +32,4 @@ class Application {
   QScopedPointer<Settings, QScopedPointerDeleteLater> m_Settings{new Settings};
 };
 
-}  // namespace room_sketcher
+}  // namespace myproject

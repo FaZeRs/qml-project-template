@@ -14,22 +14,22 @@ set(QML_FILES
     ToolBar.qml
     ToolButton.qml)
 
-qt_add_library(roomsketcher_ui STATIC)
+qt_add_library(myproject_ui STATIC)
 qt_add_qml_module(
-  roomsketcher_ui
+  myproject_ui
   URI
-  RoomSketcherUi
+  MyProjectUi
   VERSION
   1.0
   QML_FILES
   ${QML_FILES}
   OUTPUT_DIRECTORY
-  RoomSketcherUi
+  MyProjectUi
   RESOURCE_PREFIX
   /)
 
 target_link_system_libraries(
-  roomsketcher_ui
+  myproject_ui
   PRIVATE
   Qt::Core
   Qt::Qml)
