@@ -27,7 +27,7 @@ jobs:
         compiler:
           - gcc-14
         generator:
-          - "Unix Makefiles"
+          - "Ninja Multi-Config"
         build_type:
           - Debug
 
@@ -110,9 +110,9 @@ jobs:
         with:
           compiler: ${{ matrix.compiler }}
           cmake: true
-          ninja: false
+          ninja: true
           vcpkg: false
-          ccache: false
+          ccache: true
           clangtidy: false
           cppcheck: false
           gcovr: false
@@ -138,7 +138,7 @@ jobs:
 
       - name: Test simple configuration to make sure nothing broke
         run: |
-          cmake -S . -B ./build -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }}
+          cmake -S . -B ./build -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_CACHE:BOOL=ON
           # Build it because we may have broken something in the cpp/hpp files
           cmake --build build
 
@@ -164,7 +164,7 @@ jobs:
         compiler:
           - gcc-14
         generator:
-          - "Unix Makefiles"
+          - "Ninja Multi-Config"
         build_type:
           - Debug
 
@@ -221,9 +221,9 @@ jobs:
         with:
           compiler: gcc
           cmake: true
-          ninja: false
+          ninja: true
           vcpkg: false
-          ccache: false
+          ccache: true
           clangtidy: false
           cppcheck: false
           gcovr: false
@@ -242,9 +242,9 @@ jobs:
           aqtversion: "==3.1.*"
           py7zrversion: "==0.20.*"
 
-      - name: Test simple configuration to make sure nothing broke (default compiler,cmake,developer_mode OFF)
+      - name: Test simple configuration to make sure nothing broke (default compiler,cmake)
         run: |
-          cmake -S . -B ./build -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }}
+          cmake -S . -B ./build -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_CACHE:BOOL=ON
 
       - uses: EndBug/add-and-commit@v9
         # only commit and push if we are a template and project name has changed

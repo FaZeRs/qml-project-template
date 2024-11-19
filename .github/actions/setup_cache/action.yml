@@ -29,10 +29,14 @@ runs:
           ${{ env.XDG_CACHE_HOME }}/vcpkg/archives
           ${{ env.LOCALAPPDATA }}\vcpkg\archives
           ${{ env.APPDATA }}\vcpkg\archives
-          ${{ github.workspace }}/build/_deps/*-src
-          ${{ github.workspace }}/build/_deps/*-build
-          ${{ github.workspace }}/build/_deps/*-subbuild
+          ${{ github.workspace }}/build
           ~/.sonar/cache
+          ~/.cache/ccache
+          ~/.ccache
+          ~/.config/ccache
+          ~/Library/Caches/ccache
+          ${{ env.LOCALAPPDATA }}/ccache
+          ${{ env.XDG_CACHE_HOME }}/ccache
         key: ${{ runner.os }}-${{ inputs.compiler }}-${{ inputs.build_type }}-${{ inputs.generator }}-${{ hashFiles('**/CMakeLists.txt') }}
         restore-keys: |
           ${{ runner.os }}-${{ inputs.compiler }}-${{ inputs.build_type }}

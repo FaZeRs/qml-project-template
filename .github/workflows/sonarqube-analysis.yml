@@ -79,7 +79,7 @@ jobs:
       - name: Configure CMake
         working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }}
+          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_CACHE:BOOL=ON -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }}
 
       - name: Build
         working-directory: ${{ runner.workspace }}/build
