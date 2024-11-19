@@ -156,7 +156,7 @@ jobs:
           OpenCppCoverage.exe --export_type cobertura:coverage.xml --cover_children -- ctest -C ${{matrix.build_type}}
 
       - name: CPack
-        if: ${{ matrix.build_type == 'Release' }}
+        if: ${{ startsWith(github.ref, 'refs/tags/') && matrix.build_type == 'Release' }}
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
