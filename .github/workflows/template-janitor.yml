@@ -158,7 +158,7 @@ jobs:
 
   template-rename:
     name: Renames template when a new name is detected
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         compiler:

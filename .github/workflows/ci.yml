@@ -42,12 +42,15 @@ jobs:
             compiler: llvm-19
           - os: macos-latest
             compiler: gcc-14
+          - os: macos-latest
+            compiler: llvm-19
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             qt_host: linux
             qt_arch: linux_gcc_64
 
           - os: macos-latest
+            compiler: llvm-18
             qt_host: mac
             qt_arch: clang_64
 
