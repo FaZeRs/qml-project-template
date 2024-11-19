@@ -51,12 +51,14 @@ jobs:
 
           - os: macos-latest
             compiler: llvm-18
+            generator: "Ninja Multi-Config"
             qt_host: mac
             qt_arch: clang_64
             build_type: Release
 
           - os: macos-latest
             compiler: llvm-18
+            generator: "Ninja Multi-Config"
             qt_host: mac
             qt_arch: clang_64
             build_type: Debug
