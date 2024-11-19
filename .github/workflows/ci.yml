@@ -25,7 +25,7 @@ jobs:
       matrix:
         os:
           - windows-latest
-          - ubuntu-latest
+          - ubuntu-24.04
           - macos-latest
         compiler:
           - llvm-19
