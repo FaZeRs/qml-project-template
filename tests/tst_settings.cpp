@@ -30,6 +30,11 @@ TEST_CASE("Test language", "[Settings]") {
   settings.setLanguage(QString("de"));
   REQUIRE(spy.count() == 1);
   REQUIRE(settings.language() == QString("de"));
+
+  QSignalSpy spy2(&settings, &myproject::Settings::languageChanged);
+  settings.setLanguage(QString("de"));
+  REQUIRE(spy2.count() == 0);
+  REQUIRE(settings.language() == QString("de"));
 }
 
 TEST_CASE("Test window opacity", "[Settings]") {
@@ -39,6 +44,11 @@ TEST_CASE("Test window opacity", "[Settings]") {
   QSignalSpy spy(&settings, &myproject::Settings::windowOpacityChanged);
   settings.setWindowOpacity(0.5);
   REQUIRE(spy.count() == 1);
+  REQUIRE(settings.windowOpacity() == 0.5);
+
+  QSignalSpy spy2(&settings, &myproject::Settings::windowOpacityChanged);
+  settings.setWindowOpacity(0.5);
+  REQUIRE(spy2.count() == 0);
   REQUIRE(settings.windowOpacity() == 0.5);
 }
 
@@ -50,6 +60,11 @@ TEST_CASE("Test fps visible", "[Settings]") {
   settings.setFpsVisible(false);
   REQUIRE(spy.count() == 1);
   REQUIRE(settings.isFpsVisible() == false);
+
+  QSignalSpy spy2(&settings, &myproject::Settings::fpsVisibleChanged);
+  settings.setFpsVisible(false);
+  REQUIRE(spy2.count() == 0);
+  REQUIRE(settings.isFpsVisible() == false);
 }
 
 TEST_CASE("Test new shortcut", "[Settings]") {
@@ -59,6 +74,11 @@ TEST_CASE("Test new shortcut", "[Settings]") {
   QSignalSpy spy(&settings, &myproject::Settings::newShortcutChanged);
   settings.setNewShortcut("Ctrl+N");
   REQUIRE(spy.count() == 1);
+  REQUIRE(settings.newShortcut() == "Ctrl+N");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::newShortcutChanged);
+  settings.setNewShortcut("Ctrl+N");
+  REQUIRE(spy2.count() == 0);
   REQUIRE(settings.newShortcut() == "Ctrl+N");
 }
 
@@ -70,6 +90,11 @@ TEST_CASE("Test open shortcut", "[Settings]") {
   settings.setOpenShortcut("Ctrl+O");
   REQUIRE(spy.count() == 1);
   REQUIRE(settings.openShortcut() == "Ctrl+O");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::openShortcutChanged);
+  settings.setOpenShortcut("Ctrl+O");
+  REQUIRE(spy2.count() == 0);
+  REQUIRE(settings.openShortcut() == "Ctrl+O");
 }
 
 TEST_CASE("Test save shortcut", "[Settings]") {
@@ -79,6 +104,11 @@ TEST_CASE("Test save shortcut", "[Settings]") {
   QSignalSpy spy(&settings, &myproject::Settings::saveShortcutChanged);
   settings.setSaveShortcut("Ctrl+S");
   REQUIRE(spy.count() == 1);
+  REQUIRE(settings.saveShortcut() == "Ctrl+S");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::saveShortcutChanged);
+  settings.setSaveShortcut("Ctrl+S");
+  REQUIRE(spy2.count() == 0);
   REQUIRE(settings.saveShortcut() == "Ctrl+S");
 }
 
@@ -90,6 +120,11 @@ TEST_CASE("Test save as shortcut", "[Settings]") {
   settings.setSaveAsShortcut("Ctrl+Shift+S");
   REQUIRE(spy.count() == 1);
   REQUIRE(settings.saveAsShortcut() == "Ctrl+Shift+S");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::saveAsShortcutChanged);
+  settings.setSaveAsShortcut("Ctrl+Shift+S");
+  REQUIRE(spy2.count() == 0);
+  REQUIRE(settings.saveAsShortcut() == "Ctrl+Shift+S");
 }
 
 TEST_CASE("Test quit shortcut", "[Settings]") {
@@ -99,6 +134,11 @@ TEST_CASE("Test quit shortcut", "[Settings]") {
   QSignalSpy spy(&settings, &myproject::Settings::quitShortcutChanged);
   settings.setQuitShortcut("Ctrl+Q");
   REQUIRE(spy.count() == 1);
+  REQUIRE(settings.quitShortcut() == "Ctrl+Q");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::quitShortcutChanged);
+  settings.setQuitShortcut("Ctrl+Q");
+  REQUIRE(spy2.count() == 0);
   REQUIRE(settings.quitShortcut() == "Ctrl+Q");
 }
 
@@ -110,6 +150,11 @@ TEST_CASE("Test undo shortcut", "[Settings]") {
   settings.setUndoShortcut("Ctrl+Z");
   REQUIRE(spy.count() == 1);
   REQUIRE(settings.undoShortcut() == "Ctrl+Z");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::undoShortcutChanged);
+  settings.setUndoShortcut("Ctrl+Z");
+  REQUIRE(spy2.count() == 0);
+  REQUIRE(settings.undoShortcut() == "Ctrl+Z");
 }
 
 TEST_CASE("Test redo shortcut", "[Settings]") {
@@ -119,6 +164,11 @@ TEST_CASE("Test redo shortcut", "[Settings]") {
   QSignalSpy spy(&settings, &myproject::Settings::redoShortcutChanged);
   settings.setRedoShortcut("Ctrl+Y");
   REQUIRE(spy.count() == 1);
+  REQUIRE(settings.redoShortcut() == "Ctrl+Y");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::redoShortcutChanged);
+  settings.setRedoShortcut("Ctrl+Y");
+  REQUIRE(spy2.count() == 0);
   REQUIRE(settings.redoShortcut() == "Ctrl+Y");
 }
 
@@ -130,6 +180,11 @@ TEST_CASE("Test copy shortcut", "[Settings]") {
   settings.setCopyShortcut("Ctrl+C");
   REQUIRE(spy.count() == 1);
   REQUIRE(settings.copyShortcut() == "Ctrl+C");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::copyShortcutChanged);
+  settings.setCopyShortcut("Ctrl+C");
+  REQUIRE(spy2.count() == 0);
+  REQUIRE(settings.copyShortcut() == "Ctrl+C");
 }
 
 TEST_CASE("Test cut shortcut", "[Settings]") {
@@ -139,6 +194,11 @@ TEST_CASE("Test cut shortcut", "[Settings]") {
   QSignalSpy spy(&settings, &myproject::Settings::cutShortcutChanged);
   settings.setCutShortcut("Ctrl+X");
   REQUIRE(spy.count() == 1);
+  REQUIRE(settings.cutShortcut() == "Ctrl+X");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::cutShortcutChanged);
+  settings.setCutShortcut("Ctrl+X");
+  REQUIRE(spy2.count() == 0);
   REQUIRE(settings.cutShortcut() == "Ctrl+X");
 }
 
@@ -150,6 +210,11 @@ TEST_CASE("Test paste shortcut", "[Settings]") {
   settings.setPasteShortcut("Ctrl+V");
   REQUIRE(spy.count() == 1);
   REQUIRE(settings.pasteShortcut() == "Ctrl+V");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::pasteShortcutChanged);
+  settings.setPasteShortcut("Ctrl+V");
+  REQUIRE(spy2.count() == 0);
+  REQUIRE(settings.pasteShortcut() == "Ctrl+V");
 }
 
 TEST_CASE("Test options shortcut", "[Settings]") {
@@ -160,6 +225,11 @@ TEST_CASE("Test options shortcut", "[Settings]") {
   settings.setOptionsShortcut("Ctrl+O");
   REQUIRE(spy.count() == 1);
   REQUIRE(settings.optionsShortcut() == "Ctrl+O");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::optionsShortcutChanged);
+  settings.setOptionsShortcut("Ctrl+O");
+  REQUIRE(spy2.count() == 0);
+  REQUIRE(settings.optionsShortcut() == "Ctrl+O");
 }
 
 TEST_CASE("Test full screen shortcut", "[Settings]") {
@@ -169,6 +239,11 @@ TEST_CASE("Test full screen shortcut", "[Settings]") {
   QSignalSpy spy(&settings, &myproject::Settings::fullScreenShortcutChanged);
   settings.setFullScreenShortcut("Ctrl+F");
   REQUIRE(spy.count() == 1);
+  REQUIRE(settings.fullScreenShortcut() == "Ctrl+F");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::fullScreenShortcutChanged);
+  settings.setFullScreenShortcut("Ctrl+F");
+  REQUIRE(spy2.count() == 0);
   REQUIRE(settings.fullScreenShortcut() == "Ctrl+F");
 }
 
