@@ -1,11 +1,11 @@
-# qml_template
+# qml-project-template
 
 [![ci](https://github.com/FaZeRs/qml-project-template/actions/workflows/ci.yml/badge.svg)](https://github.com/FaZeRs/qml-project-template/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/FaZeRs/qml-project-template/branch/main/graph/badge.svg)](https://codecov.io/gh/FaZeRs/qml-project-template)
 [![CodeQL](https://github.com/FaZeRs/qml-project-template/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/FaZeRs/qml-project-template/actions/workflows/codeql-analysis.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=FaZeRs_qt-project-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=FaZeRs_qt-project-template)
 
-## About qml_template
+## About qml-project-template
 
 This is a QML GitHub template for getting up and running with QML quickly.
 
