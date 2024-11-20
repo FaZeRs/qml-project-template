@@ -1,13 +1,20 @@
-ARG VARIANT="focal"
+ARG VARIANT="noble"
 FROM ubuntu:${VARIANT}
 
-LABEL maintainer="Nauris Linde <nauris.linde@giraffe360.com>"
-LABEL company="Giraffe360"
-LABEL description="Development environment for Room Sketcher"
+LABEL maintainer="Nauris Linde <naurislinde@gmail.com>"
+LABEL company="Nauris Linde"
+LABEL description="Development environment for QML Template Project"
 LABEL version="1.0"
 
 # Restate the variant to use it later on in the llvm and cmake installations
 ARG VARIANT
+RUN if [ "$VARIANT" = "noble" ]; then \
+    if id "ubuntu" &>/dev/null; then \
+    echo "Deleting user 'ubuntu'  for $VARIANT" && userdel -f -r ubuntu || echo "Failed to delete ubuntu user for $VARIANT"; \
+    else \
+    echo "User 'ubuntu' does not exist for $VARIANT"; \
+    fi; \
+    fi
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -31,17 +38,16 @@ RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
     make ninja-build git \
     python3 python3-pip \
     locales zsh fonts-firacode \
-    curl libcurl4-openssl-dev \
-    libgl1-mesa-dev \
+    curl libgl1-mesa-dev \
     libdbus-1-dev libfontconfig1-dev libxkbcommon-dev libxkbcommon-x11-dev libxcb-xinerama0-dev libxcb-xkb-dev \
     libfreetype6-dev libx11-dev libx11-xcb-dev libxext-dev libxfixes-dev libxi-dev libxrender-dev libxcb1-dev \
     libxcb-glx0-dev libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync-dev \
     libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libxcb-util-dev libxcb-cursor0
 
 # User-settable versions:
-# This Dockerfile should support gcc-[7, 8, 9, 10, 11, 12, 13] and clang-[10, 11, 12, 13, 14, 15, 16]
+# This Dockerfile should support gcc-[7, 8, 9, 10, 11, 12, 13, 14] and clang-[10, 11, 12, 13, 14, 15, 16, 17, 18]
 # Earlier versions of clang will require significant modifications to the IWYU section
-ARG GCC_VER="11"
+ARG GCC_VER="14"
 # Add gcc-${GCC_VER}
 RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
     apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
@@ -52,7 +58,7 @@ RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
 RUN update-alternatives --install /usr/bin/gcc gcc $(which gcc-${GCC_VER}) 100
 RUN update-alternatives --install /usr/bin/g++ g++ $(which g++-${GCC_VER}) 100
 
-ARG LLVM_VER="13"
+ARG LLVM_VER="19"
 # Add clang-${LLVM_VER}
 ARG LLVM_URL="http://apt.llvm.org/${VARIANT}/"
 ARG LLVM_PKG="llvm-toolchain-${VARIANT}-${LLVM_VER}"
@@ -77,7 +83,7 @@ RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/nul
     echo "deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ ${CMAKE_PKG} main" | tee /etc/apt/sources.list.d/kitware.list >/dev/null && \
     apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
     rm /usr/share/keyrings/kitware-archive-keyring.gpg && \
-    apt-get install -y --no-install-recommends kitware-archive-keyring cmake cmake-curses-gui
+    apt-get install -y --no-install-recommends kitware-archive-keyring cmake cmake-curses-gui cmake-format
 
 # Install editors
 RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
@@ -87,11 +93,7 @@ RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
 # Install optional dependecies
 RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y --no-install-recommends \
-    doxygen graphviz ccache cppcheck libomp-dev
-
-# Install NodeJS
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && \
-    apt-get install -y nodejs
+    doxygen graphviz ccache cppcheck libomp-dev nodejs default-jdk
 
 # Install .NET SDK
 RUN apt-get update -qq && export DEBIAN_FRONTEND=noninteractive && \
@@ -125,9 +127,9 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # Install QT
-RUN pip3 install aqtinstall
+RUN pip3 install --no-cache-dir --break-system-packages aqtinstall
 
-ARG QT_VERSION=6.7.0
+ARG QT_VERSION=6.8.0
 ARG QT_PATH=/opt/qt
 ARG QT_MODULES=all
 ARG QT_HOST=linux
@@ -138,6 +140,9 @@ RUN aqt install-tool --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} tools_ifw
 
 ENV PATH /opt/qt/${QT_VERSION}/gcc_64/bin:$PATH
 ENV PATH /opt/qt/Tools/QtInstallerFramework/4.7/bin:$PATH
+
+# Install gcovr
+RUN pip3 install --no-cache-dir --break-system-packages gcovr
 
 ## Cleanup cached apt data we don't need anymore
 RUN apt-get autoremove -y && apt-get clean && \
@@ -165,7 +170,7 @@ RUN echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 RUN git clone https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
-RUN sed -i '/^plugins/c\plugins=(git zsh-autosuggestions sudo web-search copypath copyfile history zsh-syntax-highlighting zsh-completions)' ~/.zshrc
+RUN sed -i '/^plugins/c\plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions)' ~/.zshrc
 RUN sed -i '/^ZSH_THEME/c\ZSH_THEME=""' ~/.zshrc
 
 ENV CPM_SOURCE_CACHE=/home/$USERNAME/.cache/CPM

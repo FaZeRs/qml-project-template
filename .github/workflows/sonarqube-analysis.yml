@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Build and analyze
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
@@ -19,7 +19,7 @@ jobs:
         # Learn more about CodeQL language support at https://git.io/codeql-language-support
         compiler:
           # you can specify the version after `-` like "llvm-13.0.0".
-          - gcc
+          - gcc-14
         generator:
           - "Ninja Multi-Config"
         build_type:
@@ -28,12 +28,12 @@ jobs:
           - linux
         qt_arch:
           - linux_gcc_64
+        gcov_executable:
+          - gcov-14
 
-    env:
-      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
     steps:
       - name: Install dependencies
-        run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev doxygen graphviz
+        run: sudo apt-get install -y libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev
 
       - uses: actions/checkout@v4
         with:
@@ -57,13 +57,13 @@ jobs:
           ccache: true
           clangtidy: false
           cppcheck: false
-          gcovr: false
+          gcovr: true
           opencppcoverage: false
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: "6.7.0"
+          version: "6.8.0"
           host: ${{ matrix.qt_host }}
           target: "desktop"
           arch: ${{ matrix.qt_arch }}
@@ -73,22 +73,30 @@ jobs:
           py7zrversion: "==0.20.*"
 
       - name: Install sonar-scanner and build-wrapper
-        uses: SonarSource/sonarcloud-github-c-cpp@v2
+        uses: SonarSource/sonarcloud-github-c-cpp@v3
 
       - name: Create Build Environment
-        run: cmake -E make_directory ./build
+        run: cmake -E make_directory ${{ runner.workspace }}/build
 
       - name: Configure CMake
+        working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -S . -B build -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_DOCS:BOOL=FALSE -DCOMPILE_TESTS:BOOL=FALSE -DENABLE_CLANG_TIDY:BOOL=FALSE -DENABLE_CPPCHECK:BOOL=FALSE -DENABLE_INCLUDE_WHAT_YOU_USE:BOOL=FALSE
+          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_CACHE:BOOL=ON -DCOMPILE_TESTS:BOOL=${{ matrix.build_type == 'Debug' }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }}
 
-      - name: Run build-wrapper
+      - name: Build
+        working-directory: ${{ runner.workspace }}/build
+        run: cmake --build . --parallel ${{ env.nproc }} --config ${{ matrix.build_type }}
+
+      - name: Coverage
+        if: ${{ matrix.build_type == 'Debug' }}
+        working-directory: ${{ runner.workspace }}/build
         run: |
-          build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build ./build --parallel ${{ env.nproc }} --config ${{matrix.build_type}}
+          ctest -C ${{ matrix.build_type }}
+          gcovr -j ${{ env.nproc }} --delete --root ${{ runner.workspace }} --print-summary --cobertura-pretty --cobertura coverage.xml . --gcov-executable '${{ matrix.gcov_executable }}'
 
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          sonar-scanner --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}"
+          sonar-scanner --define sonar.cfamily.compile-commands="${{ runner.workspace }}/build/compile_commands.json" --define sonar.cfamily.cobertura.reportPaths="${{ runner.workspace }}/build/coverage.xml"

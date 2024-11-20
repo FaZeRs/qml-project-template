@@ -5,7 +5,7 @@ import "." as App
 ApplicationWindow {
     id: window
     objectName: "window"
-    title: qsTr("Room Sketcher")
+    title: qsTr("%1").arg(Qt.application.name)
     visible: true
     width: 1000
     height: 800
@@ -15,16 +15,14 @@ ApplicationWindow {
 
     function toggleFullScreen() {
         if (window.visibility === Window.FullScreen) {
-            window.visibility = oldWindowVisibility
-        }
-        else {
-            oldWindowVisibility = window.visibility
-            window.visibility = Window.FullScreen
+            window.visibility = oldWindowVisibility;
+        } else {
+            oldWindowVisibility = window.visibility;
+            window.visibility = Window.FullScreen;
         }
     }
 
-    menuBar: App.MenuBar {
-    }
+    menuBar: App.MenuBar {}
 
     header: App.ToolBar {
         id: toolBar

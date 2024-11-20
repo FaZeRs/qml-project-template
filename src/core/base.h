@@ -3,7 +3,7 @@
 #include <memory>
 #include <utility>
 
-namespace room_sketcher {
+namespace myproject {
 
 template <typename T>
 using Scope = std::unique_ptr<T>;
@@ -19,4 +19,4 @@ constexpr Ref<T> CreateRef(Args&&... args) {
   return std::make_shared<T>(std::forward<Args>(args)...);
 }
 
-}  // namespace room_sketcher
+}  // namespace myproject

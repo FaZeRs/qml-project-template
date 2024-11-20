@@ -25,11 +25,11 @@ jobs:
       matrix:
         os:
           - windows-latest
-          - ubuntu-latest
-          - macos-latest
+          - ubuntu-24.04
+          # - macos-latest
         compiler:
-          - llvm-18
-          - gcc-13
+          - llvm-19
+          - gcc-14
         generator:
           - "Ninja Multi-Config"
         build_type:
@@ -37,44 +37,56 @@ jobs:
           - Debug
         exclude:
           - os: windows-latest
-            compiler: gcc-13
+            compiler: gcc-14
           - os: windows-latest
-            compiler: llvm-18
-          - os: macos-latest
-            compiler: gcc-13
+            compiler: llvm-19
+          # - os: macos-latest
+          #   compiler: gcc-14
+          # - os: macos-latest
+          #   compiler: llvm-19
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             qt_host: linux
             qt_arch: linux_gcc_64
 
-          - os: macos-latest
-            qt_host: mac
-            qt_arch: clang_64
+          # - os: macos-latest
+          #   compiler: llvm-18
+          #   generator: "Ninja Multi-Config"
+          #   qt_host: mac
+          #   qt_arch: clang_64
+          #   build_type: Release
+
+          # - os: macos-latest
+          #   compiler: llvm-18
+          #   generator: "Ninja Multi-Config"
+          #   qt_host: mac
+          #   qt_arch: clang_64
+          #   build_type: Debug
 
           - os: windows-latest
             compiler: msvc
             generator: "Visual Studio 17 2022"
             qt_host: windows
-            qt_arch: win64_msvc2019_64
+            qt_arch: win64_msvc2022_64
             build_type: Release
 
           - os: windows-latest
             compiler: msvc
             generator: "Visual Studio 17 2022"
             qt_host: windows
-            qt_arch: win64_msvc2019_64
+            qt_arch: win64_msvc2022_64
             build_type: Debug
 
-          - compiler: gcc-13
-            gcov_executable: gcov
+          - compiler: gcc-14
+            gcov_executable: gcov-14
 
-          - compiler: llvm-18
+          - compiler: llvm-19
             gcov_executable: "llvm-cov gcov"
 
     steps:
       - name: Install dependencies
         if: ${{ contains(matrix.os, 'ubuntu') }}
-        run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev
+        run: sudo apt-get install -y libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev doxygen graphviz
 
       - uses: actions/checkout@v4
 
@@ -103,7 +115,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: "6.7.0"
+          version: "6.8.0"
           host: ${{ matrix.qt_host }}
           target: "desktop"
           arch: ${{ matrix.qt_arch }}
@@ -121,7 +133,7 @@ jobs:
         shell: bash
         working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }} -DENABLE_DOCS:BOOL=${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') }} -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.7/bin
+          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_CACHE:BOOL=ON -DCOMPILE_TESTS:BOOL=${{ matrix.build_type == 'Debug' }} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }} -DENABLE_DOCS:BOOL=${{ matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') && contains(matrix.compiler, 'gcc') }} -DCPACK_IFW_ROOT=$IQTA_TOOLS/QtInstallerFramework/4.7/bin
 
       - name: Build
         working-directory: ${{ runner.workspace }}/build
@@ -129,22 +141,22 @@ jobs:
         run: cmake --build . --parallel ${{ env.nproc }} --config ${{ matrix.build_type }}
 
       - name: Ubuntu - Test and coverage
-        if: ${{ runner.os == 'Ubuntu' && matrix.build_type == 'Debug' }}
+        if: ${{ contains(matrix.os, 'ubuntu') && matrix.build_type == 'Debug' }}
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
           ctest -C ${{ matrix.build_type }}
-          gcovr -j ${{ env.nproc }} --delete --root ../ --print-summary --xml-pretty --xml coverage.xml . --gcov-executable '${{ matrix.gcov_executable }}'
+          gcovr -j ${{ env.nproc }} --delete --root ${{ runner.workspace }} --print-summary --xml-pretty --xml coverage.xml . --gcov-executable '${{ matrix.gcov_executable }}'
 
       - name: Windows - Test and coverage
-        if: ${{ runner.os == 'Windows' && matrix.build_type == 'Debug' }}
+        if: ${{ contains(matrix.os, 'windows') && matrix.build_type == 'Debug' }}
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
-          OpenCppCoverage.exe --export_type cobertura:coverage.xml --cover_children -- ctest -C ${{matrix.build_type}}
+          OpenCppCoverage.exe --export_type cobertura:coverage.xml --cover_children -- ctest -C ${{matrix.build_type}} --output-on-failure
 
       - name: CPack
-        if: ${{ matrix.build_type == 'Release' }}
+        if: ${{ startsWith(github.ref, 'refs/tags/') && matrix.build_type == 'Release' }}
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
@@ -155,19 +167,21 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/tags/') && matrix.build_type == 'Release' }}
         with:
           files: |
-            build/RoomSketcher-*${{ github.ref_name }}*-*.*
+            ${{ runner.workspace }}/build/MyProject-*${{ github.ref_name }}-*.*
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
-        if: ${{ github.ref == 'refs/heads/main' && matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') }}
+        if: ${{ github.ref == 'refs/heads/main' && matrix.build_type == 'Release' && contains(matrix.os, 'ubuntu') && contains(matrix.compiler, 'gcc') }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/html
+          publish_dir: ${{ runner.workspace }}/build/html
 
       - name: Publish to codecov
-        if: ${{ (runner.os == 'Ubuntu' || runner.os == 'Windows') && matrix.build_type == 'Debug' }}
+        if: ${{ (contains(matrix.os, 'ubuntu') || contains(matrix.os, 'windows')) && matrix.build_type == 'Debug' }}
         uses: codecov/codecov-action@v4
         with:
           flags: ${{ runner.os }}
-          name: ${{ runner.os }}-coverage
-          files: ./build/coverage.xml
+          name: ${{ runner.os }}-${{ matrix.compiler }}-${{ matrix.generator }}-${{ matrix.build_type }}-coverage
+          files: ${{ runner.workspace }}/build/coverage.xml
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

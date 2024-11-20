@@ -2,7 +2,7 @@
 
 #include <type_traits>
 
-namespace room_sketcher {
+namespace myproject {
 
 template <typename T, typename D = T>
 class Singleton {
@@ -25,4 +25,4 @@ T& Singleton<T, D>::instance() {
   return inst;
 }
 
-}  // namespace room_sketcher
+}  // namespace myproject

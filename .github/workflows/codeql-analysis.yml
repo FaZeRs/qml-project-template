@@ -23,7 +23,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       actions: read
       contents: read
@@ -37,7 +37,7 @@ jobs:
         # Learn more about CodeQL language support at https://git.io/codeql-language-support
         compiler:
           # you can specify the version after `-` like "llvm-13.0.0".
-          - gcc
+          - gcc-14
         generator:
           - "Ninja Multi-Config"
         build_type:
@@ -49,7 +49,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev doxygen graphviz
+        run: sudo apt-get install -y libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev
 
       - uses: actions/checkout@v4
 
@@ -77,7 +77,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: "6.7.0"
+          version: "6.8.0"
           host: ${{ matrix.qt_host }}
           target: "desktop"
           arch: ${{ matrix.qt_arch }}
@@ -87,11 +87,15 @@ jobs:
           aqtversion: "==3.1.*"
           py7zrversion: "==0.20.*"
 
+      - name: Create Build Environment
+        run: cmake -E make_directory ${{ runner.workspace }}/build
+
         # make sure coverage is only enabled for Debug builds, since it sets -O0 to make sure coverage
         # has meaningful results
       - name: Configure CMake
+        working-directory: ${{ runner.workspace }}/build
         run: |
-          cmake -S . -B ./build -G "${{matrix.generator}}" -DCMAKE_BUILD_TYPE:STRING=${{matrix.build_type}} -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }}
+          cmake -G "${{ matrix.generator }}" $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} -DENABLE_CACHE:BOOL=ON -DENABLE_COVERAGE:BOOL=${{ matrix.build_type == 'Debug' }}
 
       # Initializes the CodeQL tools for scanning.
       - name: Initialize CodeQL
@@ -104,9 +108,8 @@ jobs:
           # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
       - name: Build
-        # Execute the build.  You can specify a specific target with "--target <NAME>"
-        run: |
-          cmake --build ./build --config ${{matrix.build_type}}
+        working-directory: ${{ runner.workspace }}/build
+        run: cmake --build . --parallel ${{ env.nproc }} --config ${{ matrix.build_type }}
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3

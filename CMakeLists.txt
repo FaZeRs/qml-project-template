@@ -2,16 +2,27 @@ cmake_minimum_required(VERSION 3.27)
 
 include(cmake/CPM.cmake)
 
-CPMAddPackage("gh:fazers/cmake#1.0.0")
+cpmaddpackage("gh:fazers/cmake#1.1.0")
 set(CMAKE_MODULE_PATH "${cmake_SOURCE_DIR};")
 
 include(version)
 
-project(room-sketcher
+project(
+  myproject
   VERSION ${VERSION_SHORT}
-  DESCRIPTION "Floor Plan Editor"
-  HOMEPAGE_URL "https://giraffe360.com"
+  DESCRIPTION "%%description%%"
+  HOMEPAGE_URL "%%myurl%%"
   LANGUAGES CXX C)
+
+set(PROJECT_VENDOR
+    "%%myorg%%"
+    CACHE STRING "Project vendor")
+set(AUTHOR_NAME
+    "MyName"
+    CACHE STRING "Author name")
+set(AUTHOR_EMAIL
+    "myemail@example.com"
+    CACHE STRING "Author email")
 
 include(cmake/Options.cmake)
 include(cmake/CompilationFlags.cmake)
@@ -29,7 +40,12 @@ add_library(project_warnings INTERFACE)
 add_library(project_options INTERFACE)
 
 include(compiler-warnings)
-set_project_warnings(project_warnings ${WARNINGS_AS_ERRORS} "" "" "")
+set_project_warnings(
+  project_warnings
+  ${WARNINGS_AS_ERRORS}
+  ""
+  ""
+  "")
 
 if(ENABLE_USER_LINKER)
   include(linker)
@@ -37,7 +53,8 @@ if(ENABLE_USER_LINKER)
 endif()
 
 include(sanitizers)
-enable_sanitizers(project_options
+enable_sanitizers(
+  project_options
   ${ENABLE_SANITIZER_ADDRESS}
   ${ENABLE_SANITIZER_LEAK}
   ${ENABLE_SANITIZER_UNDEFINED}
@@ -48,10 +65,10 @@ if(ENABLE_HARDENING)
   include(hardening)
 
   if(NOT SUPPORTS_UBSAN
-    OR ENABLE_SANITIZER_UNDEFINED
-    OR ENABLE_SANITIZER_ADDRESS
-    OR ENABLE_SANITIZER_THREAD
-    OR ENABLE_SANITIZER_LEAK)
+     OR ENABLE_SANITIZER_UNDEFINED
+     OR ENABLE_SANITIZER_ADDRESS
+     OR ENABLE_SANITIZER_THREAD
+     OR ENABLE_SANITIZER_LEAK)
     set(ENABLE_UBSAN_MINIMAL_RUNTIME FALSE)
   else()
     set(ENABLE_UBSAN_MINIMAL_RUNTIME TRUE)
@@ -82,8 +99,8 @@ endif()
 
 target_compile_features(project_options INTERFACE cxx_std_${CMAKE_CXX_STANDARD})
 
-add_library(rs::project_options ALIAS project_options)
-add_library(rs::project_warnings ALIAS project_warnings)
+add_library(libs::project_options ALIAS project_options)
+add_library(libs::project_warnings ALIAS project_warnings)
 
 add_subdirectory(src)
 
