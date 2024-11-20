@@ -86,7 +86,9 @@ jobs:
     steps:
       - name: Install dependencies
         if: ${{ contains(matrix.os, 'ubuntu') }}
-        run: sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev doxygen graphviz
+        run:  |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libxcb-xinerama0 libxkbcommon-dev libxkbcommon-x11-dev doxygen graphviz
 
       - uses: actions/checkout@v4
 
