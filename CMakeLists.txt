@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.27)
 
 include(cmake/CPM.cmake)
 
-cpmaddpackage("gh:fazers/cmake#1.0.0")
+cpmaddpackage("gh:fazers/cmake#1.1.0")
 set(CMAKE_MODULE_PATH "${cmake_SOURCE_DIR};")
 
 include(version)
