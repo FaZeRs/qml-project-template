@@ -10,6 +10,10 @@ namespace myproject {
 
 Settings::Settings(QObject *parent) : QSettings(parent) {}
 
+Settings::Settings(const QString &organization, const QString &application,
+                   QObject *parent)
+    : QSettings(organization, application, parent) {}
+
 QString Settings::defaultLanguage() const { return "en_GB"; }
 
 QString Settings::language() const {

@@ -46,6 +46,8 @@ class Settings : public QSettings {
 
  public:
   explicit Settings(QObject *parent = nullptr);
+  Settings(const QString &organization, const QString &application,
+           QObject *parent = nullptr);
 
   /// @brief Returns the default language for the application.
   /// @return The default language.

@@ -4,7 +4,7 @@
 #include <catch2/catch_test_macros.hpp>
 
 TEST_CASE("Test default values", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   REQUIRE(settings.defaultLanguage() == "en_GB");
   REQUIRE(settings.defaultWindowOpacity() == 1.0);
   REQUIRE(settings.defaultFpsVisible() == false);
@@ -23,7 +23,7 @@ TEST_CASE("Test default values", "[Settings]") {
 }
 
 TEST_CASE("Test language", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setLanguage(QString("fr"));
   REQUIRE(settings.language() == QString("fr"));
   QSignalSpy spy(&settings, &myproject::Settings::languageChanged);
@@ -38,7 +38,7 @@ TEST_CASE("Test language", "[Settings]") {
 }
 
 TEST_CASE("Test window opacity", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setWindowOpacity(0.8);
   REQUIRE(settings.windowOpacity() == 0.8);
   QSignalSpy spy(&settings, &myproject::Settings::windowOpacityChanged);
@@ -53,7 +53,7 @@ TEST_CASE("Test window opacity", "[Settings]") {
 }
 
 TEST_CASE("Test fps visible", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setFpsVisible(true);
   REQUIRE(settings.isFpsVisible() == true);
   QSignalSpy spy(&settings, &myproject::Settings::fpsVisibleChanged);
@@ -68,7 +68,7 @@ TEST_CASE("Test fps visible", "[Settings]") {
 }
 
 TEST_CASE("Test new shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setNewShortcut("Ctrl+A");
   REQUIRE(settings.newShortcut() == "Ctrl+A");
   QSignalSpy spy(&settings, &myproject::Settings::newShortcutChanged);
@@ -83,7 +83,7 @@ TEST_CASE("Test new shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test open shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setOpenShortcut("Ctrl+A");
   REQUIRE(settings.openShortcut() == "Ctrl+A");
   QSignalSpy spy(&settings, &myproject::Settings::openShortcutChanged);
@@ -98,7 +98,7 @@ TEST_CASE("Test open shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test save shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setSaveShortcut("Ctrl+A");
   REQUIRE(settings.saveShortcut() == "Ctrl+A");
   QSignalSpy spy(&settings, &myproject::Settings::saveShortcutChanged);
@@ -113,7 +113,7 @@ TEST_CASE("Test save shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test save as shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setSaveAsShortcut("Ctrl+A");
   REQUIRE(settings.saveAsShortcut() == "Ctrl+A");
   QSignalSpy spy(&settings, &myproject::Settings::saveAsShortcutChanged);
@@ -128,7 +128,7 @@ TEST_CASE("Test save as shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test quit shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setQuitShortcut("Ctrl+X");
   REQUIRE(settings.quitShortcut() == "Ctrl+X");
   QSignalSpy spy(&settings, &myproject::Settings::quitShortcutChanged);
@@ -143,7 +143,7 @@ TEST_CASE("Test quit shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test undo shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setUndoShortcut("Ctrl+A");
   REQUIRE(settings.undoShortcut() == "Ctrl+A");
   QSignalSpy spy(&settings, &myproject::Settings::undoShortcutChanged);
@@ -158,7 +158,7 @@ TEST_CASE("Test undo shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test redo shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setRedoShortcut("Ctrl+A");
   REQUIRE(settings.redoShortcut() == "Ctrl+A");
   QSignalSpy spy(&settings, &myproject::Settings::redoShortcutChanged);
@@ -173,7 +173,7 @@ TEST_CASE("Test redo shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test copy shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setCopyShortcut("Ctrl+A");
   REQUIRE(settings.copyShortcut() == "Ctrl+A");
   QSignalSpy spy(&settings, &myproject::Settings::copyShortcutChanged);
@@ -188,7 +188,7 @@ TEST_CASE("Test copy shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test cut shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setCutShortcut("Ctrl+A");
   REQUIRE(settings.cutShortcut() == "Ctrl+A");
   QSignalSpy spy(&settings, &myproject::Settings::cutShortcutChanged);
@@ -203,7 +203,7 @@ TEST_CASE("Test cut shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test paste shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setPasteShortcut("Ctrl+A");
   REQUIRE(settings.pasteShortcut() == "Ctrl+A");
   QSignalSpy spy(&settings, &myproject::Settings::pasteShortcutChanged);
@@ -218,7 +218,7 @@ TEST_CASE("Test paste shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test options shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setOptionsShortcut("Ctrl+P");
   REQUIRE(settings.optionsShortcut() == "Ctrl+P");
   QSignalSpy spy(&settings, &myproject::Settings::optionsShortcutChanged);
@@ -233,7 +233,7 @@ TEST_CASE("Test options shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test full screen shortcut", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setFullScreenShortcut("Ctrl+G");
   REQUIRE(settings.fullScreenShortcut() == "Ctrl+G");
   QSignalSpy spy(&settings, &myproject::Settings::fullScreenShortcutChanged);
@@ -248,7 +248,7 @@ TEST_CASE("Test full screen shortcut", "[Settings]") {
 }
 
 TEST_CASE("Test reset shortcuts to defaults", "[Settings]") {
-  myproject::Settings settings;
+  myproject::Settings settings("MyOrg", "MyApp");
   settings.setNewShortcut("Ctrl+A");
   settings.setOpenShortcut("Ctrl+S");
   settings.setSaveShortcut("Ctrl+D");
