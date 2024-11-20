@@ -1,9 +1,9 @@
 ARG VARIANT="noble"
 FROM ubuntu:${VARIANT}
 
-LABEL maintainer="Nauris Linde <nauris.linde@giraffe360.com>"
-LABEL company="Giraffe360"
-LABEL description="Development environment for GPT Chat"
+LABEL maintainer="Nauris Linde <naurislinde@gmail.com>"
+LABEL company="Nauris Linde"
+LABEL description="Development environment for QML Template Project"
 LABEL version="1.0"
 
 # Restate the variant to use it later on in the llvm and cmake installations
@@ -140,6 +140,9 @@ RUN aqt install-tool --outputdir ${QT_PATH} ${QT_HOST} ${QT_TARGET} tools_ifw
 
 ENV PATH /opt/qt/${QT_VERSION}/gcc_64/bin:$PATH
 ENV PATH /opt/qt/Tools/QtInstallerFramework/4.7/bin:$PATH
+
+# Install gcovr
+RUN pip3 install --no-cache-dir --break-system-packages gcovr
 
 ## Cleanup cached apt data we don't need anymore
 RUN apt-get autoremove -y && apt-get clean && \
