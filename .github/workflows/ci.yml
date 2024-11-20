@@ -153,7 +153,7 @@ jobs:
         working-directory: ${{ runner.workspace }}/build
         shell: bash
         run: |
-          OpenCppCoverage.exe --export_type cobertura:coverage.xml --cover_children -- ctest -C ${{matrix.build_type}}
+          OpenCppCoverage.exe --export_type cobertura:coverage.xml --cover_children -- ctest -C ${{matrix.build_type}} --output-on-failure
 
       - name: CPack
         if: ${{ startsWith(github.ref, 'refs/tags/') && matrix.build_type == 'Release' }}
