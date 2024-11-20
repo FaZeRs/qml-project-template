@@ -1,0 +1,7 @@
+<map id="myproject::Settings::setQuitShortcut" name="myproject::Settings::setQuitShortcut">
+<area shape="rect" id="Node000001" title="Sets the current quit shortcut for the application." alt="" coords="5,37,155,77"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#ab1d031494a6ee6b8a4bf6ddd576407bf" title="Returns the default quit shortcut for the application." alt="" coords="207,5,365,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,43,193,37,194,42,155,48"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#aad13bda42478ac1136c430547bc1e37d" title="Emitted when the quit shortcut is changed." alt="" coords="203,69,369,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,66,189,72,189,77,154,72"/>
+</map>

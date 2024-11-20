@@ -1,0 +1,5 @@
+<map id="myproject::Logger::initLogger" name="myproject::Logger::initLogger">
+<area shape="rect" id="Node000001" title="Creates SPDLOG logger with multiple sinks (console + file)." alt="" coords="201,5,349,45"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Logger.html#a3f2de4b82ea82e6892b167a292aeabc0" title=" " alt="" coords="5,5,153,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,28,154,28,154,23,187,23"/>
+</map>

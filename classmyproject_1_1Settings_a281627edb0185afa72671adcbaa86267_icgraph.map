@@ -1,0 +1,12 @@
+<map id="myproject::Settings::defaultFpsVisible" name="myproject::Settings::defaultFpsVisible">
+<area shape="rect" id="Node000001" title="Returns the default FPS visibility for the application." alt="" coords="345,69,495,109"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a42ad9d4d5f512fbb827795c83c393f2b" title="Returns the current FPS visibility for the application." alt="" coords="148,5,297,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="344,68,284,48,286,43,346,63"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#ad9011ea62284028bde0fd492529298cd" title="Sets the current FPS visibility for the application." alt="" coords="148,69,297,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="331,92,298,92,298,87,331,87"/>
+<area shape="rect" id="Node000005" href="$tst__settings_8cpp.html#ad9d8c2ff30fae39b4ceba73773acf481" title=" " alt="" coords="175,134,270,159"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="338,116,268,136,267,131,337,111"/>
+<area shape="rect" id="Node000003" href="$tst__settings_8cpp.html#ad92d094058c332311f48714e87bab29d" title=" " alt="" coords="5,45,100,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,45,101,51,100,46,134,39"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="134,75,100,69,101,64,135,70"/>
+</map>

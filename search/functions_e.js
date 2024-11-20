@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['saveasshortcut_0',['saveAsShortcut',['../classmyproject_1_1Settings.html#adb649acf8217908c3c61221364844bef',1,'myproject::Settings']]],
+  ['saveasshortcutchanged_1',['saveAsShortcutChanged',['../classmyproject_1_1Settings.html#a33b25c1e4b03f98374c091940d51efec',1,'myproject::Settings']]],
+  ['saveshortcut_2',['saveShortcut',['../classmyproject_1_1Settings.html#a19b321b5e837bf4a2548c962e5cf8a32',1,'myproject::Settings']]],
+  ['saveshortcutchanged_3',['saveShortcutChanged',['../classmyproject_1_1Settings.html#aadae73a9e78d1557623317608436a5f4',1,'myproject::Settings']]],
+  ['setcopyshortcut_4',['setCopyShortcut',['../classmyproject_1_1Settings.html#ad43ee86f519ad9e358dc24b62eb6735d',1,'myproject::Settings']]],
+  ['setcutshortcut_5',['setCutShortcut',['../classmyproject_1_1Settings.html#af899ea9e4b0db3844add3572d43a717c',1,'myproject::Settings']]],
+  ['setfpsvisible_6',['setFpsVisible',['../classmyproject_1_1Settings.html#ad9011ea62284028bde0fd492529298cd',1,'myproject::Settings']]],
+  ['setfullscreenshortcut_7',['setFullScreenShortcut',['../classmyproject_1_1Settings.html#afb6632600dde242082182298dfa4bfc4',1,'myproject::Settings']]],
+  ['setlanguage_8',['setLanguage',['../classmyproject_1_1Settings.html#a724460352906b6d11a80d9395676beea',1,'myproject::Settings']]],
+  ['setnewshortcut_9',['setNewShortcut',['../classmyproject_1_1Settings.html#a4cf08fce6d8b9d2721f40da992444dce',1,'myproject::Settings']]],
+  ['setopenshortcut_10',['setOpenShortcut',['../classmyproject_1_1Settings.html#aedb7ec5a225dc077c1377b2d769edbc4',1,'myproject::Settings']]],
+  ['setoptionsshortcut_11',['setOptionsShortcut',['../classmyproject_1_1Settings.html#a47af30e166f78fe478324fa0ed02429e',1,'myproject::Settings']]],
+  ['setoriginalsequence_12',['setOriginalSequence',['../classKeySequenceEditor.html#a9cd0a9658bb1963b598afd87c0ae6db0',1,'KeySequenceEditor']]],
+  ['setpasteshortcut_13',['setPasteShortcut',['../classmyproject_1_1Settings.html#a4365a02637afd321e6948b50c1571c34',1,'myproject::Settings']]],
+  ['setquitshortcut_14',['setQuitShortcut',['../classmyproject_1_1Settings.html#a912bd9f2cf554030010dedc4a136a4ff',1,'myproject::Settings']]],
+  ['setredoshortcut_15',['setRedoShortcut',['../classmyproject_1_1Settings.html#a847dbb74022d60df6703892190ca022d',1,'myproject::Settings']]],
+  ['setsaveasshortcut_16',['setSaveAsShortcut',['../classmyproject_1_1Settings.html#ab8945e6a735ce71b904c528c57570a80',1,'myproject::Settings']]],
+  ['setsaveshortcut_17',['setSaveShortcut',['../classmyproject_1_1Settings.html#a955a79a03d952ab1f539bb8fdd18f317',1,'myproject::Settings']]],
+  ['settings_18',['Settings',['../classmyproject_1_1Settings.html#a77d94277b9f1a36fb2392ecd6408e195',1,'myproject::Settings::Settings(QObject *parent=nullptr)'],['../classmyproject_1_1Settings.html#a647f36553e1263b1e41ec4a6b86006ed',1,'myproject::Settings::Settings(const QString &amp;organization, const QString &amp;application, QObject *parent=nullptr)']]],
+  ['settings_19',['settings',['../classmyproject_1_1Application.html#a7ad9f97f8b4cbc8d1a7d5bb49855321e',1,'myproject::Application']]],
+  ['setundoshortcut_20',['setUndoShortcut',['../classmyproject_1_1Settings.html#a60c36981ae4c1b2799c07dd75538a46d',1,'myproject::Settings']]],
+  ['setwindowopacity_21',['setWindowOpacity',['../classmyproject_1_1Settings.html#a4c87a4e06a00249786212ead10c458cb',1,'myproject::Settings']]],
+  ['singleton_22',['Singleton',['../classmyproject_1_1Singleton.html#aaa241e22e7f269b5e15def289c198f85',1,'myproject::Singleton::Singleton()=default'],['../classmyproject_1_1Singleton.html#adfc53a4501ee95bcddc5583c6e3f2f65',1,'myproject::Singleton::Singleton(const Singleton &amp;)=delete'],['../classmyproject_1_1Singleton.html#abb321bcae722cac17f222f8cb4af3acb',1,'myproject::Singleton::Singleton(Singleton &amp;&amp;)=delete']]]
+];

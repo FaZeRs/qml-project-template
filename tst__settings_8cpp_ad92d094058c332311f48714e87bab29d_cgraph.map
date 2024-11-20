@@ -1,0 +1,13 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,41,100,66"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a465a9e7e922710537f4527db63b11182" title="Emitted when the FPS visibility is changed." alt="" coords="345,5,496,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,38,113,27,148,19,242,11,332,13,331,19,243,16,148,24,115,32,84,43"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a42ad9d4d5f512fbb827795c83c393f2b" title="Returns the current FPS visibility for the application." alt="" coords="148,97,297,137"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="88,64,157,90,155,95,87,69"/>
+<area shape="rect" id="Node000005" href="$classmyproject_1_1Settings.html#ad9011ea62284028bde0fd492529298cd" title="Sets the current FPS visibility for the application." alt="" coords="148,33,297,73"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="100,51,134,51,134,56,100,56"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#a281627edb0185afa72671adcbaa86267" title="Returns the default FPS visibility for the application." alt="" coords="346,83,495,123"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="298,109,332,107,332,112,298,114"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="297,40,331,35,332,41,298,45"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="299,69,333,78,331,83,297,75"/>
+</map>

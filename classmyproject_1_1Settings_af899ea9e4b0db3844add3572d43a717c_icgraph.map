@@ -1,0 +1,7 @@
+<map id="myproject::Settings::setCutShortcut" name="myproject::Settings::setCutShortcut">
+<area shape="rect" id="Node000001" title="Sets the current cut shortcut for the application." alt="" coords="148,23,297,63"/>
+<area shape="rect" id="Node000002" href="$tst__settings_8cpp.html#a8a9d7d1bb87c5534e9174a0978389396" title=" " alt="" coords="5,5,100,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,33,100,28,101,22,135,28"/>
+<area shape="rect" id="Node000003" href="$tst__settings_8cpp.html#a21102cab53cc05cb45a7ceda014091d7" title=" " alt="" coords="5,55,100,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,58,101,63,100,58,134,53"/>
+</map>

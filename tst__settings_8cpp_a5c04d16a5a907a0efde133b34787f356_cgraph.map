@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#ad40518c9fd66d8e1cb85ec017715e7af" title="Emitted when the language is changed." alt="" coords="345,5,495,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,331,30,332,35,100,54"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a724460352906b6d11a80d9395676beea" title="Sets the current language for the application." alt="" coords="148,63,297,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="291,60,337,47,338,52,293,65"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#a68e9757c5f627d4ec48776d8f8f9bad2" title="Returns the default language for the application." alt="" coords="345,69,495,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="298,83,331,84,331,89,298,88"/>
+</map>

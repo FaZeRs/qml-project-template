@@ -1,0 +1,7 @@
+<map id="myproject::Settings::setPasteShortcut" name="myproject::Settings::setPasteShortcut">
+<area shape="rect" id="Node000001" title="Sets the current paste shortcut for the application." alt="" coords="5,37,155,77"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#ae02e97b96b97a3f3c6d0fd9821c98af9" title="Returns the default paste shortcut for the application." alt="" coords="209,5,374,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,43,195,37,196,43,155,49"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a998c69fdb351bf80358452fac40e4c98" title="Emitted when the paste shortcut is changed." alt="" coords="203,69,380,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,66,189,71,189,76,154,71"/>
+</map>

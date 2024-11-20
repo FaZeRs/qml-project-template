@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a5fdde332391adf74abb89c5ff97b067d" title="Emitted when the open shortcut is changed." alt="" coords="345,5,519,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,331,30,332,36,100,54"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#aedb7ec5a225dc077c1377b2d769edbc4" title="Sets the current open shortcut for the application." alt="" coords="148,63,297,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="296,60,345,46,346,52,297,65"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#a65bca73ffafab7c0eec57cdfa1509e12" title="Returns the default open shortcut for the application." alt="" coords="350,69,514,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="298,82,336,84,336,89,297,88"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="myproject::Settings::pasteShortcut" name="myproject::Settings::pasteShortcut">
+<area shape="rect" id="Node000001" title="Returns the current paste shortcut for the application." alt="" coords="5,5,155,45"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#ae02e97b96b97a3f3c6d0fd9821c98af9" title="Returns the default paste shortcut for the application." alt="" coords="203,5,368,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,23,189,23,189,28,155,28"/>
+</map>

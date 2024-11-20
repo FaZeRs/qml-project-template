@@ -1,0 +1,13 @@
+<map id="tests/tst_settings.cpp" name="tests/tst_settings.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="134,5,295,31"/>
+<area shape="rect" id="Node000002" href="$settings_8h.html" title=" " alt="" coords="55,79,142,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,33,131,74,128,69,195,28"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="167,79,263,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="217,31,217,65,212,65,212,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="287,79,505,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="245,28,355,71,353,76,243,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,91,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,106,66,142,62,139,88,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="115,152,186,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="109,103,136,139,132,142,105,106"/>
+</map>

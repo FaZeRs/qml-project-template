@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#aa9e7d595ec8f1dca931ca644b528b692" title="Emitted when the cut shortcut is changed." alt="" coords="345,5,507,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,331,30,332,35,100,54"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#af899ea9e4b0db3844add3572d43a717c" title="Sets the current cut shortcut for the application." alt="" coords="148,63,297,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="293,60,341,47,342,52,295,65"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#aae5e192a3d5dcb20bd4b8142febcb3be" title="Returns the default cut shortcut for the application." alt="" coords="350,69,502,109"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="298,82,336,84,336,89,297,88"/>
+</map>

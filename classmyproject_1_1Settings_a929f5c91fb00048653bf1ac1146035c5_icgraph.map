@@ -1,0 +1,14 @@
+<map id="myproject::Settings::defaultSaveAsShortcut" name="myproject::Settings::defaultSaveAsShortcut">
+<area shape="rect" id="Node000001" title="Returns the default save as shortcut for the application." alt="" coords="348,92,527,132"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#adb649acf8217908c3c61221364844bef" title="Returns the current save as shortcut for the application." alt="" coords="149,5,299,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="374,89,273,48,275,43,376,84"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#ab8945e6a735ce71b904c528c57570a80" title="Sets the current save as shortcut for the application." alt="" coords="148,120,300,160"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="335,128,301,133,300,127,334,123"/>
+<area shape="rect" id="Node000004" href="$tst__settings_8cpp.html#a21102cab53cc05cb45a7ceda014091d7" title=" " alt="" coords="5,74,100,99"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="334,108,100,92,101,87,335,103"/>
+<area shape="rect" id="Node000006" href="$tst__settings_8cpp.html#ad9d8c2ff30fae39b4ceba73773acf481" title=" " alt="" coords="177,185,271,210"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="382,140,301,174,266,187,264,182,299,170,380,135"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="146,118,93,102,95,97,147,113"/>
+<area shape="rect" id="Node000005" href="$tst__settings_8cpp.html#a15df0ad6cf261c017da426744e803b0b" title=" " alt="" coords="5,127,100,153"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="134,143,100,143,100,137,134,137"/>
+</map>

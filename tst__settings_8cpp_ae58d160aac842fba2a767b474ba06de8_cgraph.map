@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#ab2da2035bc125ce50e038b3a80ea7030" title="Emitted when the copy shortcut is changed." alt="" coords="345,5,517,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,331,30,332,36,100,54"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#ad43ee86f519ad9e358dc24b62eb6735d" title="Sets the current copy shortcut for the application." alt="" coords="148,63,297,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="295,60,344,46,346,52,297,65"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#a5b57c90ed6e15c4fa81363ad9219fa5e" title="Returns the default copy shortcut for the application." alt="" coords="350,69,513,109"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="298,82,336,84,336,89,298,88"/>
+</map>

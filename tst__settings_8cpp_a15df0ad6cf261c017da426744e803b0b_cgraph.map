@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a33b25c1e4b03f98374c091940d51efec" title="Emitted when the save as shortcut is changed." alt="" coords="348,5,536,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,334,31,335,36,100,54"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#ab8945e6a735ce71b904c528c57570a80" title="Sets the current save as shortcut for the application." alt="" coords="148,63,300,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="299,60,352,46,353,51,301,65"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#a929f5c91fb00048653bf1ac1146035c5" title="Returns the default save as shortcut for the application." alt="" coords="353,69,531,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="300,82,339,84,339,89,300,88"/>
+</map>

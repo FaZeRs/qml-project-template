@@ -1,0 +1,7 @@
+<map id="myproject::Settings::setCutShortcut" name="myproject::Settings::setCutShortcut">
+<area shape="rect" id="Node000001" title="Sets the current cut shortcut for the application." alt="" coords="5,37,155,77"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#aa9e7d595ec8f1dca931ca644b528b692" title="Emitted when the cut shortcut is changed." alt="" coords="203,5,364,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,43,189,38,189,43,155,48"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#aae5e192a3d5dcb20bd4b8142febcb3be" title="Returns the default cut shortcut for the application." alt="" coords="207,69,359,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,66,194,73,193,78,154,72"/>
+</map>

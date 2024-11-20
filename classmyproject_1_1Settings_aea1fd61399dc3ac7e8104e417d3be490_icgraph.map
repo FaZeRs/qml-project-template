@@ -1,0 +1,14 @@
+<map id="myproject::Settings::defaultRedoShortcut" name="myproject::Settings::defaultRedoShortcut">
+<area shape="rect" id="Node000001" title="Returns the default redo shortcut for the application." alt="" coords="345,99,508,139"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a9480f4c76fcdc257625916421a6d61eb" title="Returns the current redo shortcut for the application." alt="" coords="148,5,297,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="371,95,296,60,270,48,272,43,298,55,373,90"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a847dbb74022d60df6703892190ca022d" title="Sets the current redo shortcut for the application." alt="" coords="148,69,297,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="331,108,297,103,298,97,332,102"/>
+<area shape="rect" id="Node000005" href="$tst__settings_8cpp.html#a21102cab53cc05cb45a7ceda014091d7" title=" " alt="" coords="5,130,100,155"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="332,127,100,142,100,137,332,122"/>
+<area shape="rect" id="Node000006" href="$tst__settings_8cpp.html#ad9d8c2ff30fae39b4ceba73773acf481" title=" " alt="" coords="175,185,270,210"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="363,146,258,187,256,182,361,141"/>
+<area shape="rect" id="Node000004" href="$tst__settings_8cpp.html#a982a6c91bbbc31664f39a0b84b02c062" title=" " alt="" coords="5,77,100,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="134,92,100,92,100,87,134,87"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="146,116,95,133,93,127,145,111"/>
+</map>

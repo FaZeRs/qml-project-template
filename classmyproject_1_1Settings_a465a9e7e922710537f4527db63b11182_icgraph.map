@@ -1,0 +1,8 @@
+<map id="myproject::Settings::fpsVisibleChanged" name="myproject::Settings::fpsVisibleChanged">
+<area shape="rect" id="Node000001" title="Emitted when the FPS visibility is changed." alt="" coords="345,35,496,75"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#ad9011ea62284028bde0fd492529298cd" title="Sets the current FPS visibility for the application." alt="" coords="148,5,297,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="331,44,297,39,298,34,332,39"/>
+<area shape="rect" id="Node000003" href="$tst__settings_8cpp.html#ad92d094058c332311f48714e87bab29d" title=" " alt="" coords="5,42,100,67"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="332,59,297,60,148,60,100,59,100,54,148,55,297,55,332,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,43,101,49,100,44,134,38"/>
+</map>

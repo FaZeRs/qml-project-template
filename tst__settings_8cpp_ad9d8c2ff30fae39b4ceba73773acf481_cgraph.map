@@ -1,0 +1,33 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,461,100,486"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a5b57c90ed6e15c4fa81363ad9219fa5e" title="Returns the default copy shortcut for the application." alt="" coords="165,5,328,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,460,62,379,80,258,108,137,126,89,146,56,152,50,156,54,150,59,130,91,113,138,85,259,67,380,58,461"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#aae5e192a3d5dcb20bd4b8142febcb3be" title="Returns the default cut shortcut for the application." alt="" coords="171,69,323,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="51,460,51,400,62,309,73,259,90,209,114,161,146,120,157,110,161,114,150,123,119,164,95,211,78,260,67,310,57,400,56,460"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#a281627edb0185afa72671adcbaa86267" title="Returns the default FPS visibility for the application." alt="" coords="172,133,321,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="52,460,56,409,69,336,81,295,97,255,119,217,146,183,158,174,162,178,150,187,123,220,102,257,86,297,74,337,61,410,57,461"/>
+<area shape="rect" id="Node000005" href="$classmyproject_1_1Settings.html#a1356f33fbca31fb90758636fe2621b6e" title="Returns the default full screen shortcut for the application." alt="" coords="148,197,345,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="53,460,61,419,77,362,104,301,123,273,146,247,152,243,155,247,150,251,128,276,109,304,82,364,66,421,58,461"/>
+<area shape="rect" id="Node000006" href="$classmyproject_1_1Settings.html#a68e9757c5f627d4ec48776d8f8f9bad2" title="Returns the default language for the application." alt="" coords="172,261,321,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="56,460,67,429,85,390,112,348,146,311,158,303,161,307,150,315,116,351,90,392,72,431,61,461"/>
+<area shape="rect" id="Node000007" href="$classmyproject_1_1Settings.html#ae1758a160f0afd96feaed24ddcdd6189" title="Returns the default new shortcut for the application." alt="" coords="167,325,326,365"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="61,458,96,418,120,395,147,375,158,369,160,373,149,380,123,399,100,421,66,462"/>
+<area shape="rect" id="Node000008" href="$classmyproject_1_1Settings.html#a65bca73ffafab7c0eec57cdfa1509e12" title="Returns the default open shortcut for the application." alt="" coords="165,389,329,429"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="90,458,147,439,170,431,172,436,149,444,92,463"/>
+<area shape="rect" id="Node000009" href="$classmyproject_1_1Settings.html#ab1a1ef6af237d00cc3f1e7ce9b282538" title="Returns the default options shortcut for the application." alt="" coords="157,453,337,493"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="100,471,143,471,143,476,100,476"/>
+<area shape="rect" id="Node000010" href="$classmyproject_1_1Settings.html#ae02e97b96b97a3f3c6d0fd9821c98af9" title="Returns the default paste shortcut for the application." alt="" coords="164,517,329,557"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="92,484,149,503,172,510,170,516,147,508,90,489"/>
+<area shape="rect" id="Node000011" href="$classmyproject_1_1Settings.html#ab1d031494a6ee6b8a4bf6ddd576407bf" title="Returns the default quit shortcut for the application." alt="" coords="168,581,325,621"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="66,485,100,525,123,548,149,567,160,573,158,578,147,572,120,552,96,529,61,488"/>
+<area shape="rect" id="Node000012" href="$classmyproject_1_1Settings.html#aea1fd61399dc3ac7e8104e417d3be490" title="Returns the default redo shortcut for the application." alt="" coords="165,645,328,685"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="61,485,72,515,90,555,116,596,150,631,156,636,153,640,146,635,112,599,85,557,67,517,56,487"/>
+<area shape="rect" id="Node000013" href="$classmyproject_1_1Settings.html#a929f5c91fb00048653bf1ac1146035c5" title="Returns the default save as shortcut for the application." alt="" coords="157,709,336,749"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="58,486,66,526,82,582,109,643,128,671,150,695,155,700,152,704,146,699,123,674,104,645,77,584,61,527,53,487"/>
+<area shape="rect" id="Node000014" href="$classmyproject_1_1Settings.html#a5fcefff42c541af58a34cb865d18fcf4" title="Returns the default save shortcut for the application." alt="" coords="165,773,328,813"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="57,486,61,537,74,610,86,650,102,690,123,727,150,759,156,765,152,769,146,763,119,730,97,692,81,652,69,611,56,537,52,487"/>
+<area shape="rect" id="Node000015" href="$classmyproject_1_1Settings.html#ab1555e99c76110b4053f40982a43bb31" title="Returns the default undo shortcut for the application." alt="" coords="165,837,329,877"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="56,486,57,546,67,636,78,686,95,736,119,782,150,824,155,828,151,832,146,827,114,785,90,738,73,688,62,637,51,547,51,486"/>
+<area shape="rect" id="Node000016" href="$classmyproject_1_1Settings.html#a457da351a648b3f2f9d85605cdb78572" title="Returns the default window opacity for the application." alt="" coords="157,901,336,941"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="58,486,67,567,85,688,113,808,130,856,150,888,154,891,150,895,146,891,126,858,108,810,80,689,62,567,53,486"/>
+</map>

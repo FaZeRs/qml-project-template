@@ -1,0 +1,7 @@
+<map id="myproject::Settings::setRedoShortcut" name="myproject::Settings::setRedoShortcut">
+<area shape="rect" id="Node000001" title="Sets the current redo shortcut for the application." alt="" coords="5,37,155,77"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#aea1fd61399dc3ac7e8104e417d3be490" title="Returns the default redo shortcut for the application." alt="" coords="207,5,369,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,43,193,37,193,43,155,49"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a8499cefc0bd93d35c326dd8db18b5096" title="Emitted when the redo shortcut is changed." alt="" coords="203,69,373,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,66,189,71,189,77,154,71"/>
+</map>

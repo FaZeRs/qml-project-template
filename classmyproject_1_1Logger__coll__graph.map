@@ -1,0 +1,5 @@
+<map id="myproject::Logger" name="myproject::Logger">
+<area shape="rect" id="Node000001" title="The Logger class is a singleton that manages the application logging." alt="" coords="14,93,154,119"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Singleton.html" title=" " alt="" coords="5,5,163,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,59,87,93,81,93,81,59"/>
+</map>

@@ -1,0 +1,89 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,741,100,766"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a5b57c90ed6e15c4fa81363ad9219fa5e" title="Returns the default copy shortcut for the application." alt="" coords="411,11,574,51"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,741,51,612,59,406,70,297,87,197,112,116,128,84,146,61,173,40,203,25,234,14,268,7,335,3,398,8,397,14,335,8,269,12,236,19,205,29,176,45,150,65,132,87,117,118,93,199,76,298,65,406,56,612,56,741"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#aae5e192a3d5dcb20bd4b8142febcb3be" title="Returns the default cut shortcut for the application." alt="" coords="417,139,569,179"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="51,741,55,633,67,466,79,378,96,298,118,233,131,208,146,189,174,168,204,152,237,142,271,135,340,132,403,137,403,143,340,137,272,141,239,147,206,157,177,172,150,193,135,211,122,235,101,300,84,379,73,467,60,634,57,741"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#a1356f33fbca31fb90758636fe2621b6e" title="Returns the default full screen shortcut for the application." alt="" coords="394,267,591,307"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="52,740,59,654,75,524,88,456,103,395,123,345,146,312,172,293,201,278,232,268,264,262,328,258,388,262,388,268,328,263,264,267,233,273,203,283,175,297,150,315,127,347,108,396,93,457,80,524,64,654,57,741"/>
+<area shape="rect" id="Node000005" href="$classmyproject_1_1Settings.html#ae1758a160f0afd96feaed24ddcdd6189" title="Returns the default new shortcut for the application." alt="" coords="413,395,572,435"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="53,740,63,674,83,578,110,485,127,450,146,426,175,408,207,394,240,386,274,381,342,381,404,390,404,395,342,387,275,387,241,391,208,399,178,412,150,430,132,452,115,487,88,580,69,675,58,741"/>
+<area shape="rect" id="Node000006" href="$classmyproject_1_1Settings.html#a65bca73ffafab7c0eec57cdfa1509e12" title="Returns the default open shortcut for the application." alt="" coords="411,523,575,563"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="52,740,59,699,74,644,86,614,102,586,122,561,147,541,178,524,211,513,245,506,281,503,350,507,411,517,410,522,349,512,281,509,246,512,212,518,180,529,149,545,126,565,106,589,91,617,79,645,64,700,58,741"/>
+<area shape="rect" id="Node000007" href="$classmyproject_1_1Settings.html#ab1a1ef6af237d00cc3f1e7ce9b282538" title="Returns the default options shortcut for the application." alt="" coords="403,651,583,691"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="59,739,93,696,118,673,147,655,179,644,212,637,281,632,347,636,406,645,405,651,346,641,281,637,213,642,180,649,149,660,121,677,97,699,64,742"/>
+<area shape="rect" id="Node000008" href="$classmyproject_1_1Settings.html#ae02e97b96b97a3f3c6d0fd9821c98af9" title="Returns the default paste shortcut for the application." alt="" coords="410,779,575,819"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="85,764,149,783,212,792,277,797,396,800,396,805,277,803,212,797,147,788,84,769"/>
+<area shape="rect" id="Node000009" href="$classmyproject_1_1Settings.html#ab1d031494a6ee6b8a4bf6ddd576407bf" title="Returns the default quit shortcut for the application." alt="" coords="414,907,571,947"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="60,766,71,795,89,831,115,869,149,898,179,913,210,924,276,937,341,941,400,938,401,944,341,946,275,943,209,929,177,918,147,902,111,872,85,834,66,797,55,768"/>
+<area shape="rect" id="Node000010" href="$classmyproject_1_1Settings.html#aea1fd61399dc3ac7e8104e417d3be490" title="Returns the default redo shortcut for the application." alt="" coords="411,1035,574,1075"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="57,766,61,814,74,882,86,918,102,954,123,986,150,1013,167,1023,191,1031,254,1043,327,1049,397,1052,397,1057,326,1055,253,1048,190,1036,165,1027,146,1017,119,989,97,956,81,920,69,883,55,815,52,767"/>
+<area shape="rect" id="Node000011" href="$classmyproject_1_1Settings.html#a929f5c91fb00048653bf1ac1146035c5" title="Returns the default save as shortcut for the application." alt="" coords="403,1163,582,1203"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="58,766,67,841,86,951,113,1059,131,1100,150,1128,166,1138,189,1147,249,1162,320,1171,390,1177,390,1182,319,1176,248,1167,187,1152,163,1143,146,1131,126,1103,108,1061,81,952,62,842,53,767"/>
+<area shape="rect" id="Node000012" href="$classmyproject_1_1Settings.html#a5fcefff42c541af58a34cb865d18fcf4" title="Returns the default save shortcut for the application." alt="" coords="411,1291,574,1331"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="57,766,63,861,79,1005,91,1080,107,1149,126,1205,138,1227,150,1242,182,1256,244,1270,398,1295,397,1301,243,1275,180,1261,146,1246,133,1229,122,1207,102,1150,86,1081,74,1006,58,861,52,767"/>
+<area shape="rect" id="Node000013" href="$classmyproject_1_1Settings.html#ab1555e99c76110b4053f40982a43bb31" title="Returns the default undo shortcut for the application." alt="" coords="411,1419,575,1459"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="57,767,60,880,73,1059,84,1152,101,1239,122,1310,135,1337,150,1357,177,1367,239,1382,398,1417,396,1422,238,1388,176,1372,146,1361,131,1340,117,1312,96,1240,79,1153,67,1059,55,880,51,767"/>
+<area shape="rect" id="Node000014" href="$classmyproject_1_1Settings.html#a7666b417762dc9f2a08db63db89297fe" title="Resets all shortcuts to their default values." alt="" coords="148,734,341,774"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="100,751,134,751,134,756,100,756"/>
+<area shape="rect" id="Node000015" href="$classmyproject_1_1Settings.html#ad43ee86f519ad9e358dc24b62eb6735d" title="Sets the current copy shortcut for the application." alt="" coords="170,75,319,115"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="52,740,57,628,72,449,84,355,100,267,121,193,133,164,146,141,168,120,172,124,150,145,137,166,126,195,106,268,90,356,78,450,63,628,57,741"/>
+<area shape="rect" id="Node000017" href="$classmyproject_1_1Settings.html#af899ea9e4b0db3844add3572d43a717c" title="Sets the current cut shortcut for the application." alt="" coords="170,203,319,243"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="52,740,61,649,79,508,91,434,107,366,125,308,146,268,168,248,172,252,150,271,130,310,112,367,96,435,84,509,66,649,58,741"/>
+<area shape="rect" id="Node000019" href="$classmyproject_1_1Settings.html#afb6632600dde242082182298dfa4bfc4" title="Sets the current full screen shortcut for the application." alt="" coords="159,326,330,366"/>
+<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="51,740,51,678,61,584,73,531,90,478,114,428,146,382,158,371,162,375,150,386,119,430,95,480,78,532,67,585,57,679,56,741"/>
+<area shape="rect" id="Node000021" href="$classmyproject_1_1Settings.html#a4cf08fce6d8b9d2721f40da992444dce" title="Sets the current new shortcut for the application." alt="" coords="170,440,319,480"/>
+<area shape="poly" id="edge23_Node000001_Node000021" title=" " alt="" coords="53,740,59,695,74,630,102,560,122,527,146,497,160,485,164,489,150,501,126,530,107,562,80,632,64,696,58,741"/>
+<area shape="rect" id="Node000023" href="$classmyproject_1_1Settings.html#aedb7ec5a225dc077c1377b2d769edbc4" title="Sets the current open shortcut for the application." alt="" coords="170,555,319,595"/>
+<area shape="poly" id="edge26_Node000001_Node000023" title=" " alt="" coords="57,740,89,679,115,643,146,611,165,599,168,603,150,616,119,647,94,682,62,742"/>
+<area shape="rect" id="Node000025" href="$classmyproject_1_1Settings.html#a47af30e166f78fe478324fa0ed02429e" title="Sets the current options shortcut for the application." alt="" coords="167,670,322,710"/>
+<area shape="poly" id="edge29_Node000001_Node000025" title=" " alt="" coords="91,738,147,719,170,711,171,716,149,724,92,743"/>
+<area shape="rect" id="Node000027" href="$classmyproject_1_1Settings.html#a4365a02637afd321e6948b50c1571c34" title="Sets the current paste shortcut for the application." alt="" coords="170,848,319,888"/>
+<area shape="poly" id="edge32_Node000001_Node000027" title=" " alt="" coords="69,764,104,795,149,827,175,840,172,845,147,832,101,799,65,768"/>
+<area shape="rect" id="Node000029" href="$classmyproject_1_1Settings.html#a912bd9f2cf554030010dedc4a136a4ff" title="Sets the current quit shortcut for the application." alt="" coords="170,963,319,1003"/>
+<area shape="poly" id="edge35_Node000001_Node000029" title=" " alt="" coords="60,766,69,801,87,848,114,898,150,942,165,954,162,958,146,946,109,901,82,850,64,802,54,767"/>
+<area shape="rect" id="Node000031" href="$classmyproject_1_1Settings.html#a847dbb74022d60df6703892190ca022d" title="Sets the current redo shortcut for the application." alt="" coords="170,1078,319,1118"/>
+<area shape="poly" id="edge38_Node000001_Node000031" title=" " alt="" coords="57,766,61,819,74,896,86,939,102,981,123,1021,150,1057,163,1068,159,1072,146,1061,118,1024,97,983,80,940,69,897,55,819,52,767"/>
+<area shape="rect" id="Node000033" href="$classmyproject_1_1Settings.html#ab8945e6a735ce71b904c528c57570a80" title="Sets the current save as shortcut for the application." alt="" coords="169,1192,321,1232"/>
+<area shape="poly" id="edge41_Node000001_Node000033" title=" " alt="" coords="58,766,67,847,86,969,114,1091,131,1139,150,1172,162,1183,158,1187,146,1175,126,1141,109,1092,81,970,62,848,53,767"/>
+<area shape="rect" id="Node000035" href="$classmyproject_1_1Settings.html#a955a79a03d952ab1f539bb8fdd18f317" title="Sets the current save shortcut for the application." alt="" coords="170,1307,319,1347"/>
+<area shape="poly" id="edge44_Node000001_Node000035" title=" " alt="" coords="57,766,64,867,80,1023,92,1105,108,1181,127,1244,150,1287,161,1297,157,1301,146,1290,122,1246,103,1182,87,1106,74,1023,59,867,52,767"/>
+<area shape="rect" id="Node000037" href="$classmyproject_1_1Settings.html#a60c36981ae4c1b2799c07dd75538a46d" title="Sets the current undo shortcut for the application." alt="" coords="170,1422,319,1462"/>
+<area shape="poly" id="edge47_Node000001_Node000037" title=" " alt="" coords="57,766,61,885,74,1076,85,1177,102,1270,123,1348,136,1378,150,1401,161,1412,157,1416,146,1405,131,1381,118,1350,96,1272,80,1178,68,1076,55,886,52,766"/>
+<area shape="poly" id="edge16_Node000015_Node000002" title=" " alt="" coords="319,73,401,52,402,57,320,78"/>
+<area shape="rect" id="Node000016" href="$classmyproject_1_1Settings.html#ab2da2035bc125ce50e038b3a80ea7030" title="Emitted when the copy shortcut is changed." alt="" coords="407,75,579,115"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="320,92,393,92,393,98,320,98"/>
+<area shape="poly" id="edge19_Node000017_Node000003" title=" " alt="" coords="319,201,403,179,404,184,320,206"/>
+<area shape="rect" id="Node000018" href="$classmyproject_1_1Settings.html#aa9e7d595ec8f1dca931ca644b528b692" title="Emitted when the cut shortcut is changed." alt="" coords="412,203,573,243"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="320,220,398,220,398,226,320,226"/>
+<area shape="poly" id="edge21_Node000019_Node000004" title=" " alt="" coords="329,323,394,307,395,313,330,328"/>
+<area shape="rect" id="Node000020" href="$classmyproject_1_1Settings.html#a97cd8f29bdc99337862619fe56dcf235" title="Emitted when the full screen shortcut is changed." alt="" coords="389,331,596,371"/>
+<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="330,345,376,346,376,351,330,350"/>
+<area shape="poly" id="edge24_Node000021_Node000005" title=" " alt="" coords="319,444,399,429,400,434,320,449"/>
+<area shape="rect" id="Node000022" href="$classmyproject_1_1Settings.html#a81e53e5d111a3c2d92e037d07c3b7fe7" title="Emitted when the new shortcut is changed." alt="" coords="409,459,577,499"/>
+<area shape="poly" id="edge25_Node000021_Node000022" title=" " alt="" coords="320,463,395,469,395,474,319,468"/>
+<area shape="poly" id="edge27_Node000023_Node000006" title=" " alt="" coords="319,563,397,552,398,558,320,568"/>
+<area shape="rect" id="Node000024" href="$classmyproject_1_1Settings.html#a5fdde332391adf74abb89c5ff97b067d" title="Emitted when the open shortcut is changed." alt="" coords="406,587,579,627"/>
+<area shape="poly" id="edge28_Node000023_Node000024" title=" " alt="" coords="320,582,393,591,392,597,319,587"/>
+<area shape="poly" id="edge30_Node000025_Node000007" title=" " alt="" coords="322,681,389,676,389,681,322,686"/>
+<area shape="rect" id="Node000026" href="$classmyproject_1_1Settings.html#a9288082a6302c1f7a7673ff5d3087856" title="Emitted when the options shortcut is changed." alt="" coords="398,715,587,755"/>
+<area shape="poly" id="edge31_Node000025_Node000026" title=" " alt="" coords="323,701,385,712,384,718,322,706"/>
+<area shape="poly" id="edge33_Node000027_Node000008" title=" " alt="" coords="316,846,407,820,408,825,318,851"/>
+<area shape="rect" id="Node000028" href="$classmyproject_1_1Settings.html#a998c69fdb351bf80358452fac40e4c98" title="Emitted when the paste shortcut is changed." alt="" coords="404,843,581,883"/>
+<area shape="poly" id="edge34_Node000027_Node000028" title=" " alt="" coords="320,864,390,862,390,868,320,869"/>
+<area shape="poly" id="edge36_Node000029_Node000009" title=" " alt="" coords="319,963,400,945,401,950,320,969"/>
+<area shape="rect" id="Node000030" href="$classmyproject_1_1Settings.html#aad13bda42478ac1136c430547bc1e37d" title="Emitted when the quit shortcut is changed." alt="" coords="409,971,576,1011"/>
+<area shape="poly" id="edge37_Node000029_Node000030" title=" " alt="" coords="320,983,396,985,396,990,320,988"/>
+<area shape="poly" id="edge39_Node000031_Node000010" title=" " alt="" coords="319,1082,397,1069,398,1074,320,1087"/>
+<area shape="rect" id="Node000032" href="$classmyproject_1_1Settings.html#a8499cefc0bd93d35c326dd8db18b5096" title="Emitted when the redo shortcut is changed." alt="" coords="407,1099,578,1139"/>
+<area shape="poly" id="edge40_Node000031_Node000032" title=" " alt="" coords="320,1101,394,1108,393,1113,319,1107"/>
+<area shape="poly" id="edge42_Node000033_Node000011" title=" " alt="" coords="321,1201,389,1192,390,1198,321,1206"/>
+<area shape="rect" id="Node000034" href="$classmyproject_1_1Settings.html#a33b25c1e4b03f98374c091940d51efec" title="Emitted when the save as shortcut is changed." alt="" coords="399,1227,587,1267"/>
+<area shape="poly" id="edge43_Node000033_Node000034" title=" " alt="" coords="321,1220,386,1229,385,1235,321,1225"/>
+<area shape="poly" id="edge45_Node000035_Node000012" title=" " alt="" coords="319,1319,397,1314,398,1320,320,1325"/>
+<area shape="rect" id="Node000036" href="$classmyproject_1_1Settings.html#aadae73a9e78d1557623317608436a5f4" title="Emitted when the save shortcut is changed." alt="" coords="407,1355,579,1395"/>
+<area shape="poly" id="edge46_Node000035_Node000036" title=" " alt="" coords="320,1339,394,1353,393,1358,319,1344"/>
+<area shape="poly" id="edge48_Node000037_Node000013" title=" " alt="" coords="320,1438,397,1437,397,1443,320,1443"/>
+<area shape="rect" id="Node000038" href="$classmyproject_1_1Settings.html#aa6224265e46ecb58339f4d101831293e" title="Emitted when the undo shortcut is changed." alt="" coords="406,1483,579,1523"/>
+<area shape="poly" id="edge49_Node000037_Node000038" title=" " alt="" coords="320,1457,399,1477,397,1482,319,1463"/>
+</map>

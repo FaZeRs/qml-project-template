@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a998c69fdb351bf80358452fac40e4c98" title="Emitted when the paste shortcut is changed." alt="" coords="345,5,523,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,331,31,332,36,100,54"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a4365a02637afd321e6948b50c1571c34" title="Sets the current paste shortcut for the application." alt="" coords="148,63,297,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="296,60,346,46,347,52,298,65"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#ae02e97b96b97a3f3c6d0fd9821c98af9" title="Returns the default paste shortcut for the application." alt="" coords="351,69,517,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="298,82,338,84,338,89,297,88"/>
+</map>

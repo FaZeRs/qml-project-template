@@ -1,0 +1,7 @@
+<map id="myproject::Settings::setOptionsShortcut" name="myproject::Settings::setOptionsShortcut">
+<area shape="rect" id="Node000001" title="Sets the current options shortcut for the application." alt="" coords="5,37,160,77"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#ab1a1ef6af237d00cc3f1e7ce9b282538" title="Returns the default options shortcut for the application." alt="" coords="213,5,393,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,44,198,38,199,43,160,49"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a9288082a6302c1f7a7673ff5d3087856" title="Emitted when the options shortcut is changed." alt="" coords="208,69,397,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,66,195,71,194,76,160,71"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="myproject::Settings::newShortcut" name="myproject::Settings::newShortcut">
+<area shape="rect" id="Node000001" title="Returns the current new shortcut for the application." alt="" coords="5,5,155,45"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#ae1758a160f0afd96feaed24ddcdd6189" title="Returns the default new shortcut for the application." alt="" coords="203,5,361,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,23,189,23,189,28,155,28"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="myproject::Settings::windowOpacity" name="myproject::Settings::windowOpacity">
+<area shape="rect" id="Node000001" title="Returns the current window opacity for the application." alt="" coords="5,5,155,45"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a457da351a648b3f2f9d85605cdb78572" title="Returns the default window opacity for the application." alt="" coords="203,5,381,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,23,189,23,189,28,155,28"/>
+</map>

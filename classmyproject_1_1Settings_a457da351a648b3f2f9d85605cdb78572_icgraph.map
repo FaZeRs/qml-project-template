@@ -1,0 +1,7 @@
+<map id="myproject::Settings::defaultWindowOpacity" name="myproject::Settings::defaultWindowOpacity">
+<area shape="rect" id="Node000001" title="Returns the default window opacity for the application." alt="" coords="203,27,381,67"/>
+<area shape="rect" id="Node000002" href="$tst__settings_8cpp.html#ad9d8c2ff30fae39b4ceba73773acf481" title=" " alt="" coords="33,5,127,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,36,127,27,128,22,190,30"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a218dac451845e014fd29c39a5633fd69" title="Returns the current window opacity for the application." alt="" coords="5,55,155,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,64,155,68,154,63,189,58"/>
+</map>

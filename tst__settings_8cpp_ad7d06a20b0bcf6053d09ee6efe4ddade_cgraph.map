@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a9288082a6302c1f7a7673ff5d3087856" title="Emitted when the options shortcut is changed." alt="" coords="351,5,540,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,49,337,31,337,36,100,54"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a47af30e166f78fe478324fa0ed02429e" title="Sets the current options shortcut for the application." alt="" coords="148,63,303,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="302,60,354,46,356,51,303,65"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#ab1a1ef6af237d00cc3f1e7ce9b282538" title="Returns the default options shortcut for the application." alt="" coords="355,69,535,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="303,82,342,84,341,89,303,88"/>
+</map>

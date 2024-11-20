@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#aad13bda42478ac1136c430547bc1e37d" title="Emitted when the quit shortcut is changed." alt="" coords="345,5,512,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,331,30,332,36,100,54"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a912bd9f2cf554030010dedc4a136a4ff" title="Sets the current quit shortcut for the application." alt="" coords="148,63,297,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="294,60,342,47,344,52,296,65"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#ab1d031494a6ee6b8a4bf6ddd576407bf" title="Returns the default quit shortcut for the application." alt="" coords="350,69,507,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="297,82,337,84,336,89,297,88"/>
+</map>
