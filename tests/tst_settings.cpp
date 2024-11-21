@@ -8,6 +8,7 @@ TEST_CASE("Test default values", "[Settings]") {
   REQUIRE(settings.defaultLanguage() == "en_GB");
   REQUIRE(settings.defaultWindowOpacity() == 1.0);
   REQUIRE(settings.defaultFpsVisible() == false);
+  REQUIRE(settings.defaultAppTheme() == "System");
   REQUIRE(settings.defaultNewShortcut() == "Ctrl+N");
   REQUIRE(settings.defaultOpenShortcut() == "Ctrl+O");
   REQUIRE(settings.defaultSaveShortcut() == "Ctrl+S");
@@ -65,6 +66,21 @@ TEST_CASE("Test fps visible", "[Settings]") {
   settings.setFpsVisible(false);
   REQUIRE(spy2.count() == 0);
   REQUIRE(settings.isFpsVisible() == false);
+}
+
+TEST_CASE("Test app theme", "[Settings]") {
+  myproject::Settings settings("MyOrg", "MyApp");
+  settings.setAppTheme("Dark");
+  REQUIRE(settings.appTheme() == "Dark");
+  QSignalSpy spy(&settings, &myproject::Settings::appThemeChanged);
+  settings.setAppTheme("Light");
+  REQUIRE(spy.count() == 1);
+  REQUIRE(settings.appTheme() == "Light");
+
+  QSignalSpy spy2(&settings, &myproject::Settings::appThemeChanged);
+  settings.setAppTheme("Light");
+  REQUIRE(spy2.count() == 0);
+  REQUIRE(settings.appTheme() == "Light");
 }
 
 TEST_CASE("Test new shortcut", "[Settings]") {
