@@ -9,15 +9,17 @@ ColumnLayout {
     id: settingsTab
 
     function applyChangesToSettings() {
-        settings.language = languageComboBox.currentValue
-        settings.fpsVisible = showFpsCheckBox.checked
-        settings.windowOpacity = windowOpacitySlider.value
+        settings.language = languageComboBox.currentValue;
+        settings.fpsVisible = showFpsCheckBox.checked;
+        settings.windowOpacity = windowOpacitySlider.value;
+        settings.appTheme = appThemeComboBox.currentValue;
     }
 
     function revertToOldSettings() {
-        languageComboBox.currentIndex = languageComboBox.indexOfValue(settings.language)
-        showFpsCheckBox.checked = settings.fpsVisible
-        windowOpacitySlider.value = settings.windowOpacity
+        languageComboBox.currentIndex = languageComboBox.indexOfValue(settings.language);
+        showFpsCheckBox.checked = settings.fpsVisible;
+        windowOpacitySlider.value = settings.windowOpacity;
+        appThemeComboBox.currentIndex = appThemeComboBox.indexOfValue(settings.appTheme);
     }
 
     Item {
@@ -53,7 +55,7 @@ ColumnLayout {
                 model: [
                     {
                         value: "en_GB",
-                        display: "English"
+                        display: qsTr("English")
                     }
                 ]
             }
@@ -96,6 +98,32 @@ ColumnLayout {
                 id: showFpsCheckBox
                 checked: settings.fpsVisible
                 leftPadding: 0
+            }
+
+            Label {
+                text: qsTr("App theme")
+            }
+            ComboBox {
+                id: appThemeComboBox
+                textRole: "display"
+                valueRole: "value"
+
+                Layout.fillWidth: true
+
+                model: [
+                    {
+                        value: "Dark",
+                        display: qsTr("Dark")
+                    },
+                    {
+                        value: "Light",
+                        display: qsTr("Light")
+                    },
+                    {
+                        value: "System",
+                        display: qsTr("System")
+                    }
+                ]
             }
         }
     }

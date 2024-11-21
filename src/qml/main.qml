@@ -10,6 +10,7 @@ ApplicationWindow {
     width: 1000
     height: 800
     opacity: settings.windowOpacity
+    Material.theme: settings.appTheme === "System" ? Material.System : (settings.appTheme === "Dark" ? Material.Dark : Material.Light)
 
     property int oldWindowVisibility: Window.Windowed
 

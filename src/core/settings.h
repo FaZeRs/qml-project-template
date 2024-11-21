@@ -18,6 +18,8 @@ class Settings : public QSettings {
                  NOTIFY windowOpacityChanged)
   Q_PROPERTY(bool fpsVisible READ isFpsVisible WRITE setFpsVisible NOTIFY
                  fpsVisibleChanged)
+  Q_PROPERTY(
+      QString appTheme READ appTheme WRITE setAppTheme NOTIFY appThemeChanged)
 
   Q_PROPERTY(QString newShortcut READ newShortcut WRITE setNewShortcut NOTIFY
                  newShortcutChanged)
@@ -78,6 +80,16 @@ class Settings : public QSettings {
   /// @brief Sets the current FPS visibility for the application.
   /// @param fps_visible The new FPS visibility.
   void setFpsVisible(const bool fps_visible);
+
+  /// @brief Returns the default app theme for the application.
+  /// @return The default app theme.
+  [[nodiscard]] QString defaultAppTheme() const;
+  /// @brief Returns the current app theme for the application.
+  /// @return The current app theme.
+  [[nodiscard]] QString appTheme() const;
+  /// @brief Sets the current app theme for the application.
+  /// @param theme The new app theme.
+  void setAppTheme(const QString &theme);
 
   /// @brief Resets all shortcuts to their default values.
   Q_INVOKABLE void resetShortcutsToDefaults();
@@ -209,6 +221,8 @@ class Settings : public QSettings {
   void windowOpacityChanged();
   /// @brief Emitted when the FPS visibility is changed.
   void fpsVisibleChanged();
+  /// @brief Emitted when the app theme is changed.
+  void appThemeChanged();
 
   /// @brief Emitted when the new shortcut is changed.
   void newShortcutChanged();

@@ -53,6 +53,19 @@ void Settings::setFpsVisible(const bool fps_visible) {
   emit fpsVisibleChanged();
 }
 
+QString Settings::defaultAppTheme() const { return "System"; }
+
+QString Settings::appTheme() const {
+  return value("appTheme", defaultAppTheme()).toString();
+}
+
+void Settings::setAppTheme(const QString &theme) {
+  if (theme == value("appTheme", defaultAppTheme()).toString()) return;
+
+  setValue("appTheme", theme);
+  emit appThemeChanged();
+}
+
 void Settings::resetShortcutsToDefaults() {
   static const QVector<QString> all_shortcuts = {
       QLatin1String("newShortcut"),     QLatin1String("openShortcut"),
