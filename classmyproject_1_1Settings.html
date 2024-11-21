@@ -134,6 +134,9 @@ Signals</h2></td></tr>
 <tr class="memitem:a465a9e7e922710537f4527db63b11182" id="r_a465a9e7e922710537f4527db63b11182"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a465a9e7e922710537f4527db63b11182">fpsVisibleChanged</a> ()</td></tr>
 <tr class="memdesc:a465a9e7e922710537f4527db63b11182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when the FPS visibility is changed.  <br /></td></tr>
 <tr class="separator:a465a9e7e922710537f4527db63b11182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe9642f3398e80093b7e94817540e2ac" id="r_afe9642f3398e80093b7e94817540e2ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe9642f3398e80093b7e94817540e2ac">appThemeChanged</a> ()</td></tr>
+<tr class="memdesc:afe9642f3398e80093b7e94817540e2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when the app theme is changed.  <br /></td></tr>
+<tr class="separator:afe9642f3398e80093b7e94817540e2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81e53e5d111a3c2d92e037d07c3b7fe7" id="r_a81e53e5d111a3c2d92e037d07c3b7fe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81e53e5d111a3c2d92e037d07c3b7fe7">newShortcutChanged</a> ()</td></tr>
 <tr class="memdesc:a81e53e5d111a3c2d92e037d07c3b7fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when the new shortcut is changed.  <br /></td></tr>
 <tr class="separator:a81e53e5d111a3c2d92e037d07c3b7fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,6 +207,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad9011ea62284028bde0fd492529298cd" id="r_ad9011ea62284028bde0fd492529298cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9011ea62284028bde0fd492529298cd">setFpsVisible</a> (const bool fps_visible)</td></tr>
 <tr class="memdesc:ad9011ea62284028bde0fd492529298cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current FPS visibility for the application.  <br /></td></tr>
 <tr class="separator:ad9011ea62284028bde0fd492529298cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab06fc5b21393f1f529409aae0d6b8a6c" id="r_ab06fc5b21393f1f529409aae0d6b8a6c"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab06fc5b21393f1f529409aae0d6b8a6c">defaultAppTheme</a> () const</td></tr>
+<tr class="memdesc:ab06fc5b21393f1f529409aae0d6b8a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the default app theme for the application.  <br /></td></tr>
+<tr class="separator:ab06fc5b21393f1f529409aae0d6b8a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a21a1b4a191d93c9ab6ceef468d8896" id="r_a4a21a1b4a191d93c9ab6ceef468d8896"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a21a1b4a191d93c9ab6ceef468d8896">appTheme</a> () const</td></tr>
+<tr class="memdesc:a4a21a1b4a191d93c9ab6ceef468d8896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current app theme for the application.  <br /></td></tr>
+<tr class="separator:a4a21a1b4a191d93c9ab6ceef468d8896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0fa5f30d9ec1a95e509ddcda2de7fd" id="r_a6b0fa5f30d9ec1a95e509ddcda2de7fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b0fa5f30d9ec1a95e509ddcda2de7fd">setAppTheme</a> (const QString &amp;theme)</td></tr>
+<tr class="memdesc:a6b0fa5f30d9ec1a95e509ddcda2de7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current app theme for the application.  <br /></td></tr>
+<tr class="separator:a6b0fa5f30d9ec1a95e509ddcda2de7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7666b417762dc9f2a08db63db89297fe" id="r_a7666b417762dc9f2a08db63db89297fe"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7666b417762dc9f2a08db63db89297fe">resetShortcutsToDefaults</a> ()</td></tr>
 <tr class="memdesc:a7666b417762dc9f2a08db63db89297fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all shortcuts to their default values.  <br /></td></tr>
 <tr class="separator:a7666b417762dc9f2a08db63db89297fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -324,6 +336,8 @@ Properties</h2></td></tr>
 <tr class="separator:a86854a16cdf475191528de274d8487e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a02ccfdf10c4c93e00452069e22899" id="r_a05a02ccfdf10c4c93e00452069e22899"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05a02ccfdf10c4c93e00452069e22899">fpsVisible</a></td></tr>
 <tr class="separator:a05a02ccfdf10c4c93e00452069e22899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d4a97f2fa21e7919cf7ef032e43c5d" id="r_ad7d4a97f2fa21e7919cf7ef032e43c5d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7d4a97f2fa21e7919cf7ef032e43c5d">appTheme</a></td></tr>
+<tr class="separator:ad7d4a97f2fa21e7919cf7ef032e43c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63ab5ad6dea4807cc803cf4f7af37e6f" id="r_a63ab5ad6dea4807cc803cf4f7af37e6f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63ab5ad6dea4807cc803cf4f7af37e6f">newShortcut</a></td></tr>
 <tr class="separator:a63ab5ad6dea4807cc803cf4f7af37e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a8b1e2dd831be8e6c4f58a003e2dec9" id="r_a5a8b1e2dd831be8e6c4f58a003e2dec9"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a8b1e2dd831be8e6c4f58a003e2dec9">openShortcut</a></td></tr>
@@ -404,6 +418,71 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4a21a1b4a191d93c9ab6ceef468d8896" name="a4a21a1b4a191d93c9ab6ceef468d8896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a21a1b4a191d93c9ab6ceef468d8896">&#9670;&#160;</a></span>appTheme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString myproject::Settings::appTheme </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current app theme for the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current app theme. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmyproject_1_1Settings_a4a21a1b4a191d93c9ab6ceef468d8896_cgraph.svg" width="358" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="afe9642f3398e80093b7e94817540e2ac" name="afe9642f3398e80093b7e94817540e2ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9642f3398e80093b7e94817540e2ac">&#9670;&#160;</a></span>appThemeChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myproject::Settings::appThemeChanged </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Emitted when the app theme is changed. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmyproject_1_1Settings_afe9642f3398e80093b7e94817540e2ac_icgraph.svg" width="507" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="ace37efef1cddd4d7e998685c239b2b77" name="ace37efef1cddd4d7e998685c239b2b77"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace37efef1cddd4d7e998685c239b2b77">&#9670;&#160;</a></span>copyShortcut()</h2>
 
@@ -530,6 +609,39 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classmyproject_1_1Settings_aa9e7d595ec8f1dca931ca644b528b692_icgraph.svg" width="512" height="98"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab06fc5b21393f1f529409aae0d6b8a6c" name="ab06fc5b21393f1f529409aae0d6b8a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab06fc5b21393f1f529409aae0d6b8a6c">&#9670;&#160;</a></span>defaultAppTheme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString myproject::Settings::defaultAppTheme </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the default app theme for the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>The default app theme. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmyproject_1_1Settings_ab06fc5b21393f1f529409aae0d6b8a6c_icgraph.svg" width="500" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1773,6 +1885,41 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a6b0fa5f30d9ec1a95e509ddcda2de7fd" name="a6b0fa5f30d9ec1a95e509ddcda2de7fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b0fa5f30d9ec1a95e509ddcda2de7fd">&#9670;&#160;</a></span>setAppTheme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myproject::Settings::setAppTheme </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>theme</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the current app theme for the application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">theme</td><td>The new app theme. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmyproject_1_1Settings_a6b0fa5f30d9ec1a95e509ddcda2de7fd_cgraph.svg" width="364" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmyproject_1_1Settings_a6b0fa5f30d9ec1a95e509ddcda2de7fd_icgraph.svg" width="303" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="ad43ee86f519ad9e358dc24b62eb6735d" name="ad43ee86f519ad9e358dc24b62eb6735d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad43ee86f519ad9e358dc24b62eb6735d">&#9670;&#160;</a></span>setCopyShortcut()</h2>
 
@@ -2429,6 +2576,28 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a id="ad7d4a97f2fa21e7919cf7ef032e43c5d" name="ad7d4a97f2fa21e7919cf7ef032e43c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d4a97f2fa21e7919cf7ef032e43c5d">&#9670;&#160;</a></span>appTheme</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString myproject::Settings::appTheme</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3166445775974891897c30054d2a66a5" name="a3166445775974891897c30054d2a66a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3166445775974891897c30054d2a66a5">&#9670;&#160;</a></span>copyShortcut</h2>
 

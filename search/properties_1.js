@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['displaysequence_0',['displaySequence',['../classKeySequenceEditor.html#aee0fe2808c51f62b42c0a0e233eaab5c',1,'KeySequenceEditor']]]
+  ['copyshortcut_0',['copyShortcut',['../classmyproject_1_1Settings.html#a3166445775974891897c30054d2a66a5',1,'myproject::Settings']]],
+  ['cutshortcut_1',['cutShortcut',['../classmyproject_1_1Settings.html#a82cb970c7dadb164c4a55372c297ff49',1,'myproject::Settings']]]
 ];

@@ -1,0 +1,10 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,100,67"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#afe9642f3398e80093b7e94817540e2ac" title="Emitted when the app theme is changed." alt="" coords="345,5,501,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,332,30,332,35,100,54"/>
+<area shape="rect" id="Node000003" href="$classmyproject_1_1Settings.html#a6b0fa5f30d9ec1a95e509ddcda2de7fd" title="Sets the current app theme for the application." alt="" coords="148,63,297,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,135,65,134,71,100,65"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="293,60,339,47,341,52,294,65"/>
+<area shape="rect" id="Node000004" href="$classmyproject_1_1Settings.html#ab06fc5b21393f1f529409aae0d6b8a6c" title="Returns the default app theme for the application." alt="" coords="349,69,498,109"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="298,82,335,84,334,89,298,88"/>
+</map>

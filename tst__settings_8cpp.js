@@ -1,5 +1,6 @@
 var tst__settings_8cpp =
 [
+    [ "TEST_CASE", "tst__settings_8cpp.html#abd5b80c5ad1ff6aa0a6bd9a8ef49b9b9", null ],
     [ "TEST_CASE", "tst__settings_8cpp.html#ae58d160aac842fba2a767b474ba06de8", null ],
     [ "TEST_CASE", "tst__settings_8cpp.html#a8a9d7d1bb87c5534e9174a0978389396", null ],
     [ "TEST_CASE", "tst__settings_8cpp.html#ad9d8c2ff30fae39b4ceba73773acf481", null ],

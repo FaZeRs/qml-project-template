@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['windowopacity_0',['windowOpacity',['../classmyproject_1_1Settings.html#a86854a16cdf475191528de274d8487e0',1,'myproject::Settings']]]
+  ['undoshortcut_0',['undoShortcut',['../classmyproject_1_1Settings.html#aaf6ba3671dd5cd3389d431f2a8af6d52',1,'myproject::Settings']]]
 ];

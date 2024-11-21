@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['language_0',['language',['../classmyproject_1_1Settings.html#a01af5328a8f26921749125fbfdad33c3',1,'myproject::Settings']]]
+  ['haschanged_0',['hasChanged',['../classKeySequenceEditor.html#a00bba33954e72b109e2ec811f184fe4e',1,'KeySequenceEditor']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quitshortcut_0',['quitShortcut',['../classmyproject_1_1Settings.html#acbcf8369d9e67146b006a192cab9c87f',1,'myproject::Settings']]]
+  ['pasteshortcut_0',['pasteShortcut',['../classmyproject_1_1Settings.html#abaf66b2fa29d61e39ea21e15565084ef',1,'myproject::Settings']]]
 ];

@@ -1,0 +1,8 @@
+<map id="myproject::Settings::appThemeChanged" name="myproject::Settings::appThemeChanged">
+<area shape="rect" id="Node000001" title="Emitted when the app theme is changed." alt="" coords="345,35,501,75"/>
+<area shape="rect" id="Node000002" href="$classmyproject_1_1Settings.html#a6b0fa5f30d9ec1a95e509ddcda2de7fd" title="Sets the current app theme for the application." alt="" coords="148,5,297,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="331,44,297,39,298,34,332,39"/>
+<area shape="rect" id="Node000003" href="$tst__settings_8cpp.html#abd5b80c5ad1ff6aa0a6bd9a8ef49b9b9" title=" " alt="" coords="5,42,100,67"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="332,59,297,60,148,60,100,59,100,54,148,55,297,55,331,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,43,101,49,100,44,134,38"/>
+</map>
